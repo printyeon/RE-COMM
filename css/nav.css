@@ -41,6 +41,10 @@
     width: 20px;
 }
 
+.right .log-in, .join {
+    margin-bottom: 5px;
+}
+
 /* 내비게이션바 커서 이벤트 */
 .left img:hover {
     cursor: pointer;
