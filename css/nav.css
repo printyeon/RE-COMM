@@ -6,6 +6,11 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #bc2638;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;

@@ -327,3 +327,217 @@
     line-height: 18px;
     color: #777777;
 }
+
+/* 리콤이 추천하는 이달의 신작 */
+.recome-recommend {
+    margin: 90px 0;
+}
+
+.recome-recommend .recome {
+    height: 460px;
+    justify-content: space-between;
+    margin: 30px 170px;
+}
+
+/* 1순위 */
+.first-recome {
+    display: flex;
+    height: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 13px;
+}
+
+.first-recome .num {
+    width: 150px;
+    height: 100%;
+    text-align: center;
+    line-height: 350px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.first-recome .books-img {
+    width: 220px;
+    height: 280px;
+    background: #D9D9D9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.first-recome .books-info {
+    width: 70%;
+    height: 280px;
+    margin: 20px 40px 0 40px;
+}
+
+.first-recome .books-info .title{
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.first-recome .books-info .withstar{
+    display: flex;
+}
+
+.first-recome .books-info .author-pubyear {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.first-recome .books-info .stars {
+    margin: 0 0 3px 10px;
+}
+
+.first-recome .books-info .comment {
+    margin-top: 10px;
+    color: rgba(164, 164, 164, 1);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* 나머지 */
+.remain-recome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.recome-items {
+    background: #FFFFFE;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 13px;
+}
+
+.recome-items {
+    display: flex;
+}
+
+.recome-items .num {
+    width: 70px;
+    height: 100%;
+    line-height: 150px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.recome-items .books-img {
+    width: 90px;
+    height: 120px;
+    margin-top: 15px;
+    background: #D9D9D9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+}
+
+.recome-items .books-info {
+    margin: 25px 20px 0 20px;
+}
+
+.recome-items .stars p {
+    font-size: 14px;
+}
+
+.best-commend {
+    margin-top: 350px;
+    margin-bottom: 200px;
+}
+
+.best-commend .commend-grid {
+    display: grid;
+    margin: 30px 170px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 440px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.best-commend .commend-items {
+    background: #FBFBFB;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 13px;
+}
+
+.best-commend .commend-items .f-block {
+    display: grid;
+    grid-template-columns: 171px 1fr;
+}
+
+.best-commend .commend-items .comment {
+    font-size: 15px;
+    font-weight: 500px;
+    color: rgba(119, 119, 119, 1);
+    /* 제목이 넘칠 때 텍스트 말줄임표 */
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: wrap;
+}
+
+.best-commend .commend-items .books-img {
+    height: 180px;
+    background: #D1D1D1;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 13px;
+    margin: 20px;
+}
+
+.best-commend .commend-items .books-info {
+    margin: 12px 30px 0 10px;
+}
+
+body > div.best-commend > div.commend-grid > div:nth-child(1) > div.f-block > div.books-info > div.comment {
+    margin-right: 50px;
+}
+
+body > div.best-commend > div.commend-grid > div:nth-child(2) > div.f-block > div.books-info > div.comment {
+    margin-right: 50px;
+}
+
+.best-commend .commend-items .s-block {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    background: #F4F4F4;
+    border-top: 1px solid #D1D1D1;
+    border-radius: 0px 0px 13px 13px;
+    padding: 0 23px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.best-commend .s-block .icon {
+    margin-right: 10px;
+}
+
+.best-commend .s-block .icon img {
+    width: 23px;
+    height: 25px;
+}
+
+.best-commend .s-block .member {
+    display: flex;
+    color: rgba(119, 119, 119, 1);
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.best-commend .s-block .member-name {
+    display: flex;
+}
+
+.best-commend .s-block .member-name p {
+    font-size: 16px;
+    letter-spacing: 5;
+}
+
+/* 배너 */
+.final-banner {
+    width: 100%;
+    height: 330px;
+    background: #D9D9D9;
+}
