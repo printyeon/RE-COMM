@@ -2,9 +2,19 @@ const surveyBtn = document.getElementById("surveyBtn");
 surveyBtn.style.backgroundColor = "#ffffff";
 surveyBtn.style.color = "#777777";
 
-surveyBtn.addEventListener("click", surveyBtnClick);
+// surveyBtn.addEventListener("click", surveyBtnClick);
 
-function surveyBtnClick() {
+// function surveyBtnClick() {
+//   if (surveyBtn.style.backgroundColor == "rgb(188, 38, 56)") {
+//     surveyBtn.style.backgroundColor = "#ffffff";
+//     surveyBtn.style.color = "#777777";
+//   } else if (surveyBtn.style.backgroundColor == "rgb(255, 255, 255)") {
+//     surveyBtn.style.backgroundColor = "#bc2638";
+//     surveyBtn.style.color = "#FBFBFB";
+//   }
+// }
+
+surveyBtn.addEventListener("click", () => {
   if (surveyBtn.style.backgroundColor == "rgb(188, 38, 56)") {
     surveyBtn.style.backgroundColor = "#ffffff";
     surveyBtn.style.color = "#777777";
@@ -12,7 +22,7 @@ function surveyBtnClick() {
     surveyBtn.style.backgroundColor = "#bc2638";
     surveyBtn.style.color = "#FBFBFB";
   }
-}
+});
 
 // const surveyBtn2 = document.getElementById("surveyBtn2");
 // surveyBtn2.style.backgroundColor = "#ffffff";

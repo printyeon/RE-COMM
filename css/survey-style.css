@@ -6,8 +6,67 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.survey-txt1 {
+  position: absolute;
+  width: 614px;
+  height: 70px;
+  left: 150px;
+  top: 130px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  color: #bc2638;
+}
+
+.survey-txt2 {
+  position: absolute;
+  width: 498px;
+  height: 35px;
+  left: 150px;
+  top: 200px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 35px;
+
+  display: flex;
+  align-items: center;
+
+  color: #a4a4a4;
+}
+
+.survey-category {
+  position: absolute;
+  width: 165px;
+  height: 49px;
+  left: 150px;
+  top: 300px;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 49px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
 .survey-btn {
   position: absolute;
+
+  left: 150px;
+  top: 370px;
 
   justify-content: center;
   align-items: center;
@@ -20,7 +79,7 @@
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 35px;
 
   display: flex;
@@ -31,6 +90,9 @@
 .survey-btn2 {
   position: absolute;
 
+  left: 285px;
+  top: 370px;
+
   justify-content: center;
   align-items: center;
   padding: 8px 24px;
@@ -42,10 +104,10 @@
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 35px;
 
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
