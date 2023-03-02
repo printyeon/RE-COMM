@@ -6,6 +6,103 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+body {
+    position: relative;
+}
+
+/* 넘기기 버튼 슬라이드 버튼 */
+/* 기본 크기  */
+.ranking-top-5 .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.bookstore-best .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.member-type .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.best-good .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.guess-you-want .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.best-commend .next-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+/* top5 넘기기 버튼 */
+.ranking-top-5 .next-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 930px;
+    left: 1320px;
+}
+
+/* 서점별 베스트셀러 넘기기 버튼 */
+.bookstore-best .next-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 1540px;
+    left: 1320px;
+}
+
+/* 리콤의 000님 취향저격 추천 */
+.member-type .next-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -280px;
+    left: 1320px;
+}
+
+/* 좋아요 많이 받은 책 */
+.best-good .next-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -280px;
+    left: 1320px;
+}
+
+/* 마음에 드는 모음집 하나는 있겠지 */
+.guess-you-want .next-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -280px;
+    left: 1320px;
+}
+
+body > div.best-commend > div:nth-child(3) {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -660px;
+    left: 1320px;
+}
+
+body > div.best-commend > div:nth-child(4) {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -270px;
+    left: 1320px;
+}
+
 /* 배너 -> 옆으로 넘어가는 모션인가? 그럼 나중에 js 추가 */
 .banner {
     width: 100%;
@@ -78,6 +175,7 @@
     margin-left: 185px;
 }
 
+/* 찜 버튼 마우스 오버 */
 .books .heart:hover {
     cursor: pointer;
 }
