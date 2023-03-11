@@ -11,6 +11,9 @@ body {
 }
 
 /* 넘기기 버튼 슬라이드 버튼 */
+.next-btn:hover {
+    cursor: pointer;
+}
 /* 기본 크기  */
 .ranking-top-5 .next-btn img {
     width: 100%;
