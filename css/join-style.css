@@ -9,12 +9,16 @@
 .bg {
   position: absolute;
   width: 100%;
-  height: 1080px;
+  height: 100%;
   left: 0px;
   top: 0px;
 
   background: rgba(28, 28, 28, 0.45);
 }
+
+/* .join{
+  margin-left: 36%;
+} */
 
 .join-bg {
   position: absolute;
