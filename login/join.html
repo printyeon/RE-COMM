@@ -66,6 +66,7 @@
           type="password"
           maxlength="255"
           placeholder="&nbsp&nbsp비밀번호 확인"
+          id="reSignUpPassword"
         />
 
         <button class="join-btn" type="submit" id="signUpButton">확인</button>
@@ -112,6 +113,12 @@
       event.preventDefault();
       const signUpEmail = document.getElementById('signUpEmail').value
       const signUpPassword = document.getElementById('signUpPassword').value
+      const reSignUpPassword = document.getElementById('reSignUpPassword').value
+
+      if(signUpPassword!==reSignUpPassword){
+        console.log("비번다름");
+      }
+
       createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
         .then((userCredential) => {
           console.log(userCredential);
@@ -126,6 +133,7 @@
     // ..
   });
     })
+    cors
 
     </script>
   </body>
