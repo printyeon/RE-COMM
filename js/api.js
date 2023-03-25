@@ -36,7 +36,7 @@ const showBook = (jsonString) => {
   // https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON
   // let getJson = json["item"][0];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     title = json["item"][i]["title"];
     img = json["item"][i]["coverLargeUrl"];
     pubDate = json["item"][i]["pubDate"];
@@ -53,7 +53,7 @@ const showBook = (jsonString) => {
     <div class="grid-books-items">
       <div class="books">
           <img class="crown" src="./img/books-crown.png" alt="">
-          <img class="heart" src="./img/books-heart-1.png" alt="">
+          <img class="heart" onclick=chkHeart() src="./img/books-heart-1.png" alt="">
           <div class="books-img">
               <img src="${img}" alt="">
           </div>
@@ -79,6 +79,33 @@ const showBook = (jsonString) => {
 
   return json;
 };
+
+function chkHeart() {
+  let heart = document.getElementsByClassName("heart");
+
+  // 같은 클래스명을 공유하는 요소들의 개수
+  let heartLength = heart.length;
+  console.log(heartLength);
+
+  // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
+  for (let i = 0; i < heartLength; i++) {
+    heart[i].addEventListener("click", function () {
+      // 꽉 찬 하트일 때
+      if (heart[i].getAttribute("src") == "./img/books-heart-1.png") {
+        // 경로 가져오기
+        heart[i].setAttribute("src", "./img/books-heart-2.png");
+        console.log(heart[i].getAttribute("src"));
+      }
+      // 빈 하트일 때
+      else if (heart[i].getAttribute("src") == "./img/books-heart-2.png") {
+        heart[i].setAttribute("src", "./img/books-heart-1.png");
+        console.log(heart[i].getAttribute("src"));
+      }
+    });
+  }
+}
+
+https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbcyyy20051901001&QueryType=Bestseller&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101
 
 // CORS 해결 해야 함... 일단 크롬 확장 모드 깔아둠
 // const xhr = new XMLHttpRequest();

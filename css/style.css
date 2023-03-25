@@ -155,7 +155,8 @@ body > div.best-commend > div:nth-child(4) {
     position: relative;
     justify-content: space-between;
     margin: 30px 170px;
-    /* gap: 15px; */
+    gap: 20px;
+    overflow: hidden;
 }
 
 .grid-books-items {
