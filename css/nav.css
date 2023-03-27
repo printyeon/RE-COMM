@@ -34,7 +34,7 @@ a {
 .right {
   display: flex;
   justify-content: space-evenly;
-  width: 263px;
+  width: 289px;
   height: 100%;
   align-items: center;
   gap: 38px; /* 간격 */

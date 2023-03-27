@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../js/searh.js">
+    <link rel="stylesheet" href="../css/nav.css">
+    <title>RE;COMM</title>
+</head>
+<body>
+    <!-- 리콤 웹 검색 페이지 -->
+
+    <!-- 내비게이션바 -->
+    <div class="nav">
+        <!-- 왼쪽 로고 -->
+        <div class="left">
+            <a href="../index.html"><div class="icon"><img src="../img/logo-logo.png" alt=""></div></a>
+        </div>
+        <!-- 오른쪽 주요 아이콘 -->
+        <div class="right">
+            <a href="./search/search.html"><div class="search"><img src="../img/logo-search.png" alt=""></div></a>
+            <div class="books"><img src="../img/logo-books.png" alt=""></div>
+            <div class="log-in"><a href="../login/login.html">로그인</a></div>
+            <div class="join"><a href="../login/join.html">회원가입</a></div>
+        </div>
+    </div>
+
+    <!-- INPUT TAG -->
+    <div class="input">
+        <form id="search">
+            <input
+              type="text"
+              maxlength="255"
+              placeholder="검색어를 입력해 주세요."
+              />
+            </form>
+        <div class="img">
+            <img src="../img/logo-search.png" alt="">
+        </div>
+    </div>
+
+    <!-- 보고 싶은 작품 -->
+    <div class="want-to-see">
+        <!-- 드롭다운 세 개 -->
+        <p class="title">보고 싶은 작품을 찾아보세요</p>
+        <div class="drop-down">
+            <!-- 모든 장르 -->
+            <select id="whole-genre" class="whole-genre">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option disabled hidden selected value="모든 장르">모든 장르</option>
+            </select>
+            <!-- 모든 국가 -->
+            <select id="whole-country" class="whole-country" name="whole">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option disabled hidden selected value="모든 국가">모든 국가</option>
+            </select>
+            <!-- 모든 채널 -->
+            <select id="whole-channel" class="whole-channel" name="whole">
+                <option value="ㄱ">ㄱ</option>
+                <option value="ㄴ">ㄴ</option>
+                <option value="ㄷ">ㄷ</option>
+                <option value="ㄹ">ㄹ</option>
+                <option value="ㅁ">ㅁ</option>
+                <option disabled hidden selected value="모든 채널">모든 채널</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 인기 검색 콘텐츠 -->
+    <div class="popular-search-contents">
+        <p>인기 검색 콘텐츠</p>
+        <!-- 검색 API 사용할 곳 -->
+        <div class="grid-content">
+            <div class="grid-item">
+                <div class="num">1</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">2</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">3</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">4</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">5</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">6</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">7</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">8</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">9</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="num">10</div>
+                <div class="books-img"></div>
+                <div class="books-info">
+                    <div class="title">책 제목입니다.</div>
+                    <div class="author-pubyear">작가 · 출판연도</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-1.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                            <img src="../img/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
