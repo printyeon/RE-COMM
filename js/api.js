@@ -9,7 +9,7 @@ let getBookAPI = (link) => {
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log("api 호출");
+      console.log("API 호출 완료");
       apis = showBook(xhr.response);
     } else {
       // FAIL
@@ -23,10 +23,10 @@ let getBookAPI = (link) => {
 getBookAPI(link);
 
 const showBook = (jsonString) => {
-  console.log(jsonString);
+  // console.log(jsonString);
 
   let json = JSON.parse(jsonString);
-  console.log(json);
+  // console.log(json);
 
   let title;
   let img; // imageUrl
@@ -36,12 +36,13 @@ const showBook = (jsonString) => {
   // https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON
   // let getJson = json["item"][0];
 
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 15; i++) {
     title = json["item"][i]["title"];
+    autor = json["item"][i]["author"];
     img = json["item"][i]["coverLargeUrl"];
-    pubDate = json["item"][i]["pubDate"];
+    pubDate = json["item"][i]["pubDate"].substr(0, 4); // 월ㄴ일 슬라이스
 
-    console.log(title + "\n" + img + "\n" + pubDate);
+    // console.log(title + "\n" + img + "\n" + pubDate);
 
     // let title_div = document.getElementsByClassName("title");
     // let img_div = document.getElementsByClassName("books-img");
@@ -61,7 +62,7 @@ const showBook = (jsonString) => {
       </div>
       <div class="books-title">
           <div class="title">${title}</div>
-          <div class="author-pubyear">${pubDate}</div>
+          <div class="author-pubyear">${autor} · ${pubDate}</div>
           <div class="stars">
               <p>평균 별점</p>
               <div class="stars-img">
@@ -77,6 +78,8 @@ const showBook = (jsonString) => {
 
     container.appendChild(item);
   }
+
+  console.log("책 15권 API 호출 완료");
 
   return json;
 };
@@ -105,6 +108,7 @@ function chkHeart() {
     });
   }
 }
+
 
 // https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbcyyy20051901001&QueryType=Bestseller&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101
 

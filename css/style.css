@@ -115,6 +115,10 @@ body > div.best-commend > div:nth-child(4) {
     width: 100%;
 }
 
+.more:hover {
+    cursor: pointer;
+}
+
 /* 리콤 랭킹 top 5 */
 .ranking-top-5 {
     width: 100%;
@@ -166,6 +170,7 @@ body > div.best-commend > div:nth-child(4) {
     /* margin: 30px 170px; */
     gap: 20px;
     /* overflow: hidden; */
+    transition: all ease 1s;
 }
 
 
@@ -181,6 +186,7 @@ body > div.best-commend > div:nth-child(4) {
     height: 25px;
     margin-left: 16px;
     top: -13px;
+    z-index: 99;
 }
 
 /* 하트 (찜) 아이콘 */
