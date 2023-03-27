@@ -47,7 +47,8 @@ const showBook = (jsonString) => {
     // let img_div = document.getElementsByClassName("books-img");
     // let pubDate_div = document.getElementsByClassName("author-pubyear");
 
-    let container = document.getElementsByClassName("grid-books")[0];
+    // let container = document.getElementsByClassName("grid-books")[0];
+    let container = document.getElementsByClassName('books-container')[0];
     let item = document.createElement("grid-books-item");
     item.innerHTML = `
     <div class="grid-books-items">
@@ -105,7 +106,7 @@ function chkHeart() {
   }
 }
 
-https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbcyyy20051901001&QueryType=Bestseller&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101
+// https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbcyyy20051901001&QueryType=Bestseller&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101
 
 // CORS 해결 해야 함... 일단 크롬 확장 모드 깔아둠
 // const xhr = new XMLHttpRequest();

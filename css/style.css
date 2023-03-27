@@ -159,6 +159,17 @@ body > div.best-commend > div:nth-child(4) {
     overflow: hidden;
 }
 
+.books-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    /* margin: 30px 170px; */
+    gap: 20px;
+    /* overflow: hidden; */
+}
+
+
+
 .grid-books-items {
     width: 220px;
 }
@@ -199,6 +210,15 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 /* 리콤 탑 랭킹 5 타이틀 */
+
+/* .ranking-top-5 .grid-books .books-container {
+    height: 460px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 30px 170px;
+} */
+
 .title {
     width: 220px;
     font-weight: 700;
