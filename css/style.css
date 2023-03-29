@@ -190,6 +190,7 @@ body > div.best-commend > div:nth-child(4) {
     gap: 20px;
     /* overflow: hidden; */
     transition: all ease 1s;
+    margin-top: 12px;
 }
 
 
