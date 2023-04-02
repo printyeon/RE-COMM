@@ -44,10 +44,10 @@ const showInterparkBook = (jsonString) => {
   let pubDate; // pubDate
   let author;
   let star; // coverLargeUrl
-
+  
   // https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON
   // let getJson = json["item"][0];
-
+  
   for (let i = 0; i < 15; i++) {
     title = json["item"][i]["title"];
     author = json["item"][i]["author"];

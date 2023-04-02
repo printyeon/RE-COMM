@@ -19,6 +19,8 @@ input {
     width: 100%;
     height: 100%;
     padding-left: 30px;
+    color: rgba(119, 119, 119, 1);
+    background-color: #FBFBFB;
 }
 
 input::placeholder {
@@ -31,14 +33,29 @@ input:focus {
 }
 
 .input {
-    width: 50%;
+    display: flex;
+    width: 83%;
     height: 60px;
     align-items: center;
-    margin: 70px auto 0 auto;
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid #A4A4A4;
     filter: drop-shadow(0px 12px 3px rgba(0, 0, 0, 0.05));
+    background: #FBFBFB;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 0px;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1.5em;
+    appearance: none;
+    align-items: center;
+    /* background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em; */
+    background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    color: rgba(119, 119, 119, 1);
+    font-weight: 700;
 }
 
 .input .img {
@@ -46,6 +63,10 @@ input:focus {
     height: 23px;
     margin-right: 10px;
     align-items: center;
+}
+
+.input img:hover {
+    cursor: pointer;
 }
 
 .input .img img {
@@ -60,25 +81,32 @@ input:focus {
     margin: 100px auto 80px auto;
 }
 
-.want-to-see .title {
+.want-to-see p {
     color: black;
-    font-size: 30px;
+    font-size: 27px;
     font-weight: 700;
     width: auto;
 }
+
+/* .want-to-see .title {
+    color: black;
+    font-size: 27px;
+    font-weight: 700;
+    width: auto;
+} */
 
 .want-to-see .drop-down {
     width: 100%;
     height: 70px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
     gap: 10px;
     margin: 20px 0;
 }
 
 .want-to-see select {
     background: #FBFBFB;
-    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     border: 0px;
     display: inline-block;
@@ -88,8 +116,8 @@ input:focus {
     appearance:none;
     align-items: center;
     background-image:
-    linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(45deg, transparent 50%, #BC2638 50%),
+    linear-gradient(135deg, #BC2638 50%, transparent 50%),
     radial-gradient(#ffffff 70%, transparent 72%);
     background-position:
     calc(100% - 20px) calc(1em + 2px),
@@ -100,7 +128,7 @@ input:focus {
     5px 5px,
     1.5em 1.5em;
     background-repeat: no-repeat;
-    font-size: 20px;
+    font-size: 16px;
     color: rgba(119, 119, 119, 1);
     font-weight: 700;
 }
