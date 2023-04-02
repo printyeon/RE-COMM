@@ -177,7 +177,7 @@ body > div.best-commend > div:nth-child(4) {
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin: 30px 170px;
+    margin: 20px 170px;
     gap: 20px;
     overflow: hidden;
 }
@@ -190,6 +190,7 @@ body > div.best-commend > div:nth-child(4) {
     gap: 20px;
     /* overflow: hidden; */
     transition: all ease 1s;
+    margin-top: 15px;
 }
 
 
@@ -260,6 +261,9 @@ body > div.best-commend > div:nth-child(4) {
     margin-bottom: 5px;
     font-size: 15px;
     color: rgba(73, 73, 73, 1);
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .stars {

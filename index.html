@@ -38,7 +38,7 @@
     <div class="ranking-top-5">
         <div class="title-area">
             <p class="title">리콤 랭킹 top 50</p>
-            <p class="more">더보기</p>
+            <p class="more"></p>
             <img src="./img/books-more.png" alt="">
         </div>
         <!-- api 끌어와서 넣을 부분 -->
@@ -73,7 +73,7 @@
 
 
         <!-- <우> 넘기기 버튼 -->
-        <div id="next-btn" class="next-btn">
+        <div onclick=slider() id="next-btn" class="next-btn">
             <img src="./img/next-btn.png" alt="">
         </div>
         <!-- <좌> 넘기기 버튼 -->
@@ -98,120 +98,122 @@
         </div>
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
-            <div class="grid-books-items">
-                <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-1.png" alt="">
-                    <div class="books-img">
-                        <!-- <img src="" alt=""> -->
+            <div class="books-container">
+                <!--<div class="grid-books-items">
+                    <div class="books">
+                        <img class="crown" src="./img/books-crown.png" alt="">
+                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <div class="books-img">
+                            <img src="" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="books-title">
-                    <div class="title">책 제목입니다.</div>
-                    <div class="author-pubyear">작가 · 출판연도</div>
-                    <div class="stars">
-                        <p>평균 별점</p>
-                        <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                    <div class="books-title">
+                        <div class="title">책 제목입니다.</div>
+                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="stars">
+                            <p>평균 별점</p>
+                            <div class="stars-img">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-books-items">
-                <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-2.png" alt="">
-                    <div class="books-img">
-                        <!-- <img src="" alt=""> -->
+                <div class="grid-books-items">
+                    <div class="books">
+                        <img class="crown" src="./img/books-crown.png" alt="">
+                        <img class="heart" src="./img/books-heart-2.png" alt="">
+                        <div class="books-img">
+                            <img src="" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="books-title">
-                    <div class="title">책 제목이 길어지면 줄임 ⋯</div>
-                    <div class="author-pubyear">작가 · 출판연도</div>
-                    <div class="stars">
-                        <p>평균 별점</p>
-                        <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                    <div class="books-title">
+                        <div class="title">책 제목이 길어지면 줄임 ⋯</div>
+                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="stars">
+                            <p>평균 별점</p>
+                            <div class="stars-img">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-books-items">
-                <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-1.png" alt="">
-                    <div class="books-img">
-                        <!-- <img src="" alt=""> -->
+                <div class="grid-books-items">
+                    <div class="books">
+                        <img class="crown" src="./img/books-crown.png" alt="">
+                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <div class="books-img">
+                            <img src="" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="books-title">
-                    <div class="title">책 제목입니다.</div>
-                    <div class="author-pubyear">작가 · 출판연도</div>
-                    <div class="stars">
-                        <p>평균 별점</p>
-                        <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                    <div class="books-title">
+                        <div class="title">책 제목입니다.</div>
+                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="stars">
+                            <p>평균 별점</p>
+                            <div class="stars-img">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-books-items">
-                <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-1.png" alt="">
-                    <div class="books-img">
-                        <!-- <img src="" alt=""> -->
+                <div class="grid-books-items">
+                    <div class="books">
+                        <img class="crown" src="./img/books-crown.png" alt="">
+                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <div class="books-img">
+                            <img src="" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="books-title">
-                    <div class="title">책 제목입니다.</div>
-                    <div class="author-pubyear">작가 · 출판연도</div>
-                    <div class="stars">
-                        <p>평균 별점</p>
-                        <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                    <div class="books-title">
+                        <div class="title">책 제목입니다.</div>
+                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="stars">
+                            <p>평균 별점</p>
+                            <div class="stars-img">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-books-items">
-                <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-1.png" alt="">
-                    <div class="books-img">
-                        <!-- <img src="" alt=""> -->
-                    </div>
-                </div>
-                <div class="books-title">
-                    <div class="title">누가 내 머리에 똥쌌어! 비하인드</div>
-                    <div class="author-pubyear">작가 · 출판연도</div>
-                    <div class="stars">
-                        <p>평균 별점</p>
-                        <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                <div class="grid-books-items">
+                    <div class="books">
+                        <img class="crown" src="./img/books-crown.png" alt="">
+                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <div class="books-img">
+                            <img src="" alt="">
                         </div>
                     </div>
-                </div>
+                    <div class="books-title">
+                        <div class="title">누가 내 머리에 똥쌌어! 비하인드</div>
+                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="stars">
+                            <p>평균 별점</p>
+                            <div class="stars-img">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-1.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                                <img src="./img/books-star-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
             </div>
         </div>
 
