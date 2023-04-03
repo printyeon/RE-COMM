@@ -133,6 +133,27 @@ input:focus {
     font-weight: 700;
 }
 
+/* 인기 검색어 */
+.popular-search {
+    width: 75%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.tags-grid {
+    display: grid;
+    height:120px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr
+}
+
+/* 최근 관람한 책 */
+.recent-books {
+    width: 75%;
+    height: 600px;
+    margin: 0 auto;
+}
+
 /* 인기 검색 콘텐츠 */
 .popular-search-contents {
     width: 75%;
