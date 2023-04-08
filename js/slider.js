@@ -1,6 +1,6 @@
 function slider() {
   let nextBtn = document.getElementById("next-btn");
-  let prevBtn = document.getElementsByClassName("prev-btn")[0];
+  // let prevBtn = document.getElementsByClassName("prev-btn")[0];
   let container = document.getElementsByClassName("books-container")[0];
   let i = 1;
 
@@ -13,8 +13,6 @@ function slider() {
     i++;
     console.log(`현재 위치 ${current}, ${i}`);
 
-    prevBtnSlide(current, i);
-
     // 만약 마지막 슬라이드에 도달했다면 첫 슬라이드로 0.5초 빠르게 이동
     if (current == -3600) {
       container.style.transform = `translateX(0px)`;
@@ -24,22 +22,6 @@ function slider() {
       console.log("첫 슬라이드 이동");
     }
   });
-
-  function prevBtnSlide(current, i) {
-    prevBtn.style.display = "block";
-    let thisCurrent = 0;
-    prevBtn.addEventListener("click", function () {
-      if(thisCurrent == 0) {
-
-      }
-      else if(thisCurrent == 1) {
-        
-      }
-      else if(thisCurrent == 2) {
-
-      }
-
-      thisCurrent++;
-    });
-  }
 }
+
+slider();

@@ -1,6 +1,5 @@
 // fetch("http://book.interpark.com/api/bestSeller.api").then((response) => console.log("response: ", response));
 
-
 // 인터파크 API
 const KEY = "5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E";
 const TYPE = "json";
@@ -44,10 +43,10 @@ const showInterparkBook = (jsonString) => {
   let pubDate; // pubDate
   let author;
   let star; // coverLargeUrl
-  
+
   // https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/JSON
   // let getJson = json["item"][0];
-  
+
   for (let i = 0; i < 15; i++) {
     title = json["item"][i]["title"];
     author = json["item"][i]["author"];
@@ -61,7 +60,7 @@ const showInterparkBook = (jsonString) => {
     // let pubDate_div = document.getElementsByClassName("author-pubyear");
 
     // let container = document.getElementsByClassName("grid-books")[0];
-    let container = document.getElementsByClassName('books-container')[0];
+    let container = document.getElementsByClassName("books-container")[0];
     let item = document.createElement("grid-books-item");
     item.innerHTML = `
     <div class="grid-books-items">
@@ -144,7 +143,7 @@ const showAladinBook = (jsonString) => {
     // let pubDate_div = document.getElementsByClassName("author-pubyear");
 
     // let container = document.getElementsByClassName("grid-books")[0];
-    let container = document.getElementsByClassName('books-container')[1];
+    let container = document.getElementsByClassName("books-container")[1];
     let item = document.createElement("grid-books-item");
     item.innerHTML = `
     <div class="grid-books-items">
@@ -252,7 +251,7 @@ function chkHeart() {
   // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
   for (let i = 0; i < heartLength; i++) {
     heart[i].addEventListener("click", function () {
-        console.log("클릭");
+      console.log("클릭");
       // 꽉 찬 하트일 때
       if (heart[i].getAttribute("src") == "./img/books-heart-1.png") {
         // 경로 가져오기
