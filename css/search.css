@@ -140,6 +140,18 @@ input:focus {
     margin: 0 auto;
 }
 
+.popular-search .title {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.popular-search img {
+    width: 100%;
+}
+
 .tags-grid {
     display: grid;
     height:120px;
@@ -154,11 +166,77 @@ input:focus {
     margin: 0 auto;
 }
 
+.recent-books .title {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.recent-books .books-title .title {
+    font-size: 20px;
+    /* 제목이 넘칠 때 텍스트 말줄임표 */
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.recent-books .grid-books {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.recent-books .books-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    /* margin: 30px 170px; */
+    gap: 20px;
+    /* overflow: hidden; */
+    transition: all ease 1s;
+    margin-top: 15px;
+}
+
+.recent-books .grid-books-items {
+    width: 220px;
+}
+
+/* 하트 (찜) 아이콘 */
+.recent-books .books .heart {
+    position: absolute;
+    top: 260px;
+    margin-left: 185px;
+}
+
+/* 찜 버튼 마우스 오버 */
+.recent-books .books .heart:hover {
+    cursor: pointer;
+}
+
+.recent-books .books .books-img {
+    height: 295px;
+    background-color: #D9D9D9;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.recent-books .books .books-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+
 /* 인기 검색 콘텐츠 */
 .popular-search-contents {
     width: 75%;
-    height: 700px;
     margin: 0 auto;
+    margin: 20px 170px;
 }
 
 .popular-search-contents p {
@@ -169,7 +247,7 @@ input:focus {
     margin-bottom: 20px;
 }
 
-.grid-content {
+.popular-search-contents .grid-content {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
@@ -177,14 +255,14 @@ input:focus {
     gap: 20px;
 }
 
-.grid-item {
+.popular-search-contents .grid-item {
     background: #FFFFFE;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 13px;
     display: flex;
 }
 
-.grid-item .num {
+.popular-search-contents .grid-item .num {
     width: 70px;
     height: 100%;
     line-height: 150px;
@@ -193,7 +271,7 @@ input:focus {
     font-weight: 700;
 }
 
-.grid-item .books-img {
+.popular-search-contents .grid-item .books-img {
     width: 90px;
     height: 120px;
     margin-top: 15px;
@@ -202,10 +280,42 @@ input:focus {
     border-radius: 13px;
 }
 
-.grid-item .books-info {
+.popular-search-contents .grid-item .books-info {
     margin: 25px 20px 0 20px;
 }
 
-.grid-item .stars p {
+.popular-search-contents .grid-item .stars p {
     font-size: 14px;
+}
+
+/* 카테고리 검색 */
+.category {
+    width: 75%;
+    margin: 0 auto;
+    margin: 120px 170px;
+}
+
+.category .title {
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.category .grid-category {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.category .category-item {
+    padding: 30%;
+    background-color: rgba(188, 38, 56, 1);
+    border-radius: 5px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
 }
