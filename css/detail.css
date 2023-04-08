@@ -1,0 +1,239 @@
+body {
+    background-position: 50% -10%;
+    background-image: url(../img/banner/banner-1.png);
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+}
+
+.banner img {
+    width: 100%;
+    height: 200%;
+}
+
+.back {
+    width: 100%;
+    background-color: #fff;
+}
+
+.book-profile {
+    width: 75%;
+    height: 560px;
+    margin: 250px auto 10px auto;
+    display: flex;
+    background-color: #fff;
+}
+
+.book-profile img:nth-child(1) {
+    border-radius: 10px;
+    margin-top: -150px;
+    width: 100%;
+    height: 100%;
+}
+
+.book-profile .profile {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.book-profile .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.book-profile .info1 {
+    display: flex;
+    gap: 50px;
+    margin-top: 5px;
+    color: rgba(119, 119, 119, 1);
+}
+
+.book-profile .info1 .author, .pub, .pubyear {
+    border-right: 1px solid #3f3f3f;
+    padding-right: 10px;
+}
+
+.book-profile .info2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 140px;
+    margin-top: 20px;
+    border: 0.1px solid rgba(232, 232, 232, 1);
+    border-left: none;
+    border-right: none;
+}
+
+.book-profile .info2 .star {
+    display: block;
+    border-right: 0.1px solid rgba(232, 232, 232, 1);
+}
+
+.book-profile .info2 .star-title {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.book-profile .star-img {
+    margin: 10px 0 0 50px;
+}
+
+.book-profile .star-img img {
+    width: 50px;
+    height: 52px;
+    margin-top: 5px;
+}
+
+.book-profile .info2 .grid-tag {
+    margin-top: 50px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.book-profile .info2 .tag-item {
+    background-color: #BC2638;
+    border-radius: 6px;
+    color: #fff;
+    text-align-last: center;
+}
+
+
+.book-profile .summary-title {
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgba(73, 73, 73, 1);
+}
+
+.book-profile .summary-content {
+    margin-top: 5px;
+    color: rgba(119, 119, 119, 1);
+}
+
+/* 독자들의 인상깊은 구절 */
+.reader-impressive {
+    width: 75%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #3f3f3f;
+    background: #FBFBFB;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.reader-impressive .reader-nav {
+    display: flex;
+}
+
+.reader-impressive .reader-nav .write-btn {
+    width: 120px;
+    height: 30px;
+    background-color: #BC2638;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.reader-impressive .reader-nav .title {
+    width: 100%;
+    height: 100px;
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+}
+
+body > div.reader-impressive > div.reader-nav > div.title {
+    height: 80px;
+}
+
+.reader-impressive .reader-nav .more {
+    color: #BC2638;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 25px;
+    margin-top: 9px;
+}
+
+.reader-impressive .reader-nav img {
+    width: 12px;
+    height: 15px;
+    margin-left: 5px;
+    margin-top: 18px;
+}
+
+.reader-impressive .grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.reader-impressive .content {
+    display: grid;
+    grid-template-rows: 230px 1fr;
+    background: #FBFBFB;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 13px;
+}
+
+.reader-impressive .content .top {
+    color: rgba(28, 28, 28, 1);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.reader-impressive .content .top .comment {
+    font-size: 16px;
+    color : rgba(119, 119, 119, 1);
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.reader-impressive .content .bottom {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    background: #F4F4F4;
+    border-top: 1px solid #D1D1D1;
+    border-radius: 0px 0px 13px 13px;
+    align-items: center;
+}
+
+
+.reader-impressive .content .bottom .member {
+    display: flex;
+    color: rgba(119, 119, 119, 1);
+    font-size: 13px;
+    line-height: 25px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.reader-impressive .content .bottom .member-name {
+    display: flex;
+    gap: 5px;
+}
+
+.reader-impressive .content .bottom .member-name p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-top: 3px;
+}
+
+.reader-impressive .content .bottom .heart {
+    margin-right: 10px;
+}
+
+/* 독자들의 인상깊은 구절들 넘기기 버튼 */
+.reader-impressive .next-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 1110px;
+    left: 1330px;
+}
