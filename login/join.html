@@ -43,6 +43,7 @@
           type="text"
           maxlength="255"
           placeholder="&nbsp&nbsp이름"
+          id="signUpName"
         />
 
         <input
@@ -84,68 +85,6 @@
       </div>
     </div>
 
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyD-KvwhezfpQVtFejdhj1by372iON-nnJc",
-        authDomain: "recomm-test.firebaseapp.com",
-        projectId: "recomm-test",
-        storageBucket: "recomm-test.appspot.com",
-        messagingSenderId: "1024841789555",
-        appId: "1:1024841789555:web:5a33493976125f3e00fa06",
-        measurementId: "G-N63J4R732X",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-
-      import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-
-      const auth = getAuth();
-
-      document
-        .getElementById("signUpButton")
-        .addEventListener("click", (event) => {
-          event.preventDefault();
-          const signUpEmail = document.getElementById("signUpEmail").value;
-          const signUpPassword =
-            document.getElementById("signUpPassword").value;
-          const reSignUpPassword =
-            document.getElementById("reSignUpPassword").value;
-
-          if (signUpPassword !== reSignUpPassword) {
-            alert("비번이 다릅니다");
-          }
-
-          createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-            .then((userCredential) => {
-              console.log(userCredential);
-              // Signed in
-              const user = userCredential.user;
-              location.href = "./survey.html";
-
-              // ...
-            })
-            .catch((error) => {
-              console.log("error");
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              // ..
-            });
-        });
-      cors;
-    </script>
+    <script type="module" src="../js/join.js"></script>
   </body>
 </html>
