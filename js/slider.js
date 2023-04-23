@@ -1,6 +1,7 @@
 let nextBtn = document.querySelectorAll(".next-btn");
 // let prevBtn = document.getElementsByClassName("prev-btn")[0];
 let container = document.querySelectorAll(".books-container")[0];
+// 모든 books-container 요소에 같은 이벤트 추가하기 연구
 let i = 1;
 
 nextBtn.forEach((nextBtns) => {
