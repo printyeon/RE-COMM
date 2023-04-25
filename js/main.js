@@ -27,3 +27,44 @@
 //     });
 //   }
 // }
+
+// 서점별 베스트 셀러 버튼
+let btn = document.getElementsByClassName("store-btn");
+
+function handleClick(event) {
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+
+// 배너 페이징 버튼
+let bannerBtn = document.getElementsByClassName("paging-banner");
+
+function bannerSlide() {
+  let item = document.createElement("paging");
+  let current = i;
+  let remain = 3;
+  item.innerHTML = `<div>
+    <div class="prev"> < </div>
+    <p>${current} / ${remain}</p>
+    <div class="next"> > </div>
+  </div>`;
+
+  document.appendChild(item);
+}
+
+bannerSlide();

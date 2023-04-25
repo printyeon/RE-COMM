@@ -128,10 +128,19 @@ body > div.best-commend > div:nth-child(4) {
 /* 배너 -> 옆으로 넘어가는 모션인가? 그럼 나중에 js 추가 */
 .banner {
     width: 100%;
+    position: relative;
 }
 
 .banner img {
     width: 100%;
+}
+
+/* 배너 페이징 */
+.paging {
+    position: absolute;
+    display: flex;
+    top: 30px;
+
 }
 
 .more:hover {
@@ -299,31 +308,42 @@ body > div.best-commend > div:nth-child(4) {
     
 }
 
+.store-btn {
+    cursor: pointer;
+}
+
 .aladdin {
     width: 140px;
     text-align: center;
     border-radius: 30px;
     padding: 4px;
+    background-color: #D06773;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.naver {
+    width: 140px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 4px;
+    background-color: #D06773;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.daum {
+    width: 140px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 4px;
+    background-color: #D06773;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.clicked {
     background-color: #BC2638;
+    color: rgba(255, 255, 255, 1);
 }
 
-.gyobo {
-    width: 140px;
-    text-align: center;
-    border-radius: 30px;
-    padding: 4px;
-    background-color: #D06773;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.yes24 {
-    width: 140px;
-    text-align: center;
-    border-radius: 30px;
-    padding: 4px;
-    background-color: #D06773;
-    color: rgba(255, 255, 255, 0.6);
-}
 
 /* 리콤의 000님 취향저격 추천 */
 .member-type {
