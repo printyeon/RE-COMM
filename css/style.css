@@ -8,8 +8,8 @@
 
 body {
     position: relative;
+    overflow-x: hidden;
 }
-
 /* 넘기기 버튼 슬라이드 버튼 */
 .next-btn:hover {
     cursor: pointer;

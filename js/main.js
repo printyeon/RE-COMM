@@ -52,19 +52,73 @@ function init() {
 init();
 
 // 배너 페이징 버튼
-let bannerBtn = document.getElementsByClassName("paging-banner");
+// let bannerBtn = document.getElementsByClassName("paging-banner");
 
-function bannerSlide() {
-  let item = document.createElement("paging");
-  let current = i;
-  let remain = 3;
-  item.innerHTML = `<div>
-    <div class="prev"> < </div>
-    <p>${current} / ${remain}</p>
-    <div class="next"> > </div>
-  </div>`;
+// function bannerSlide() {
+//   let item = document.createElement("paging");
+//   let current = i;
+//   let remain = 3;
+//   item.innerHTML = `<div>
+//     <div class="prev"> < </div>
+//     <p>${current} / ${remain}</p>
+//     <div class="next"> > </div>
+//   </div>`;
 
-  document.appendChild(item);
+//   document.appendChild(item);
+// }
+
+// bannerSlide();
+
+// 로그인 모달창 켜지기
+function openLogin() {
+  const modal = document.getElementById("modal1");
+  const modalBtn = document.getElementsByClassName("log-in")[0];
+  modalBtn.addEventListener("click", (e) => {
+    modal.style.display = "flex";
+    // document.body.style.backgroundColor = "rgba(28, 28, 28, 0.45)";
+    document.body.style.fliter = "blur(5px);";
+  });
+
+  modal.addEventListener("click", (e) => {
+    const evTarget = e.target;
+    if (evTarget.classList.contains("modal-overlay1")) {
+      modal.style.display = "none";
+    }
+  });
+
+  // 로그인 모달창 -> 회원가입 모달창
+  const toJoin = document.getElementsByClassName("toJoin")[0];
+  toJoin.addEventListener("click", (e) => {
+    // modal.style.display = "none";
+    const modal1 = document.getElementById("modal2");
+    modal1.style.display = "flex";
+    modal.style.display = "none";
+  });
 }
 
-bannerSlide();
+// 회원가입 모달창 켜지기
+function openJoin() {
+  const modal1 = document.getElementById("modal2");
+  const modalBtn1 = document.getElementsByClassName("join")[0];
+  modalBtn1.addEventListener("click", (e) => {
+    modal1.style.display = "flex";
+    // document.body.style.backgroundColor = "rgba(28, 28, 28, 0.45)";
+    document.body.style.fliter = "blur(5px);";
+  });
+
+  modal1.addEventListener("click", (e) => {
+    const evTarget = e.target;
+    if (evTarget.classList.contains("modal-overlay2")) {
+      modal1.style.display = "none";
+    }
+  });
+
+  // 회원가입 모달창 -> 로그인 모달창
+  const toLogin = document.getElementsByClassName("toLogin")[0];
+  toLogin.addEventListener("click", (e) => {
+    // modal.style.display = "none";
+    const modal = document.getElementById("modal1");
+    modal.style.display = "flex";
+    modal1.style.display = "none";
+  });
+}

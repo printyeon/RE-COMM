@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login-style.css">
+    <link rel="stylesheet" href="./css/join-style.css">
     <title>RE;COMM</title>
 </head>
 <body>
@@ -21,8 +23,8 @@
         <div class="right">
             <a href="./search/search.html"><div class="search"><img src="./img/logo-search.png" alt=""></div></a>
             <div class="books"><img src="./img/logo-books.png" alt=""></div>
-            <div class="log-in"><a href="./login/login.html">로그인</a></div>
-            <div class="join"><a href="./login/join.html">회원가입</a></div>
+            <div class="log-in" onclick="openLogin()">로그인</div>
+            <div class="join" onclick="openJoin()">회원가입</div>
         </div>
     </div>
 
@@ -731,8 +733,115 @@
         
     </div>
 
+    <!-- 로그인 창 -->
+    <div id="modal1" class="modal-overlay1">
+        <div class="login">
+            <div class="login-bg"></div>
+            <div class="login-logo">
+              <img src="./login/img/login-logo.png" width="75%" />
+            </div>
+            <div class="login-txt">로그인</div>
+      
+            <form class="login-form">
+              <input
+                class="row"
+                type="email"
+                maxlength="255"
+                placeholder=" &nbsp&nbsp이메일"
+                id="signInEmail"
+              />
+      
+              <input
+                class="row"
+                type="password"
+                maxlength="255"
+                placeholder=" &nbsp&nbsp비밀번호"
+                id="signInPassword"
+              />
+      
+              <button class="login-btn" type="submit" id="signInButton">
+                로그인
+              </button>
+            </form>
+      
+            <div class="login-check">
+              <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
+              <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
+            </div>
+      
+            <div class="forgot-hy">
+              <a>비밀번호를 잊어버리셨나요?</a>
+            </div>
+            <div class="join-hy">
+              회원이 아니신가요? &nbsp&nbsp<a class="toJoin">회원가입</a>
+            </div>
+          </div>
+    </div>
+
+    <!--회원가입 창-->
+    <div id="modal2" class="modal-overlay2">
+        <div class="join">
+            <div class="join-bg"></div>
+            <div class="join-logo">
+                <img src="./login/img/login-logo.png" width="75%" />
+            </div>
+            <div class="join-txt">회원가입</div>
+        
+            <form class="join-form">
+                <input
+                class="row"
+                type="text"
+                maxlength="255"
+                placeholder="&nbsp&nbsp이름"
+                id="signUpName"
+                />
+        
+                <input
+                class="row"
+                type="email"
+                maxlength="255"
+                placeholder="&nbsp&nbsp이메일"
+                id="signUpEmail"
+                />
+        
+                <input
+                class="row"
+                type="password"
+                maxlength="255"
+                placeholder="&nbsp&nbsp비밀번호(6자 이상)"
+                id="signUpPassword"
+                />
+        
+                <input
+                class="row"
+                type="password"
+                maxlength="255"
+                placeholder="&nbsp&nbsp비밀번호 확인"
+                id="reSignUpPassword"
+                />
+        
+                <button class="join-btn" type="submit" id="signUpButton">확인</button>
+            </form>
+        
+            <div class="join-check">
+                <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
+                <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
+                <div class="check-row c3"><img src="./login/img/login-check.png" /></div>
+                <div class="check-row c4"><img src="./login/img/login-check.png" /></div>
+            </div>
+        
+            <div class="login-hy">
+                이미 가입하셨나요? &nbsp&nbsp<a class="toLogin">로그인</a>
+            </div>
+            </div>
+    </div>
+
+
+
     <script src="./js/main.js"></script>
     <script src="./js/api.js"></script>
     <script src="./js/slider.js"></script>
+    <script type="module" src="./js/login.js"></script>
+    <script type="module" src="./js/join.js"></script>
 </body>
 </html>

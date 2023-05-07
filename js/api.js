@@ -95,6 +95,15 @@ const showInterparkBook = (jsonString) => {
   return json;
 };
 
+// function prevSlide() {
+//   console.log("클릭");
+//   current = i * 1200;
+//   container.style.transform = `trslateX(${current}px)`;
+//   container.style.transition = "all ease 1s";
+//   i--;
+//   console.log(`현재 위치 ${current}, ${i}`);
+// }
+
 // 알라딘 API
 
 let aladinAPI = (link) => {
