@@ -49,22 +49,24 @@ function bannerSlide() {
   // 현재 보여지는 슬라이드의 인덱스
   let currentIndex = 0;
 
-  // 이전 버튼 클릭 시 이벤트 핸들러
-  prevButton.addEventListener("click", () => {
+  // 다음 슬라이드 이동
+  const prevSlide = () => {
     currentIndex--;
 
     if (currentIndex < 0) {
       currentIndex = bannerItems.length - 1;
-      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동하는 트랜지션 효과를 추가
-      slide.style.transform = `translateX(-${(bannerItems.length - 1) * 100}%)`; // 마지막 슬라이드로 이동
+      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동
+      slide.style.transform = `translateX(-${
+        (bannerItems.length - 1) * 1920
+      }px)`; // 마지막 슬라이드로 이동
     } else {
-      slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
     }
     currentpage.innerHTML = `${currentIndex + 1} / 3`;
-  });
+  };
 
-  // 다음 버튼 클릭 시 이벤트 핸들러
-  nextButton.addEventListener("click", () => {
+  // 이전 슬라이드로 이동하는 함수
+  const nextSlide = () => {
     // 현재 인덱스에서 1++
     currentIndex++;
     console.log("클릭" + currentIndex);
@@ -74,8 +76,23 @@ function bannerSlide() {
       currentIndex = 0;
     }
 
-    // 슬라이드 요소를 이동합니다.
+    // 슬라이드 요소를 이동
     slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
     currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  };
+
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
+
+  let slideInterval = setInterval(nextSlide, 3000);
+
+  // 마우스 올리면 슬라이드 멈추기
+  slide.addEventListener("mouseover", () => {
+    clearInterval(slideInterval);
+  });
+
+  // 마우스 나가면 슬라이드 재생
+  slide.addEventListener("mouseout", () => {
+    setInterval(slideInterval);
   });
 }
