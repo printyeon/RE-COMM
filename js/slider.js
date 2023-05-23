@@ -1,3 +1,4 @@
+// https://blog.naver.com/PostView.naver?blogId=sujeedo&logNo=222104824984&categoryNo=204&parentCategoryNo=0
 let prevBtn = document.getElementsByClassName("prev-btn")[0];
 let container = document.querySelectorAll(".books-container")[0];
 let nextBtn = document.querySelectorAll(".next-btn");
@@ -32,30 +33,49 @@ function nextSlide() {
   }
 }
 
-// function slide() {
-//   // A
-//   const itemWrapperEl = document.querySelector(".books-container"),
-//     leftBtnEl = document.getElementById("next-btn"),
-//     rightBtnEl = document.getElementById("right-btn");
+// 상단 배너 슬라이드
+window.onload = bannerSlide;
 
-//   function moveSlides(direction) {
-//     // B
-//     const item = itemWrapperEl.querySelector(".item"),
-//       itemMargin = parseFloat(getComputedStyle(item).marginRight);
-//     itemWidth = itemMargin + item.offsetWidth + 2;
+function bannerSlide() {
+  const slide = document.querySelector(".slide");
+  const bannerItems = document.querySelectorAll(".banner-item");
 
-//     let itemCount = Math.round(itemWrapperEl.scrollLeft / itemWidth);
+  // 이전 버튼과 다음 버튼을 선택
+  const prevButton = document.getElementsByClassName("prev")[0];
+  const nextButton = document.getElementsByClassName("next")[0];
+  // 현재 페이지 위치
+  const currentpage = document.getElementsByClassName("paging")[0];
 
-//     if (direction === "left") {
-//       itemCount = itemCount - 1;
-//     } else {
-//       itemCount = itemCount + 1;
-//     }
-//     itemWrapperEl.scrollLeft = itemWidth * itemCount;
-//   }
+  // 현재 보여지는 슬라이드의 인덱스
+  let currentIndex = 0;
 
-//   leftBtnEl.addEventListener("click", (e) => moveSlides("left")); // C
-//   rightBtnEl.addEventListener("click", (e) => moveSlides("right"));
-// }
+  // 이전 버튼 클릭 시 이벤트 핸들러
+  prevButton.addEventListener("click", () => {
+    currentIndex--;
 
-// slide();
+    if (currentIndex < 0) {
+      currentIndex = bannerItems.length - 1;
+      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동하는 트랜지션 효과를 추가
+      slide.style.transform = `translateX(-${(bannerItems.length - 1) * 100}%)`; // 마지막 슬라이드로 이동
+    } else {
+      slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  });
+
+  // 다음 버튼 클릭 시 이벤트 핸들러
+  nextButton.addEventListener("click", () => {
+    // 현재 인덱스에서 1++
+    currentIndex++;
+    console.log("클릭" + currentIndex);
+
+    // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
+    if (currentIndex >= bannerItems.length) {
+      currentIndex = 0;
+    }
+
+    // 슬라이드 요소를 이동합니다.
+    slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  });
+}
