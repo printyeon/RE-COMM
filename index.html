@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./css/join-style.css">
     <title>RE;COMM</title>
 </head>
+
 <body>
     <!-- 리콤 웹 메인 페이지 -->
 
@@ -17,11 +19,14 @@
     <div class="nav">
         <!-- 왼쪽 로고 -->
         <div class="left">
-            <a href="#"><div class="icon"><img src="./img/logo-logo.png" alt=""></div>
+            <a href="#">
+                <div class="icon"><img src="./img/logo-logo.png" alt=""></div>
         </div>
         <!-- 오른쪽 주요 아이콘 -->
         <div class="right">
-            <a href="./search/search.html"><div class="search"><img src="./img/logo-search.png" alt=""></div></a>
+            <a href="./search/search.html">
+                <div class="search"><img src="./img/logo-search.png" alt=""></div>
+            </a>
             <div class="books"><img src="./img/logo-books.png" alt=""></div>
             <div class="log-in" onclick="openLogin()">로그인</div>
             <div class="join" onclick="openJoin()">회원가입</div>
@@ -30,8 +35,25 @@
 
     <!-- 웹 배너 -->
     <!-- 배너 3컷 각각의 상세 페이지 -->
-    <div class="banner">
-        <img src="./img/banner/banner-1.png" alt=""> 
+    <div class="slide-container">
+        <div class="banner">
+            <div class="slide">
+                <div class="banner-item">
+                    <img src="./img/banner/banner-1.png" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="./img/banner/banner-2.png" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="./img/banner/banner-3.png" alt="">
+                </div>
+            </div>
+            <div class="banner-arrow">
+                <img class="prev" src="./img/banner/banner-arrow-prev.png" alt="">
+                <p class="paging">1 / 3</p>
+                <img class="next" src="./img/banner/banner-arrow-next.png" alt="">
+            </div>
+        </div>
     </div>
 
     <!-- 모니터 크기별 위치 조절 필요한 부분  -->
@@ -46,8 +68,8 @@
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
             <div class="books-container">
-            <!-- API 삽입 -->
-            <!-- <div class="grid-books-items">
+                <!-- API 삽입 -->
+                <!-- <div class="grid-books-items">
                 <div class="books">
                     <img class="crown" src="./img/books-crown.png" alt="">
                     <img class="heart" src="./img/books-heart-1.png" alt="">
@@ -84,7 +106,7 @@
         </div>
     </div>
 
-    <!-- 서점별 베스트 셀러 --> 
+    <!-- 서점별 베스트 셀러 -->
     <!-- 버튼 -->
     <div class="bookstore-best">
         <div class="title-area">
@@ -224,7 +246,7 @@
             <img src="./img/next-btn.png" alt="">
         </div>
     </div>
-    
+
     <!-- 리콤의 000님 취향저격 추천 -->
     <!-- 선호하는 작가, 장르 페이지 이동 -->
     <!-- 버튼 -->
@@ -237,30 +259,31 @@
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
             <div class="books-container">
-                <a href="./detail/detail.html"><div class="grid-books-items">
-                    <div class="books">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
-                        <div class="books-img">
-                            <!-- <img src="" alt=""> -->
+                <a href="./detail/detail.html">
+                    <div class="grid-books-items">
+                        <div class="books">
+                            <img class="heart" src="./img/books-heart-1.png" alt="">
+                            <div class="books-img">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <!-- 선호하는... 뭐시기 -->
+                            <div class="prefer">#선호하는 작가</div>
                         </div>
-                        <!-- 선호하는... 뭐시기 -->
-                        <div class="prefer">#선호하는 작가</div>
-                    </div>
-                    <div class="books-title">
-                        <div class="title">책 제목입니다.</div>
-                        <div class="author-pubyear">작가 · 출판연도</div>
-                        <div class="stars">
-                            <p>평균 별점</p>
-                            <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                        <div class="books-title">
+                            <div class="title">책 제목입니다.</div>
+                            <div class="author-pubyear">작가 · 출판연도</div>
+                            <div class="stars">
+                                <p>평균 별점</p>
+                                <div class="stars-img">
+                                    <img src="./img/books-star-1.png" alt="">
+                                    <img src="./img/books-star-1.png" alt="">
+                                    <img src="./img/books-star-1.png" alt="">
+                                    <img src="./img/books-star-2.png" alt="">
+                                    <img src="./img/books-star-2.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </a>
                 <div class="grid-books-items">
                     <div class="books">
@@ -312,7 +335,7 @@
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart"src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="./img/books-heart-1.png" alt="">
                         <div class="books-img">
                             <!-- <img src="" alt=""> -->
                         </div>
@@ -385,39 +408,47 @@
             <div class="books-container">
                 <div class="grid-books-items">
                     <div class="books-simple-title">
-                        <p>따뜻한 가득<br/><b>장호연</b> 장편 소설</p>
+                        <p>따뜻한 가득<br /><b>장호연</b> 장편 소설</p>
                     </div>
                     <div class="books">
                         <div class="books-img"><!-- <img src="" alt=""> --></div>
                     </div>
-                    <div class="books-title"><div class="title">책 제목입니다.</div></div>
+                    <div class="books-title">
+                        <div class="title">책 제목입니다.</div>
+                    </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books-simple-title">
-                        <p>따뜻한 가득<br/><b>장호연</b> 장편 소설</p>
+                        <p>따뜻한 가득<br /><b>장호연</b> 장편 소설</p>
                     </div>
                     <div class="books">
                         <div class="books-img"><!-- <img src="" alt=""> --></div>
                     </div>
-                    <div class="books-title"><div class="title">책 제목입니다. 길어지면 줄임</div></div>
+                    <div class="books-title">
+                        <div class="title">책 제목입니다. 길어지면 줄임</div>
+                    </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books-simple-title">
-                        <p>따뜻한 가득<br/><b>장호연</b> 장편 소설</p>
+                        <p>따뜻한 가득<br /><b>장호연</b> 장편 소설</p>
                     </div>
                     <div class="books">
                         <div class="books-img"><!-- <img src="" alt=""> --></div>
                     </div>
-                    <div class="books-title"><div class="title">책 제목입니다.</div></div>
+                    <div class="books-title">
+                        <div class="title">책 제목입니다.</div>
+                    </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books-simple-title">
-                        <p>따뜻한 가득<br/><b>장호연</b> 장편 소설</p>
+                        <p>따뜻한 가득<br /><b>장호연</b> 장편 소설</p>
                     </div>
                     <div class="books">
                         <div class="books-img"><!-- <img src="" alt=""> --></div>
                     </div>
-                    <div class="books-title"><div class="title">책 제목입니다. 길어지면 줄임</div></div>
+                    <div class="books-title">
+                        <div class="title">책 제목입니다. 길어지면 줄임</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -540,7 +571,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="comment">책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리……</div>
+                    <div class="comment">책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은
+                        줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은
+                        줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은
+                        줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은 줄거리 책 소개 혹은
+                        줄거리……</div>
                 </div>
             </div>
             <!-- 나머지 추천들 -->
@@ -646,7 +681,9 @@
                         <div class="icon">
                             <img src="./img/memeber-icon.png" alt="">
                         </div>
-                        <div class="member-name"><p>이**</p>님의 리뷰</div>
+                        <div class="member-name">
+                            <p>이**</p>님의 리뷰
+                        </div>
                     </div>
                     <div class="heart">
                         <img class="heart" src="./img/books-heart-1.png" alt="">
@@ -668,7 +705,9 @@
                         <div class="icon">
                             <img src="./img/memeber-icon.png" alt="">
                         </div>
-                        <div class="member-name"><p>이**</p>님의 리뷰</div>
+                        <div class="member-name">
+                            <p>이**</p>님의 리뷰
+                        </div>
                     </div>
                     <div class="heart">
                         <img class="heart" src="./img/books-heart-1.png" alt="">
@@ -680,7 +719,12 @@
                     <div class="books-img"></div>
                     <div class="books-info">
                         <div class="title">불편한 편의점</div>
-                        <div class="comment">너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다.  소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도……</div>
+                        <div class="comment">너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무
+                            재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도
+                            저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런
+                            책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다. 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에기억에
+                            안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다 소설임에도 저를 울리게 하였습니다. 이런
+                            책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도……</div>
                     </div>
                 </div>
                 <div class="s-block">
@@ -688,7 +732,9 @@
                         <div class="icon">
                             <img src="./img/memeber-icon.png" alt="">
                         </div>
-                        <div class="member-name"><p>이**</p>님의 리뷰</div>
+                        <div class="member-name">
+                            <p>이**</p>님의 리뷰
+                        </div>
                     </div>
                     <div class="heart">
                         <img class="heart" src="./img/books-heart-1.png" alt="">
@@ -700,7 +746,12 @@
                     <div class="books-img"></div>
                     <div class="books-info">
                         <div class="title">불편한 편의점</div>
-                        <div class="comment">너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다.  소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도……</div>
+                        <div class="comment">너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무
+                            재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도
+                            저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런
+                            책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다. 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에기억에
+                            안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다최고입니다 소설임에도 저를 울리게 하였습니다. 이런
+                            책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도……</div>
                     </div>
                 </div>
                 <div class="s-block">
@@ -708,7 +759,9 @@
                         <div class="icon">
                             <img src="./img/memeber-icon.png" alt="">
                         </div>
-                        <div class="member-name"><p>이**</p>님의 리뷰</div>
+                        <div class="member-name">
+                            <p>이**</p>님의 리뷰
+                        </div>
                     </div>
                     <div class="heart">
                         <img class="heart" src="./img/books-heart-1.png" alt="">
@@ -730,7 +783,7 @@
 
     <!-- 마지막 배너 -->
     <div class="final-banner">
-        
+
     </div>
 
     <!-- 로그인 창 -->
@@ -738,44 +791,32 @@
         <div class="login">
             <div class="login-bg"></div>
             <div class="login-logo">
-              <img src="./login/img/login-logo.png" width="75%" />
+                <img src="./login/img/login-logo.png" width="75%" />
             </div>
             <div class="login-txt">로그인</div>
-      
+
             <form class="login-form">
-              <input
-                class="row"
-                type="email"
-                maxlength="255"
-                placeholder=" &nbsp&nbsp이메일"
-                id="signInEmail"
-              />
-      
-              <input
-                class="row"
-                type="password"
-                maxlength="255"
-                placeholder=" &nbsp&nbsp비밀번호"
-                id="signInPassword"
-              />
-      
-              <button class="login-btn" type="submit" id="signInButton">
-                로그인
-              </button>
+                <input class="row" type="email" maxlength="255" placeholder=" &nbsp&nbsp이메일" id="signInEmail" />
+
+                <input class="row" type="password" maxlength="255" placeholder=" &nbsp&nbsp비밀번호" id="signInPassword" />
+
+                <button class="login-btn" type="submit" id="signInButton">
+                    로그인
+                </button>
             </form>
-      
+
             <div class="login-check">
-              <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
-              <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
+                <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
+                <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
             </div>
-      
+
             <div class="forgot-hy">
-              <a>비밀번호를 잊어버리셨나요?</a>
+                <a>비밀번호를 잊어버리셨나요?</a>
             </div>
             <div class="join-hy">
-              회원이 아니신가요? &nbsp&nbsp<a class="toJoin">회원가입</a>
+                회원이 아니신가요? &nbsp&nbsp<a class="toJoin">회원가입</a>
             </div>
-          </div>
+        </div>
     </div>
 
     <!--회원가입 창-->
@@ -786,54 +827,32 @@
                 <img src="./login/img/login-logo.png" width="75%" />
             </div>
             <div class="join-txt">회원가입</div>
-        
+
             <form class="join-form">
-                <input
-                class="row"
-                type="text"
-                maxlength="255"
-                placeholder="&nbsp&nbsp이름"
-                id="signUpName"
-                />
-        
-                <input
-                class="row"
-                type="email"
-                maxlength="255"
-                placeholder="&nbsp&nbsp이메일"
-                id="signUpEmail"
-                />
-        
-                <input
-                class="row"
-                type="password"
-                maxlength="255"
-                placeholder="&nbsp&nbsp비밀번호(6자 이상)"
-                id="signUpPassword"
-                />
-        
-                <input
-                class="row"
-                type="password"
-                maxlength="255"
-                placeholder="&nbsp&nbsp비밀번호 확인"
-                id="reSignUpPassword"
-                />
-        
+                <input class="row" type="text" maxlength="255" placeholder="&nbsp&nbsp이름" id="signUpName" />
+
+                <input class="row" type="email" maxlength="255" placeholder="&nbsp&nbsp이메일" id="signUpEmail" />
+
+                <input class="row" type="password" maxlength="255" placeholder="&nbsp&nbsp비밀번호(6자 이상)"
+                    id="signUpPassword" />
+
+                <input class="row" type="password" maxlength="255" placeholder="&nbsp&nbsp비밀번호 확인"
+                    id="reSignUpPassword" />
+
                 <button class="join-btn" type="submit" id="signUpButton">확인</button>
             </form>
-        
+
             <div class="join-check">
                 <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
                 <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
                 <div class="check-row c3"><img src="./login/img/login-check.png" /></div>
                 <div class="check-row c4"><img src="./login/img/login-check.png" /></div>
             </div>
-        
+
             <div class="login-hy">
                 이미 가입하셨나요? &nbsp&nbsp<a class="toLogin">로그인</a>
             </div>
-            </div>
+        </div>
     </div>
 
 
@@ -844,4 +863,5 @@
     <script type="module" src="./js/login.js"></script>
     <script type="module" src="./js/join.js"></script>
 </body>
+
 </html>

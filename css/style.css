@@ -126,21 +126,62 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 /* 배너 -> 옆으로 넘어가는 모션인가? 그럼 나중에 js 추가 */
-.banner {
+.slide-container {
     width: 100%;
+}
+
+.banner {
+    /* height: 77vh; */
+    width: 1920px;
     position: relative;
+}
+
+.slide {
+    display: flex;
+    height: 100%;
+    /* overflow: hidden; */
+    transition: transform 0.3s ease;
+}
+
+.banner-item {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.banner-item img{
+    width: 100%;
+    height: auto;
 }
 
 .banner img {
     width: 100%;
 }
 
+.banner-arrow {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 80.5%;
+    left: 86%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+    color: #fff;
+}
+
+.banner-arrow img {
+    width: 8px;
+    height: 16px;
+}
+
+.banner-arrow img:hover {
+    cursor: pointer;
+}
+
 /* 배너 페이징 */
 .paging {
-    position: absolute;
-    display: flex;
-    top: 30px;
-
+    margin-bottom: 5px;
 }
 
 .more:hover {
