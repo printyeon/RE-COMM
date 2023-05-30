@@ -10,22 +10,14 @@ nextBtn.forEach((nextBtns) => {
 
 function nextSlide() {
   console.log("클릭");
-  let current = i * -1200;
+  let current = i * -1650;
   container.style.transform = `translateX(${current}px)`;
   container.style.transition = "all ease 1s";
   i++;
   console.log(`현재 위치 ${current}, ${i}`);
 
   // 만약 마지막 슬라이드에 도달했다면 첫 슬라이드로 0.5초 빠르게 이동
-  if (current == -3600) {
-    // 복제용 슬라이드
-    // let firstChild = container.firstElementChild;
-    // let lastChild = container.lastElementChild;
-    // console.log(firstChild + lastChild);
-    // let clonedFirst = firstChild.cloneNode(true);
-    // let clonedLast = lastChild.cloneNode(true);
-    // container.appendChild(clonedFirst);
-    // container.insertBefore(clonedLast, container.firstElementChild);
+  if (current == -4950) {
     container.style.transform = `translateX(0px)`;
     container.style.transition = "all ease 0.1s";
     i = 1;
