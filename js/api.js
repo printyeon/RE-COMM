@@ -66,7 +66,7 @@ const showInterparkBook = (jsonString) => {
     <div class="grid-books-items">
       <div class="books">
           <img class="crown" src="./img/books-crown.png" alt="">
-          <img class="heart" src="./img/books-heart-1.png" alt="">
+          <img class="heart" src="./img/books-heart-2.png" alt="">
           <div class="books-img">
               <img src="${img}" alt="">
           </div>
@@ -158,7 +158,7 @@ const showAladinBook = (jsonString) => {
     <div class="grid-books-items">
       <div class="books">
           <img class="crown" src="./img/books-crown.png" alt="">
-          <img class="heart" src="./img/books-heart-1.png" alt="">
+          <img class="heart" src="./img/books-heart-2.png" alt="">
           <div class="books-img">
               <img src="${img}" alt="">
           </div>
@@ -246,10 +246,9 @@ const showAladinBook = (jsonString) => {
 // http_req.onload = () => console.log("Flask 서버로 부터의 응답은: " + http_req.responseText)
 // http_req.send();
 
+
+
 // 찜 클릭 시 하트 채워지는 기능 (빈 하트 -> 찬 하트 이미지 변경)
-
-// 하트 변수
-
 function chkHeart() {
   let heart = document.getElementsByClassName("heart");
 
