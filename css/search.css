@@ -6,6 +6,10 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+body {
+    width: 1920px;
+}
+
 form, input {
     border: solid 0px;
 }
@@ -34,8 +38,8 @@ input:focus {
 
 .input {
     display: flex;
-    width: 83%;
-    height: 60px;
+    width: 700px;
+    height: 90px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -53,9 +57,9 @@ input:focus {
     /* background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em; */
     background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
     background-repeat: no-repeat;
-    font-size: 16px;
+    font-size: 24px;
     color: rgba(119, 119, 119, 1);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .input .img {
@@ -76,9 +80,9 @@ input:focus {
 
 /* 보고 싶은 작품 찾아보세요 */
 .want-to-see {
-    width: 75%;
-    height: 150px;
-    margin: 100px auto 80px auto;
+    width: 1620px;
+    height: auto;
+    margin: 110px auto 110px auto;
 }
 
 .want-to-see p {
@@ -88,19 +92,19 @@ input:focus {
     width: auto;
 }
 
-/* .want-to-see .title {
+.want-to-see .title {
     color: black;
-    font-size: 27px;
     font-weight: 700;
+    font-size: 48px;
     width: auto;
-} */
+}
 
 .want-to-see .drop-down {
     width: 100%;
-    height: 70px;
+    height: 90px;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
     margin: 20px 0;
 }
 
@@ -133,189 +137,127 @@ input:focus {
     font-weight: 700;
 }
 
-/* 인기 검색어 */
-.popular-search {
-    width: 75%;
-    height: 300px;
+/* 검색 결과 */
+.container {
+    width: 1620px;
+    height: auto;
     margin: 0 auto;
 }
 
-.popular-search .title {
-    color: black;
-    font-size: 30px;
+.container .title {
+    width: 1620px;
+    margin: 0 auto 30px auto;
     font-weight: 700;
-    width: auto;
-    margin-bottom: 20px;
+    font-size: 48px;
 }
 
-.popular-search img {
+.grid-books {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    /* margin: 20px 170px; */
+    gap: 30px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.books-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 50px 0px 150px 0;;
+    gap: 30px;
+    /* overflow: hidden; */
+    transition: all ease 1s;
+}
+
+.grid-books-items {
+    width: 300px;
+    height: 395px;
+}
+
+/* 왕관 아이콘 */
+.books .crown {
+    position: absolute;
+    width: 26px;
+    height: 24px;
+    margin-left: 22.32px;
+    top: -13px;
+    z-index: 99;
+}
+
+/* 하트 (찜) 아이콘 */
+.books .heart {
+    width: 26px;
+    height: 24px;
+    position: absolute;
+    top: 351px;
+    margin-left: 254px;
+}
+
+/* 찜 버튼 마우스 오버 */
+.books .heart:hover {
+    cursor: pointer;
+}
+
+.books .books-img {
+    background-color: #D9D9D9;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.books .books-img img {
     width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
-.tags-grid {
-    display: grid;
-    height:120px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr
-}
+/* 리콤 탑 랭킹 5 타이틀 */
 
-/* 최근 관람한 책 */
-.recent-books {
-    width: 75%;
-    height: 600px;
-    margin: 0 auto;
-}
+/* .ranking-top-5 .grid-books .books-container {
+    height: 460px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 30px 170px;
+} */
 
-.recent-books .title {
-    color: black;
-    font-size: 30px;
+.title {
+    width: 220px;
     font-weight: 700;
-    width: auto;
-    margin-bottom: 20px;
-}
-
-.recent-books .books-title .title {
     font-size: 20px;
+    padding: 7px 0;
+    color: #1C1C1C;
     /* 제목이 넘칠 때 텍스트 말줄임표 */
     text-overflow: ellipsis; 
     overflow: hidden;
     white-space: nowrap;
 }
 
-.recent-books .grid-books {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    gap: 20px;
+.author-pubyear {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: rgba(73, 73, 73, 1);
+    text-overflow: ellipsis; 
     overflow: hidden;
+    white-space: nowrap;
 }
 
-.recent-books .books-container {
+.stars {
     display: flex;
-    position: relative;
-    justify-content: space-between;
-    /* margin: 30px 170px; */
-    gap: 20px;
-    /* overflow: hidden; */
-    transition: all ease 1s;
-    margin-top: 15px;
+    align-items: center;
+    color: #BC2638;
+    font-size: 13px;
 }
 
-.recent-books .grid-books-items {
-    width: 220px;
+.stars img {
+    width: 12px;
+    height: 11px;
+    margin-top: 5px;
+    gap: 3px;
 }
 
-/* 하트 (찜) 아이콘 */
-.recent-books .books .heart {
-    position: absolute;
-    top: 260px;
-    margin-left: 185px;
-}
-
-/* 찜 버튼 마우스 오버 */
-.recent-books .books .heart:hover {
-    cursor: pointer;
-}
-
-.recent-books .books .books-img {
-    height: 295px;
-    background-color: #D9D9D9;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
-}
-
-.recent-books .books .books-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
-}
-
-
-/* 인기 검색 콘텐츠 */
-.popular-search-contents {
-    width: 75%;
-    margin: 0 auto;
-    margin: 20px 170px;
-}
-
-.popular-search-contents p {
-    color: black;
-    font-size: 30px;
-    font-weight: 700;
-    width: auto;
-    margin-bottom: 20px;
-}
-
-.popular-search-contents .grid-content {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1fr, 10);
-    gap: 20px;
-}
-
-.popular-search-contents .grid-item {
-    background: #FFFFFE;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 13px;
-    display: flex;
-}
-
-.popular-search-contents .grid-item .num {
-    width: 70px;
-    height: 100%;
-    line-height: 150px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.popular-search-contents .grid-item .books-img {
-    width: 90px;
-    height: 120px;
-    margin-top: 15px;
-    background: #D9D9D9;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 13px;
-}
-
-.popular-search-contents .grid-item .books-info {
-    margin: 25px 20px 0 20px;
-}
-
-.popular-search-contents .grid-item .stars p {
-    font-size: 14px;
-}
-
-/* 카테고리 검색 */
-.category {
-    width: 75%;
-    margin: 0 auto;
-    margin: 120px 170px;
-}
-
-.category .title {
-    color: black;
-    font-size: 30px;
-    font-weight: 700;
-    width: auto;
-    margin-bottom: 20px;
-}
-
-.category .grid-category {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.category .category-item {
-    padding: 30%;
-    background-color: rgba(188, 38, 56, 1);
-    border-radius: 5px;
-    font-size: 30px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
+.stars-img {
+    margin-left: 5px;
 }

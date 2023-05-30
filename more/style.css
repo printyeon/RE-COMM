@@ -8,7 +8,7 @@
 
 .top50-title {
     display: flex;
-    margin: 70px 170px 30px 170px;
+    margin: 70px 150px 30px 150px;
     align-items: center;
     color: black;
     font-size: 30px;
@@ -28,4 +28,4 @@
 /* 찜 버튼 마우스 오버 */
 .books .heart:hover {
     cursor: pointer;
-}
+} 
