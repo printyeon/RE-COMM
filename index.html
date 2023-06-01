@@ -101,9 +101,9 @@
             <img src="./img/next-btn.png" alt="">
         </div>
         <!-- <좌> 넘기기 버튼 -->
-        <div id="prev-btn" class="prev-btn">
+        <!-- <div id="prev-btn" class="prev-btn">
             <img src="./img/next-btn.png" alt="">
-        </div>
+        </div> -->
     </div>
 
     <!-- 서점별 베스트 셀러 -->
@@ -262,7 +262,7 @@
                 <a href="./detail/detail.html">
                     <div class="grid-books-items">
                         <div class="books">
-                            <img class="heart" src="./img/books-heart-1.png" alt="">
+                            <img class="heart" src="./img/books-heart-2.png" alt="">
                             <div class="books-img">
                                 <!-- <img src="" alt=""> -->
                             </div>
@@ -390,9 +390,26 @@
     </div>
 
     <!-- 중간 배너 -->
-    <!-- 세 개의 배너 슬라이드 (자동, 수동?) 클릭하면 상세 페이지 이동 -->
-    <div class="middle-banner">
-        <img src="./img/middle-banner-background.png" alt="">
+    <!-- 배너 3컷 각각의 상세 페이지 -->
+    <div class="slide-container">
+        <div class="banner middle-banner">
+            <div class="slide">
+                <div class="banner-item">
+                    <img src="./img/middle-banner/banner-1.png" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="./img/middle-banner/banner-2.png" alt="">
+                </div>
+                <div class="banner-item">
+                    <img src="./img/middle-banner/banner-3.png" alt="">
+                </div>
+            </div>
+            <p class="middle-paging">1 / 3</p>
+            <div class="middle-banner-arrow">
+                <img class="next" src="./img/banner/middle-banner-arrow-next.png" alt="">
+                <img class="prev" src="./img/middle-banner/banner-arrow-next.png" alt="">
+            </div>
+        </div>
     </div>
 
     <!-- 좋아요 많이 받은 책 -->
@@ -796,9 +813,9 @@
             <div class="login-txt">로그인</div>
 
             <form class="login-form">
-                <input class="row" type="email" maxlength="255" placeholder=" &nbsp&nbsp이메일" id="signInEmail" />
+                <input class="row" type="email" maxlength="255" placeholder="이메일" id="signInEmail" />
 
-                <input class="row" type="password" maxlength="255" placeholder=" &nbsp&nbsp비밀번호" id="signInPassword" />
+                <input class="row" type="password" maxlength="255" placeholder="비밀번호" id="signInPassword" />
 
                 <button class="login-btn" type="submit" id="signInButton">
                     로그인
@@ -806,8 +823,8 @@
             </form>
 
             <div class="login-check">
-                <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
-                <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
+                <div class="check check-row c1"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c2"><img src="./login/img/login-no-check.png" /></div>
             </div>
 
             <div class="forgot-hy">
@@ -828,25 +845,25 @@
             </div>
             <div class="join-txt">회원가입</div>
 
-            <form class="join-form">
-                <input class="row" type="text" maxlength="255" placeholder="&nbsp&nbsp이름" id="signUpName" />
+            <form class="join-form" name="frm">
+                <input class="row" name="name" type="text" maxlength="255" placeholder="이름" id="signUpName" />
 
-                <input class="row" type="email" maxlength="255" placeholder="&nbsp&nbsp이메일" id="signUpEmail" />
+                <input class="row" name="emial" type="email" maxlength="255" placeholder="이메일" id="signUpEmail" />
 
-                <input class="row" type="password" maxlength="255" placeholder="&nbsp&nbsp비밀번호(6자 이상)"
+                <input class="row" name="pass" type="password" maxlength="255" placeholder="비밀번호(6자 이상)"
                     id="signUpPassword" />
 
-                <input class="row" type="password" maxlength="255" placeholder="&nbsp&nbsp비밀번호 확인"
+                <input class="row" name="passcheck" type="password" maxlength="255" placeholder="비밀번호 확인"
                     id="reSignUpPassword" />
 
                 <button class="join-btn" type="submit" id="signUpButton">확인</button>
             </form>
 
             <div class="join-check">
-                <div class="check-row c1"><img src="./login/img/login-check.png" /></div>
-                <div class="check-row c2"><img src="./login/img/login-check.png" /></div>
-                <div class="check-row c3"><img src="./login/img/login-check.png" /></div>
-                <div class="check-row c4"><img src="./login/img/login-check.png" /></div>
+                <div class="check check-row c1"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c2"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c3"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c4"><img src="./login/img/login-no-check.png" /></div>
             </div>
 
             <div class="login-hy">

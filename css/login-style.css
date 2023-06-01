@@ -11,7 +11,15 @@ a {
 }
 
 input {
-  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+input::placeholder {
+	font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #A4A4A4;
 }
 
 #modal1 {

@@ -187,67 +187,6 @@ const showAladinBook = (jsonString) => {
   return json;
 };
 
-// CORS 해결 해야 함... 일단 크롬 확장 모드 깔아둠
-// 조언 받은 거 : json 말고 jsonp 사용해보기
-// jsonp 조사하고 어떻게 적용할지 알아오자~~..
-// https://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbcyyy20051901001&QueryType=Bestseller&MaxResults=10&start=1&SearchTarget=Book&output=xml&Version=20131101
-
-// const xhr = new XMLHttpRequest();
-
-// xhr.open('GET', link);
-// xhr.onreadystatechange = someHandler;
-// xhr.send();
-
-// const handler = async (event) => {
-//     const response = {
-//         statusCode: 200,
-//         headers: {
-//             "Access-Control-Allow-Headers" : "Content-Type",
-//             "Access-Control-Allow-Origin": "*",
-//             "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-//         },
-//         body: JSON.stringify('Hello from Lambda!'),
-//     };
-//     return response;
-// };
-
-// https://kimyhcj.tistory.com/263
-// CORS 정책
-
-// const request = new XMLHttpRequest();
-// // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
-// // console.log(location.origin); https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-CORS-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-%F0%9F%91%8F
-// request.open('GET', 'http://book.interpark.com/api/bestSeller.api?key=interpark&categoryId=100');
-// // request.setRequestHeader('Access-Control-Allow-Origin', '*');
-// request.setRequestHeader = handler();
-// console.log('STATE:', request.readyState); // if opend -> 1
-// request.send();
-// request.onload = function() {
-//     console.log(JSON.parse(request, this.response));
-// }
-// // origin = PROTOCOL + HOST + PORT
-
-// function handler(event)  {
-//     let response  = request.response;
-//     let headers  = response.headers;
-
-//     // If Access-Control-Allow-Origin CORS header is missing, add it.
-//     // Since JavaScript doesn't allow for hyphens in variable names, we use the dict["key"] notation.
-//         headers['access-control-allow-origin'] = {value: "*"}; // 허용 사이트 // https://kk-programming.tistory.com/63
-//         console.log("Access-Control-Allow-Origin was missing, adding it now.");
-
-//     return response;
-// }
-
-// https://coding-groot.tistory.com/91
-// const http_req = new XMLHttpRequest()
-// http_req.headers['access-control-allow-origin'] = {value: "*"};
-// http_req.open("GET", "http://book.interpark.com/api/bestSeller.api")
-// http_req.onload = () => console.log("Flask 서버로 부터의 응답은: " + http_req.responseText)
-// http_req.send();
-
-
-
 // 찜 클릭 시 하트 채워지는 기능 (빈 하트 -> 찬 하트 이미지 변경)
 function chkHeart() {
   let heart = document.getElementsByClassName("heart");

@@ -122,3 +122,37 @@ function openJoin() {
     modal1.style.display = "none";
   });
 }
+
+// 로그인/회원가입 모달창에서 입력값이 있으면 check 활성화 else 비활성화
+// let val = document.getElementsByClassName('row').value;
+// let check = document.getElementsByClassName('check');
+
+// console.log(val);
+
+// function inputisInit() {
+//   // 값이 없을 때
+//   if(val === '') {
+//     check.setAttribute("src") == "./login/img/login-no-check.png";
+//     console.log("값 안 들어옴")
+//   }
+//   else {
+//     check.setAttribute("src") == "./login/img/login-check.png";
+//     console.log("값 들어옴")
+//   }
+// }
+
+// inputisInit();
+let inputStr = document.getElementsByClassName('row');
+let check = document.getElementsByClassName('check');
+console.log(check);
+for(let i = 0; i < inputStr.length; i++) {
+  inputStr[i].addEventListener("change", function(e) {
+    // 텍스트가 비었을 경우
+    if(inputStr[i] == '') {
+      check[i].setAttribute("src", "./login/img/login-no-check.png");
+    }
+    else {
+      check[i].setAttribute("src", "./login/img/login-check.png");
+    }
+  })
+}

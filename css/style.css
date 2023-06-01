@@ -14,53 +14,23 @@ body {
 .next-btn:hover {
     cursor: pointer;
 }
+.next-btn {
+    width: 65px;
+    height: 65px;
+}
+.next-btn img {
+    width: 100%;
+    height: 100%;
+}
 .prev-btn:hover {
     cursor: pointer;
-}
-
-/* 기본 크기  */
-.ranking-top-5 .next-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.ranking-top-5 .prev-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.bookstore-best .next-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.member-type .next-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.best-good .next-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.guess-you-want .next-btn img {
-    width: 100%;
-    height: 100%;
-}
-
-.best-commend .next-btn img {
-    width: 100%;
-    height: 100%;
 }
 
 /* top5 넘기기 버튼 */
 .ranking-top-5 .next-btn {
     position: absolute;
-    width: 65px;
-    height: 65px;
     left: 1738px;
-    top: 1215px;
+    top: 1255px;
 }
 
 .ranking-top-5 .prev-btn {
@@ -76,26 +46,20 @@ body {
 /* 서점별 베스트셀러 넘기기 버튼 */
 .bookstore-best .next-btn {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    top: 1540px;
-    left: 1320px;
+    left: 1738px;
+    top: 2125px;
 }
 
 /* 리콤의 000님 취향저격 추천 */
 .member-type .next-btn {
     position: absolute;
-    width: 70px;
-    height: 70px;
-    margin-top: -280px;
-    left: 1320px;
+    margin-top: -370px;
+    left: 1585px;
 }
 
 /* 좋아요 많이 받은 책 */
 .best-good .next-btn {
     position: absolute;
-    width: 70px;
-    height: 70px;
     margin-top: -280px;
     left: 1320px;
 }
@@ -103,24 +67,18 @@ body {
 /* 마음에 드는 모음집 하나는 있겠지 */
 .guess-you-want .next-btn {
     position: absolute;
-    width: 70px;
-    height: 70px;
     margin-top: -280px;
     left: 1320px;
 }
 
 body > div.best-commend > div:nth-child(3) {
     position: absolute;
-    width: 70px;
-    height: 70px;
     margin-top: -660px;
     left: 1320px;
 }
 
 body > div.best-commend > div:nth-child(4) {
     position: absolute;
-    width: 70px;
-    height: 70px;
     margin-top: -270px;
     left: 1320px;
 }
@@ -385,32 +343,30 @@ body > div.best-commend > div:nth-child(4) {
     position: relative;
 }
 
+.member-type .grid-books {
+    width: 1620px;
+}
+
 .member-type .prefer {
     position: absolute;
-    top: -16px;
-    margin-left: 30px;
-    width: 163px;
-    height: 28px;
-    padding: 3px 0;
+    display:inline-block;
+    top: -20px;
+    margin-left: 60px;
+    padding: 4px 30px 0px 30px;
+    height: 40px;
     background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 13px;
-    color: rgba(188, 38, 56, 1);
+    color: #BC2638;
     text-align: center;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .member-type .book-title {
     margin-bottom: 20px;
-}
-
-/* 배너 */
-.middle-banner {
-    width: 100%;
-    height: 330px;
-    background: #D9D9D9;
-    margin: 140px 0;
 }
 
 .member-type .grid-books-items {
@@ -419,8 +375,25 @@ body > div.best-commend > div:nth-child(4) {
     box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
 }
 
+/* 배너 */
+.middle-banner {
+    width: 1920px;
+    height: 510px;
+    background: #D9D9D9;
+    margin: 140px 0;
+}
+
 .middle-banner img {
     width: 100%;
+}
+
+.middle-banner img {
+    width: 100%;
+}
+
+.middle-paging {
+    position: absolute;
+    
 }
 
 /* 좋아요 많이 받은 책 */
