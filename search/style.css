@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    width: 1920px;
+}
+
+form, input {
+    border: solid 0px;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 85%;
+    height: 100%;
+    padding-left: 30px;
+    font-size: 25px;
+    color: rgba(119, 119, 119, 1);
+    background-color: #FBFBFB;
+}
+
+input::placeholder {
+    color: rgba(164, 164, 164, 1);
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.input {
+    display: flex;
+    width: 700px;
+    height: 90px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #A4A4A4;
+    filter: drop-shadow(0px 12px 3px rgba(0, 0, 0, 0.05));
+    background: #FBFBFB;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 0px;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1.5em;
+    appearance: none;
+    align-items: center;
+    /* background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em; */
+    background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+    background-repeat: no-repeat;
+    font-size: 24px;
+    color: rgba(119, 119, 119, 1);
+    font-weight: 500;
+}
+
+.input .img {
+    width: 25px;
+    height: 23px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.input img:hover {
+    cursor: pointer;
+}
+
+.input .img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 보고 싶은 작품 찾아보세요 */
+.want-to-see {
+    width: 1620px;
+    height: auto;
+    margin: 110px auto 110px auto;
+}
+
+.want-to-see p {
+    color: black;
+    font-size: 27px;
+    font-weight: 700;
+    width: auto;
+}
+
+.want-to-see .title {
+    color: black;
+    font-weight: 700;
+    font-size: 48px;
+    width: auto;
+}
+
+.want-to-see .drop-down {
+    width: 100%;
+    height: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.want-to-see select {
+    background: #FBFBFB;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 0px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1.5em;
+    appearance:none;
+    align-items: center;
+    background-image:
+    linear-gradient(45deg, transparent 50%, #BC2638 50%),
+    linear-gradient(135deg, #BC2638 50%, transparent 50%),
+    radial-gradient(#ffffff 70%, transparent 72%);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    color: rgba(119, 119, 119, 1);
+    font-weight: 700;
+}
+
+option {
+    clip: 'rect(0 0 0 0)';
+    clipPath: 'inset(50%)';
+    height: '1px';
+    overflow: 'hidden';
+    position: 'absolute';
+    whiteSpace: 'nowrap';
+    width: '1px';
+}
+
+/* 검색 결과 */
+.container {
+    width: 1620px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.container .title {
+    width: 1620px;
+    margin: 0 auto 30px auto;
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.grid-books {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    /* margin: 20px 170px; */
+    gap: 30px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.books-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 50px 0px 150px 0;;
+    gap: 30px;
+    /* overflow: hidden; */
+    transition: all ease 1s;
+}
+
+.grid-books-items {
+    width: 300px;
+    height: 395px;
+}
+
+/* 왕관 아이콘 */
+.books .crown {
+    position: absolute;
+    width: 26px;
+    height: 24px;
+    margin-left: 22.32px;
+    top: -13px;
+    z-index: 99;
+}
+
+/* 하트 (찜) 아이콘 */
+.books .heart {
+    width: 26px;
+    height: 24px;
+    position: absolute;
+    top: 351px;
+    margin-left: 254px;
+}
+
+/* 찜 버튼 마우스 오버 */
+.books .heart:hover {
+    cursor: pointer;
+}
+
+.books .books-img {
+    background-color: #D9D9D9;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.books .books-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* 리콤 탑 랭킹 5 타이틀 */
+
+/* .ranking-top-5 .grid-books .books-container {
+    height: 460px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 30px 170px;
+} */
+
+.title {
+    width: 220px;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 7px 0;
+    color: #1C1C1C;
+    /* 제목이 넘칠 때 텍스트 말줄임표 */
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.author-pubyear {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: rgba(73, 73, 73, 1);
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    color: #BC2638;
+    font-size: 13px;
+}
+
+.stars img {
+    width: 12px;
+    height: 11px;
+    margin-top: 5px;
+    gap: 3px;
+}
+
+.stars-img {
+    margin-left: 5px;
+}
+
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    width: 437px;
+    height: 100%;
+    align-items: center;
+    gap: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 170px;
+}
