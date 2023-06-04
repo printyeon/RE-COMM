@@ -1,30 +1,44 @@
 // https://blog.naver.com/PostView.naver?blogId=sujeedo&logNo=222104824984&categoryNo=204&parentCategoryNo=0
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-let prevBtn = document.getElementsByClassName("prev-btn")[0];
-let container = document.querySelectorAll(".books-container")[0];
-let nextBtn = document.querySelectorAll(".next-btn");
-let i = 1;
 
-nextBtn.forEach((nextBtns) => {
-  nextBtns.addEventListener("click", nextSlide);
+let containers = document.querySelectorAll(".books-container");
+let nextBtns = document.querySelectorAll(".next-btn");
+
+nextBtns.forEach(function (nextBtn, index) {
+  nextBtn.addEventListener("click", function () {
+    let container = containers[index];
+    let current = container.dataset.current
+      ? parseInt(container.dataset.current)
+      : 0;
+    let slideWidth = -1650;
+    let maxSlides = container.childElementCount;
+    console.log(maxSlides);
+    let nextSlide = current + 1;
+
+    let maxWidth = (slideWidth * maxSlides) / 5;
+
+    // 현재 위치 계산
+    let transformX = nextSlide * slideWidth;
+
+    // 슬라이드 이동
+    container.style.transform = `translateX(${transformX}px)`;
+    container.style.transition = "all ease 1s";
+
+    // 현재 위치 갱신
+    container.dataset.current = nextSlide;
+
+    console.log(`현재 위치: ${transformX}, ${nextSlide}`);
+
+    // 마지막 슬라이드에 도달했을 때
+    if (maxWidth == transformX) {
+      // 첫 슬라이드로 빠르게 이동
+      container.style.transform = "translateX(0px)";
+      container.style.transition = "all ease 0.5s";
+      container.dataset.current = 0;
+      console.log("첫 슬라이드로 이동");
+    }
+  });
 });
-
-function nextSlide() {
-  console.log("클릭");
-  let current = i * -1650;
-  container.style.transform = `translateX(${current}px)`;
-  container.style.transition = "all ease 1s";
-  i++;
-  console.log(`현재 위치 ${current}, ${i}`);
-
-  // 만약 마지막 슬라이드에 도달했다면 첫 슬라이드로 0.5초 빠르게 이동
-  if (current == -4950) {
-    container.style.transform = `translateX(0px)`;
-    container.style.transition = "all ease 0.1s";
-    i = 1;
-    console.log("첫 슬라이드 이동");
-  }
-}
 
 window.onload = bannerslide;
 
@@ -55,35 +69,43 @@ function bannerslide() {
   prev.addEventListener("click", prevSlide);
 
   function nextSlide() {
+    console.log("클릭");
     if (current < slide.length - 1) {
       current++;
       slideWrap.style.transition = "ease 0.5s";
       slideWrap.style.left = `-${100 * (current + 1)}%`;
+      console.log("현재 페이지 : ", current);
     } else {
       current++;
       slideWrap.style.transition = "ease 0.5s";
       slideWrap.style.left = `-${100 * (current + 1)}%`;
       current = 0;
+      console.log("현재 페이지 : ", current);
       setTimeout(function () {
-        slideWrap.style.transition = "0ms";
+        slideWrap.style.transition = "0s";
         slideWrap.style.left = `-${100 * (current + 1)}%`;
+        console.log("현재 페이지 : ", current);
       }, 550);
     }
     paging.innerHTML = `${current + 1} / 3`;
   }
 
   function prevSlide() {
+    console.log("클릭");
     if (current > 0) {
       current--;
       slideWrap.style.transition = "ease 0.5s";
       slideWrap.style.left = `-${100 * (current + 1)}%`;
+      console.log("현재 페이지 : ", current);
     } else {
       slide.style.transition = "ease 0.5s";
       slideWrap.style.left = "0%";
       current = slide.length - 1;
+      console.log("현재 페이지 : ", current);
       setTimeout(function () {
         slide.style.transition = "ease 0s";
         slideWrap.style.left = `-${100 * (current + 1)}%`;
+        console.log("현재 페이지 : ", current);
       });
     }
     paging.innerHTML = `${current + 1} / 3`;
