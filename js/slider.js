@@ -1,4 +1,5 @@
 // https://blog.naver.com/PostView.naver?blogId=sujeedo&logNo=222104824984&categoryNo=204&parentCategoryNo=0
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 let prevBtn = document.getElementsByClassName("prev-btn")[0];
 let container = document.querySelectorAll(".books-container")[0];
 let nextBtn = document.querySelectorAll(".next-btn");
@@ -25,66 +26,66 @@ function nextSlide() {
   }
 }
 
-// 상단 배너 슬라이드
-window.onload = bannerSlide;
+window.onload = bannerslide;
 
-function bannerSlide() {
-  const slide = document.querySelector(".slide");
-  const bannerItems = document.querySelectorAll(".banner-item");
+function bannerslide() {
+  let slideWrap = document.querySelector(".slide");
+  let slide = slideWrap.querySelectorAll(".banner-item");
+  let paging = document.getElementsByClassName("paging")[0];
 
-  // 이전 버튼과 다음 버튼을 선택
-  const prevButton = document.getElementsByClassName("prev")[0];
-  const nextButton = document.getElementsByClassName("next")[0];
-  // 현재 페이지 위치
-  const currentpage = document.getElementsByClassName("paging")[0];
+  // 처음, 마지막 슬라이드 복제
+  const firstEl = slideWrap.firstElementChild;
+  const lastEl = slideWrap.lastElementChild;
+  let clone1 = firstEl.cloneNode(true);
+  let cloneLast = lastEl.cloneNode(true);
 
-  // 현재 보여지는 슬라이드의 인덱스
-  let currentIndex = 0;
+  // 끝 슬라읻느느 앞에 추가, 처음 슬라이드는 뒤에 추가 시키기
+  slideWrap.appendChild(clone1);
+  slideWrap.insertBefore(cloneLast, slideWrap.firstElementChild);
 
-  // 다음 슬라이드 이동
-  const prevSlide = () => {
-    currentIndex--;
+  // (슬라이드 개수 + 복제된 슬라이드 2개) X 슬라이드 1개의 넓이
+  slideWrap.style.width = `${100 * (slide.length + 2)}%`;
+  slideWrap.style.left = `-${1903}px`;
 
-    if (currentIndex < 0) {
-      currentIndex = bannerItems.length - 1;
-      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동
-      slide.style.transform = `translateX(-${
-        (bannerItems.length - 1) * 1920
-      }px)`; // 마지막 슬라이드로 이동
+  let next = document.querySelector(".next");
+  let prev = document.querySelector(".prev");
+  let current = 0;
+
+  next.addEventListener("click", nextSlide);
+  prev.addEventListener("click", prevSlide);
+
+  function nextSlide() {
+    if (current < slide.length - 1) {
+      current++;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
     } else {
-      slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+      current++;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+      current = 0;
+      setTimeout(function () {
+        slideWrap.style.transition = "0ms";
+        slideWrap.style.left = `-${100 * (current + 1)}%`;
+      }, 550);
     }
-    currentpage.innerHTML = `${currentIndex + 1} / 3`;
-  };
+    paging.innerHTML = `${current + 1} / 3`;
+  }
 
-  // 이전 슬라이드로 이동하는 함수
-  const nextSlide = () => {
-    // 현재 인덱스에서 1++
-    currentIndex++;
-    console.log("클릭" + currentIndex);
-
-    // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
-    if (currentIndex >= bannerItems.length) {
-      currentIndex = 0;
+  function prevSlide() {
+    if (current > 0) {
+      current--;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+    } else {
+      slide.style.transition = "ease 0.5s";
+      slideWrap.style.left = "0%";
+      current = slide.length - 1;
+      setTimeout(function () {
+        slide.style.transition = "ease 0s";
+        slideWrap.style.left = `-${100 * (current + 1)}%`;
+      });
     }
-
-    // 슬라이드 요소를 이동
-    slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
-    currentpage.innerHTML = `${currentIndex + 1} / 3`;
-  };
-
-  nextButton.addEventListener("click", nextSlide);
-  prevButton.addEventListener("click", prevSlide);
-
-  let slideInterval = setInterval(nextSlide, 3000);
-
-  // 마우스 올리면 슬라이드 멈추기
-  slide.addEventListener("mouseover", () => {
-    clearInterval(slideInterval);
-  });
-
-  // 마우스 나가면 슬라이드 재생
-  slide.addEventListener("mouseout", () => {
-    setInterval(slideInterval);
-  });
+    paging.innerHTML = `${current + 1} / 3`;
+  }
 }

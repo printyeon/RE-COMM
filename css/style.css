@@ -89,22 +89,25 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 .banner {
-    /* height: 77vh; */
-    width: 1920px;
+    width: 100%;
     height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
     position: relative;
 }
 
 .slide {
-    display: flex;
     height: 100%;
-    /* overflow: hidden; */
-    transition: transform 0.7s ease;
+    display: flex;
+    position: absolute;
+    left: 0; top: 0;
 }
 
 .banner-item {
-    flex-shrink: 0;
-    width: 100%;
+    width: 100%; height: 100%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center; align-items: center;
 }
 
 .banner-item img{
@@ -392,9 +395,44 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 .middle-paging {
-    position: absolute;
-    
+    position: absolute;   
+    top: 30px;
+    left: 150px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #BC2638;
 }
+
+.middle-banner-arrow {
+    position: absolute;
+    top: -400px;
+    width: 1920px;
+}
+
+.middle-banner-arrow .prev {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 260px;
+    top: 793px;
+}
+
+.middle-banner-arrow .next {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 1595px;
+    top: 793px;
+}
+
+.middle-banner-arrow .next:hover {
+    cursor: pointer;
+}
+
+.middle-banner-arrow .prev:hover {
+    cursor: pointer;
+}
+
 
 /* 좋아요 많이 받은 책 */
 .best-good {
