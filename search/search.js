@@ -4,11 +4,28 @@ const KEY = "5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E";
 const searchBtn = document.querySelector("#search-btn");
 const searchInput = document.querySelector("#search-input");
 const container = document.getElementsByClassName("grid-books")[0];
+const resultText = document.getElementsByClassName("title")[1];
 
 window.onload = function () {
+  // 검색 상황 1. 검색 버튼 클릭해서 검색했을 때
   searchBtn.addEventListener("click", () => {
     let keyword = searchInput.value.trim();
     if (keyword !== "") {
+      let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
+        keyword
+      )}&output=${TYPE}`;
+      searchBooks(link);
+    }
+  });
+
+  // 검색 상황 2. 엔터 키를 눌러서 검색했을 때
+  searchInput.addEventListener("keyup", function (e) {
+    let keyword = searchInput.value.trim();
+    if (keyword !== "") {
+      if (e.keyCode === 13) {
+        console.log("엔터 클릭");
+        resultText.innerHTML = `"${keyword}"의 검색 결과`;
+      }
       let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
         keyword
       )}&output=${TYPE}`;
