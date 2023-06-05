@@ -142,7 +142,7 @@ input:focus {
 .container {
     width: 1620px;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 200px auto;
 }
 
 .container .title {
@@ -156,10 +156,49 @@ input:focus {
     display: flex;
     position: relative;
     justify-content: space-between;
-    /* margin: 20px 170px; */
-    gap: 30px;
+    padding: 0px 0px 110px 0px;
+    row-gap: 175px;
     overflow: hidden;
     flex-wrap: wrap;
+}
+
+.books-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin: 50px 0px 150px 0;;
+    gap: 30px;
+    /* overflow: hidden; */
+    transition: all ease 1s;
+}
+
+.grid-books-items {
+    width: 300px;
+    height: 395px;
+}
+
+.grid-books .books {
+    height: 395px;
+}
+
+.grid-books .books-img {
+    height: 100%;
+
+}
+.grid-books .books-title {
+    height: 150px;
+}
+
+.books-title .title {
+    width: 220px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    margin: 15px 0px 0px 0px;
+    /* 텍스트 길 때 말줄임표 */
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .books-container {
