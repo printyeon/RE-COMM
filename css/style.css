@@ -193,6 +193,19 @@ body > div:nth-child(2) > div > div.slide {
     overflow: hidden;
 }
 
+.grid-books .books {
+    height: 395px;
+}
+
+.grid-books .books-img {
+    height: 100%;
+
+}
+.grid-books .books-title {
+    height: 150px;
+    margin-top: 15px;
+}
+
 .books-container {
     display: flex;
     position: relative;
