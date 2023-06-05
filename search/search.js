@@ -11,6 +11,7 @@ window.onload = function () {
   searchBtn.addEventListener("click", () => {
     let keyword = searchInput.value.trim();
     if (keyword !== "") {
+      resultText.innerHTML = `"${keyword}"의 검색 결과`;
       let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
         keyword
       )}&output=${TYPE}`;
@@ -19,19 +20,19 @@ window.onload = function () {
   });
 
   // 검색 상황 2. 엔터 키를 눌러서 검색했을 때
-  searchInput.addEventListener("keyup", function (e) {
-    let keyword = searchInput.value.trim();
-    if (keyword !== "") {
-      if (e.keyCode === 13) {
-        console.log("엔터 클릭");
-        resultText.innerHTML = `"${keyword}"의 검색 결과`;
-      }
-      let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
-        keyword
-      )}&output=${TYPE}`;
-      searchBooks(link);
-    }
-  });
+  // searchInput.addEventListener("keyup", function (e) {
+  //   let keyword = searchInput.value.trim();
+  //   if (keyword !== "") {
+  //     if (e.keyCode === 13) {
+  //       console.log("엔터 클릭");
+  //       resultText.innerHTML = `"${keyword}"의 검색 결과`;
+  //     }
+  //     let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
+  //       keyword
+  //     )}&output=${TYPE}`;
+  //     searchBooks(link);
+  //   }
+  // });
 
   const searchBooks = (link) => {
     let xhr = new XMLHttpRequest();
@@ -71,8 +72,7 @@ window.onload = function () {
       bookItem.className = "grid-books-items";
       bookItem.innerHTML = `
           <div class="books">
-            <img class="crown" src="./img/books-crown.png" alt="">
-            <img class="heart" src="./img/books-heart-2.png" alt="">
+            <img class="heart" src="../img/books-heart-2.png" alt="">
             <div class="books-img">
               <img src="${img}" alt="">
             </div>
@@ -83,11 +83,11 @@ window.onload = function () {
             <div class="stars">
               <p>평균 별점</p>
               <div class="stars-img">
-                <img src="./img/books-star-1.png" alt="">
-                <img src="./img/books-star-1.png" alt="">
-                <img src="./img/books-star-1.png" alt="">
-                <img src="./img/books-star-2.png" alt="">
-                <img src="./img/books-star-2.png" alt="">
+                <img src="../img/books-star-1.png" alt="">
+                <img src="../img/books-star-1.png" alt="">
+                <img src="../img/books-star-1.png" alt="">
+                <img src="../img/books-star-2.png" alt="">
+                <img src="../img/books-star-2.png" alt="">
               </div>
             </div>
           </div>`;
