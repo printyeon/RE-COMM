@@ -282,7 +282,7 @@ body > div:nth-child(2) > div > div.slide {
 
 .author-pubyear {
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 20px;
     color: rgba(73, 73, 73, 1);
     text-overflow: ellipsis; 
     overflow: hidden;
@@ -293,7 +293,7 @@ body > div:nth-child(2) > div > div.slide {
     display: flex;
     align-items: center;
     color: #BC2638;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .stars img {
