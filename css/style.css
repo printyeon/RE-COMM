@@ -60,27 +60,27 @@ body {
 /* 좋아요 많이 받은 책 */
 .best-good .next-btn {
     position: absolute;
-    margin-top: -280px;
-    left: 1320px;
-}
+    margin-top: -439px;
+    left: 1592px;
 
+}
 /* 마음에 드는 모음집 하나는 있겠지 */
 .guess-you-want .next-btn {
     position: absolute;
-    margin-top: -280px;
-    left: 1320px;
+    margin-top: -340px;
+    left: 1560px;
 }
 
 body > div.best-commend > div:nth-child(3) {
     position: absolute;
     margin-top: -660px;
-    left: 1320px;
+    left: 1555px;
 }
 
 body > div.best-commend > div:nth-child(4) {
     position: absolute;
     margin-top: -270px;
-    left: 1320px;
+    left: 1555px;
 }
 
 /* 배너 -> 옆으로 넘어가는 모션인가? 그럼 나중에 js 추가 */
@@ -466,20 +466,22 @@ body > div:nth-child(6) {
 
 /* 좋아요 많이 받은 책 */
 .best-good {
-    margin-bottom: 90px;
+    margin: 95px 150px 106px 150px;
+    position: relative;
 }
 
 .best-good .grid-books {
-    height: 460px;
+    width: 1582px;
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin: 30px 170px;
+    padding-right: 40px;
     /* gap: 15px; */
 }
 
 .best-good .grid-books-items {
-    width: 276px;
+    width: 382px;
+    height: 560px;
     background: #FFFFFE;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 13px;
@@ -490,15 +492,27 @@ body > div:nth-child(6) {
 .books-simple-title p {
     text-align: center;
     margin: 17px;
-    font-size: 18px;
-    color:rgba(188, 38, 56, 1);
+    font-weight: 500;
+    font-size: 24px;
+    color: #BC2638;
 }
 
 .best-good .books-img {
-    margin-top: -17px;
+    width: 282px;
+    height: 365px;
+    margin-top: 20px;
     background: #D9D9D9;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 13px;
+}
+
+.best-good .books-title {
+    width: 267px;
+    height: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .best-good .books-title .title {
@@ -510,20 +524,23 @@ body > div:nth-child(6) {
 
 /* 마음에 드는 모음집 하나는 있겠지 */
 .guess-you-want {
-    margin: 90px 0;
+    margin: 95px 150px 106px 150px;
+    position: relative;
 }
 
 .guess-you-want .grid-books {
-    height: 460px;
+    width: 1582px;
     display: flex;
     position: relative;
     justify-content: space-between;
-    margin: 30px 170px;
-    /* gap: 15px; */
+    padding-right: 40px;
+    gap: 28px;
+    margin-top: 40px;
 }
 
 .guess-you-want .grid-books-items {
-    width: 276px;
+    width: 384px;
+    height: 637px;
     border-radius: 13px;
     display: grid;
     justify-content: center;
@@ -537,12 +554,12 @@ body > div:nth-child(6) {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 357px;
-    margin: -8px 0 0 6px;
+    height: 523px;
+    margin: 4px 0 0 17px;
 }
 
 .guess-you-want .books-img {
-    width: 125px;
+    width: 166px;
     height: 48%;
     margin: 3px;
 }
@@ -575,7 +592,7 @@ body > div:nth-child(6) {
     padding: 0;
     color: rgba(28, 28, 28, 1);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 38px;
     color: #1C1C1C;
 }
@@ -584,26 +601,29 @@ body > div:nth-child(6) {
     display: flex;
     justify-content: center;
     font-weight: 500;
-    font-size: 16.5px;
+    font-size: 20px;
     line-height: 18px;
     color: #777777;
 }
 
 /* 리콤이 추천하는 이달의 신작 */
 .recome-recommend {
-    margin: 90px 0;
+    margin: 95px 150px 106px 150px;
+    height: auto;
+    position: relative;
 }
 
 .recome-recommend .recome {
+    width: 100%;
     height: 460px;
     justify-content: space-between;
-    margin: 30px 170px;
+    margin-top: 30px;
 }
 
 /* 1순위 */
 .first-recome {
     display: flex;
-    height: 350px;
+    height: 500px;
     background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 13px;
@@ -613,17 +633,18 @@ body > div:nth-child(6) {
     width: 150px;
     height: 100%;
     text-align: center;
-    line-height: 350px;
+    line-height: 500px;
     font-size: 40px;
     font-weight: 700;
 }
 
 .first-recome .books-img {
-    width: 220px;
-    height: 280px;
+    width: 300px;
+    height: 395px;
     background: #D9D9D9;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
+    border-radius: 13px;
 }
 
 .first-recome .books-info {
@@ -634,7 +655,7 @@ body > div:nth-child(6) {
 
 .first-recome .books-info .title{
     font-weight: 700;
-    font-size: 32px;
+    font-size: 48px;
 }
 
 .first-recome .books-info .withstar{
@@ -642,8 +663,9 @@ body > div:nth-child(6) {
 }
 
 .first-recome .books-info .author-pubyear {
-    font-size: 21px;
     font-weight: 500;
+    font-size: 34px;
+    color: #494949;
 }
 
 .first-recome .books-info .stars {
@@ -651,24 +673,24 @@ body > div:nth-child(6) {
 }
 
 .first-recome .books-info .comment {
-    margin-top: 10px;
-    color: rgba(164, 164, 164, 1);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 24px;
+    color: #A4A4A4;
 }
 
 /* 나머지 */
 .remain-recome {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
+    width: 101%;
     height: 300px;
     margin-top: 30px;
-    column-gap: 15px;
-    row-gap: 15px;
+    gap: 30px;
 }
 
 .recome-items {
+    width: 776px;
+    height: 190px;
     background: #FFFFFE;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 13px;
@@ -681,15 +703,15 @@ body > div:nth-child(6) {
 .recome-items .num {
     width: 70px;
     height: 100%;
-    line-height: 150px;
+    line-height: 180px;
     text-align: center;
     font-size: 20px;
     font-weight: 700;
 }
 
 .recome-items .books-img {
-    width: 90px;
-    height: 120px;
+    width: 114px;
+    height: 150px;
     margin-top: 15px;
     background: #D9D9D9;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -705,17 +727,19 @@ body > div:nth-child(6) {
 }
 
 .best-commend {
-    margin-top: 350px;
-    margin-bottom: 200px;
+    margin: 584px 150px 106px 150px;
+    position: relative;
+}
+
+.best-commend .title-area {
+    margin-bottom: 30px;
 }
 
 .best-commend .commend-grid {
     display: grid;
-    margin: 30px 170px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 280px 440px;
-    column-gap: 30px;
-    row-gap: 30px;
+    gap: 30px;
 }
 
 .best-commend .commend-items {
