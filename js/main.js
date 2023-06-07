@@ -32,7 +32,7 @@
 let btn = document.getElementsByClassName("store-btn");
 
 function handleClick(event) {
-  if (event.target.classList[1] === "clicked") {
+  if (event.target.classList[0] === "clicked") {
     event.target.classList.remove("clicked");
   } else {
     for (var i = 0; i < btn.length; i++) {
@@ -142,17 +142,21 @@ function openJoin() {
 // }
 
 // inputisInit();
-let inputStr = document.getElementsByClassName('row');
-let check = document.getElementsByClassName('check');
-console.log(check);
-for(let i = 0; i < inputStr.length; i++) {
-  inputStr[i].addEventListener("change", function(e) {
-    // 텍스트가 비었을 경우
-    if(inputStr[i] == '') {
-      check[i].setAttribute("src", "./login/img/login-no-check.png");
-    }
-    else {
-      check[i].setAttribute("src", "./login/img/login-check.png");
-    }
-  })
+
+window.onload = inputisEmpty;
+
+function inputisEmpty() {
+  let inputStr = document.getElementsByClassName("row");
+  let check = document.getElementsByClassName("check");
+  for (let i = 0; i < inputStr.length; i++) {
+    inputStr[i].addEventListener("change", function (e) {
+      // 텍스트가 비었을 경우
+      if (inputStr[i] == "") {
+        console.log("비엇음");
+        check[i].setAttribute("src", "./login/img/login-no-check.png");
+      } else {
+        check[i].setAttribute("src", "./login/img/login-check.png");
+      }
+    });
+  }
 }

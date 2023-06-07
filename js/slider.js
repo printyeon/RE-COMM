@@ -40,8 +40,7 @@ nextBtns.forEach(function (nextBtn, index) {
   });
 });
 
-window.onload = bannerslide;
-
+bannerslide();
 function bannerslide() {
   let slideWrap = document.querySelector(".slide");
   let slide = slideWrap.querySelectorAll(".banner-item");
@@ -61,8 +60,8 @@ function bannerslide() {
   slideWrap.style.width = `${100 * (slide.length + 2)}%`;
   slideWrap.style.left = `-${1903}px`;
 
-  let next = document.querySelector(".next");
-  let prev = document.querySelector(".prev");
+  let next = document.querySelectorAll(".next")[0];
+  let prev = document.querySelectorAll(".prev")[0];
   let current = 0;
 
   next.addEventListener("click", nextSlide);
@@ -109,5 +108,78 @@ function bannerslide() {
       });
     }
     paging.innerHTML = `${current + 1} / 3`;
+  }
+}
+
+window.onload = bannerslide1;
+
+function bannerslide1() {
+  let slideWrap = document.querySelector(".slide2");
+  let slide = slideWrap.querySelectorAll(".banner-item");
+  let paging = slideWrap.getElementsByClassName("middle-paging");
+
+  // 처음, 마지막 슬라이드 복제
+  const firstEl = slideWrap.firstElementChild;
+  const lastEl = slideWrap.lastElementChild;
+  let clone1 = firstEl.cloneNode(true);
+  let cloneLast = lastEl.cloneNode(true);
+
+  // 끝 슬라이드는 앞에 추가, 처음 슬라이드는 뒤에 추가
+  slideWrap.appendChild(clone1);
+  slideWrap.insertBefore(cloneLast, slideWrap.firstElementChild);
+
+  // (슬라이드 개수 + 복제된 슬라이드 2개) X 슬라이드 1개의 넓이
+  slideWrap.style.width = `${100 * (slide.length + 2)}%`;
+  slideWrap.style.left = `-${slideWrap.offsetWidth}px`;
+
+  let next = document.querySelectorAll(".next")[1];
+  let prev = document.querySelectorAll(".prev")[1];
+  let current = 0;
+
+  next.addEventListener("click", nextSlide);
+  prev.addEventListener("click", prevSlide);
+
+  function nextSlide() {
+    console.log("클릭");
+    if (current < slide.length - 1) {
+      current++;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+      console.log("현재 페이지 : ", current);
+    } else {
+      current++;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+      current = 0;
+      console.log("현재 페이지 : ", current);
+      setTimeout(function () {
+        slideWrap.style.transition = "0s";
+        slideWrap.style.left = `-${100 * (current + 1)}%`;
+        console.log("현재 페이지 : ", current);
+      }, 550);
+    }
+    paging.innerHTML = `${current + 1} / ${slide.length}`;
+  }
+
+  function prevSlide() {
+    console.log("클릭");
+    if (current > 0) {
+      current--;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+      console.log("현재 페이지 : ", current);
+    } else {
+      slideWrap.style.left = `-${100 * (current + 1)}%`;
+      slideWrap.style.transition = "ease 0.5s";
+      slideWrap.style.left = "0%";
+      current = slide.length - 1;
+      console.log("현재 페이지 : ", current);
+      setTimeout(function () {
+        slideWrap.style.transition = "ease 0s";
+        slideWrap.style.left = `-${100 * (current + 1)}%`;
+        console.log("현재 페이지 : ", current);
+      });
+    }
+    paging.innerHTML = `${current + 1} / ${slide.length}`;
   }
 }
