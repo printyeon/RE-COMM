@@ -42,6 +42,7 @@
           console.log("클릭");
           var isbn = event.target.getAttribute("data-isbn");
           isbn = encodeURIComponent(isbn);
+          console.log(isbn);
           var api_url = "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" + isbn + "&output=json";
           console.log(api_url);
     
@@ -74,8 +75,15 @@
               var des = document.createElement('p');
               des.textContent = "줄거리 : " + book.description;
               bookDetail.appendChild(des);
-    
-              // 원하는 형식에 맞게 필요한 책 정보들을 추가
+
+              var img = document.createElement('img');
+              img.setAttribute('src', book.coverLargeUrl);
+              bookDetail.appendChild(img);
+
+              let bookDetailURL = "detail.html";
+              let url = bookDetailURL + "?id=" + book.itemId;
+              window.document.write(bookDetail);
+              window.open(url, ".blank");
     
             })
             .catch(function(error) {
