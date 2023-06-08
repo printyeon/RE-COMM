@@ -3,6 +3,12 @@ body {
     background-image: url(../img/banner/banner-1.png);
     background-repeat: no-repeat;
     backdrop-filter: blur(10px);
+    overflow-x: hidden;
+    background-size: cover;
+}
+
+#book-detail {
+    background-color: #fff;
 }
 
 .banner img {
@@ -15,19 +21,25 @@ body {
     background-color: #fff;
 }
 
+.cover {
+    width: 529px;
+    height: 747px;
+    margin-top: 122px;
+}
+
 .book-profile {
-    width: 75%;
-    height: 560px;
-    margin: 250px auto 10px auto;
+    width: 1620px;
+    height: 700px;
+    margin: 310px auto 10px auto;
     display: flex;
     background-color: #fff;
 }
 
 .book-profile img:nth-child(1) {
     border-radius: 10px;
-    margin-top: -150px;
-    width: 100%;
-    height: 100%;
+    margin-top: -122px;
+    width: 529px;
+    height: 747px;
 }
 
 .book-profile .profile {
@@ -36,20 +48,30 @@ body {
 }
 
 .book-profile .title {
-    font-size: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
     font-weight: 700;
+    font-size: 48px;
 }
 
 .book-profile .info1 {
     display: flex;
-    gap: 50px;
-    margin-top: 5px;
+    gap: 20px;
+    margin: 7px;
+    height: 29px;
     color: rgba(119, 119, 119, 1);
+    align-items: center;
+
 }
 
 .book-profile .info1 .author, .pub, .pubyear {
-    border-right: 1px solid #3f3f3f;
+    border-right: 2px solid #777777;
     padding-right: 10px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #777777;
 }
 
 .book-profile .info2 {
@@ -111,15 +133,21 @@ body {
 }
 
 /* 독자들의 인상깊은 구절 */
+.reader {
+    width: 100%;
+    background-color: #fff;
+    margin-top: -17px;
+}
+
 .reader-impressive {
-    width: 75%;
-    height: 400px;
+    width: 1620px;
+    height: 531px;
     margin: 0 auto;
     background-color: #3f3f3f;
     background: #FBFBFB;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .reader-impressive .reader-nav {
@@ -141,8 +169,10 @@ body {
     width: 100%;
     height: 100px;
     color: black;
-    font-size: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
     font-weight: 700;
+    font-size: 48px;
     display: flex;
 }
 
@@ -152,17 +182,18 @@ body > div.reader-impressive > div.reader-nav > div.title {
 
 .reader-impressive .reader-nav .more {
     color: #BC2638;
-    font-size: 20px;
+    font-style: normal;
     font-weight: 500;
+    font-size: 34px;
     margin-left: 25px;
     margin-top: 9px;
 }
 
 .reader-impressive .reader-nav img {
-    width: 12px;
-    height: 15px;
+    width: 15px;
+    height: 30px;
     margin-left: 5px;
-    margin-top: 18px;
+    margin-top: 22px;
 }
 
 .reader-impressive .grid-content {

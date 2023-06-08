@@ -216,7 +216,7 @@ const showBookDetail = (event) => {
       let bookDetailURL = "detail.html";
       let url = bookDetailURL + "?id=" + id;
       // window.document.write(bookDetailHtml);
-      window.open(url, ".blank");
+      window.location.href = url;
     })
     .catch((error) => {
       console.log(error);

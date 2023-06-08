@@ -5,12 +5,293 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/detail.css">
-  <title>Book Detail</title>
+  <link rel="stylesheet" href="./css/nav.css">
+  <title>RE:COMM</title>
 </head>
 <body>
-  <div id="book-detail">
 
-  </div>
+    <!-- 내비게이션바 -->
+    <div class="nav">
+        <!-- 왼쪽 로고 -->
+        <div class="left">
+            <a href="./index.html">
+                <div class="icon"><img src="./img/logo-logo.png" alt=""></div>
+        </div>
+        <!-- 오른쪽 주요 아이콘 -->
+        <div class="right">
+            <a href="./search/search.html">
+                <div class="search"><img src="./img/logo-search.png" alt=""></div>
+            </a>
+            <div class="books"><img src="./img/logo-books.png" alt=""></div>
+            <div class="log-in" onclick="openLogin()">로그인</div>
+            <div class="join" onclick="openJoin()">회원가입</div>
+        </div>
+    </div>
+
+    <div id="book-detail"></div>
+
+    <!-- 독자들의 인상깊은 구절 -->
+    <div class="reader">
+        <div class="reader-impressive">
+            <div class="reader-nav">
+                <div class="title">
+                    <p>독자들의 인상 깊었던 구절들</p>
+                    <div class="more">더보기</div>
+                    <img src="../img/books-more.png" alt="">
+                </div>
+                <div class="write-btn">작성하기</div>
+            </div>
+            <div class="grid-content">
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰
+                            .뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="next-btn" class="next-btn">
+                    <img src="../img/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="reader-impressive">
+            <div class="reader-nav">
+                <div class="title">
+                    <p>독자들의 인상 깊었던 구절들</p>
+                    <div class="more">더보기</div>
+                    <img src="../img/books-more.png" alt="">
+                </div>
+                <div class="write-btn">작성하기</div>
+            </div>
+            <div class="grid-content">
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰
+                            .뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="next-btn" class="next-btn">
+                    <img src="../img/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="reader-impressive">
+            <div class="reader-nav">
+                <div class="title">
+                    <p>독자들의 인상 깊었던 구절들</p>
+                    <div class="more">더보기</div>
+                    <img src="../img/books-more.png" alt="">
+                </div>
+                <div class="write-btn">작성하기</div>
+            </div>
+            <div class="grid-content">
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰
+                            .뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="next-btn" class="next-btn">
+                    <img src="../img/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="reader-impressive">
+            <div class="reader-nav">
+                <div class="title">
+                    <p>독자들의 인상 깊었던 구절들</p>
+                    <div class="more">더보기</div>
+                    <img src="../img/books-more.png" alt="">
+                </div>
+                <div class="write-btn">작성하기</div>
+            </div>
+            <div class="grid-content">
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰
+                            .뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="next-btn" class="next-btn">
+                    <img src="../img/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="reader-impressive">
+            <div class="reader-nav">
+                <div class="title">
+                    <p>독자들의 인상 깊었던 구절들</p>
+                    <div class="more">더보기</div>
+                    <img src="../img/books-more.png" alt="">
+                </div>
+                <div class="write-btn">작성하기</div>
+            </div>
+            <div class="grid-content">
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰
+                            .뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="top">
+                        <div class="id">아이디</div>
+                        <div class="comment">리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 리뷰 </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="member">
+                            <div class="icon">
+                                <img src="../img/memeber-icon.png" alt="">
+                            </div>
+                            <div class="member-name"><p>이**</p>님의 프로필 방문하기</div>
+                        </div>
+                        <div class="heart">
+                            <img class="heart" src="../img/books-heart-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="next-btn" class="next-btn">
+                    <img src="../img/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -36,8 +317,8 @@
       // 날짜 포맷팅
       let pub = book.pubDate;
       let pubYear = pub.substr(0, 4);
-      let pubMonth = pub.substr(5, 6);
-      let pubDay = pub.substr(7, 8);
+      let pubMonth = pub.substr(5, 1);
+      let pubDay = pub.substr(7, 1);
 
       // 배경 이미지 변경
       document.body.style.backgroundImage = `url(${book.coverLargeUrl})`;
@@ -45,7 +326,7 @@
       const bookDetailDiv = document.getElementById('book-detail');
       bookDetailDiv.innerHTML =`
         <div class="book-profile">
-            <img src="${book.coverLargeUrl}" alt="">
+            <img class="cover" src="${book.coverLargeUrl}" alt="">
             <div class="profile">
                 <div class="title">${book.title}</div>
                 <div class="info1"> 
@@ -79,16 +360,11 @@
                 </div>
                 <div class="summary">
                     <div class="summary-title">이 책의 줄거리</div>
-                    <div class="summary-content">어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕어쩌구저쩌구왕왕</div>
+                    <div class="summary-content">${book.description}</div>
                 </div>
             </div>
         </div>
       `;
-
-      let bookDetailHtml = `<h2>${book.title}</h2>`;
-      bookDetailHtml += `<p>저자: ${book.author}</p>`;
-      bookDetailHtml += `<p>출판사: ${book.publisher}</p>`;
-      bookDetailHtml += `<img src="${book.coverLargeUrl}" />`;
     } else {
       console.log('책 정보가 없습니다.');
     }
