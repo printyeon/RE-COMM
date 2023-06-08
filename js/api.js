@@ -79,44 +79,6 @@ function showInterparkBook(data) {
   console.log("인터파크 베스트셀러 15권 API 호출 완료");
 }
 
-const showBookDetail = (event) => {
-  let id = event.currentTarget.getAttribute("data-id");
-  id = encodeURIComponent(id);
-  console.log(id);
-  var api_url =
-    "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
-    id +
-    "&output=json";
-  console.log(api_url);
-
-  fetch(api_url)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("API 요청에 실패했습니다.");
-      }
-    })
-    .then((data) => {
-      let book = data.item[0];
-      console.log(book);
-
-      // let bookDetailHtml = `<h2>${book.title}</h2>`;
-      // bookDetailHtml += `<p>저자: ${book.author}</p>`;
-      // bookDetailHtml += `<p>출판사: ${book.publisher}</p>`;
-      // bookDetailHtml += `<img src=${book.coverLargeUrl} />`;
-      // 원하는 형식에 맞게 필요한 책 정보들을 추가
-
-      let bookDetailURL = "detail.html";
-      let url = bookDetailURL + "?id=" + id;
-      // window.document.write(bookDetailHtml);
-      window.open(url, ".blank");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
 // 버튼 세 개별로 각각 베스트셀러, 추천도서, 신간 도서 가져오기
 // 네이버 api는 4개라서 수가 적으니 넘기기 버튼 안 보이게 하기
 const bestSellerBtn = document.querySelector("#aladin");
@@ -221,4 +183,42 @@ const showBooks = (jsonString) => {
   }
 
   return json;
+};
+
+const showBookDetail = (event) => {
+  let id = event.currentTarget.getAttribute("data-id");
+  id = encodeURIComponent(id);
+  console.log(id);
+  var api_url =
+    "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
+    id +
+    "&output=json";
+  console.log(api_url);
+
+  fetch(api_url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("API 요청에 실패했습니다.");
+      }
+    })
+    .then((data) => {
+      let book = data.item[0];
+      console.log(book);
+
+      // let bookDetailHtml = `<h2>${book.title}</h2>`;
+      // bookDetailHtml += `<p>저자: ${book.author}</p>`;
+      // bookDetailHtml += `<p>출판사: ${book.publisher}</p>`;
+      // bookDetailHtml += `<img src=${book.coverLargeUrl} />`;
+      // 원하는 형식에 맞게 필요한 책 정보들을 추가
+
+      let bookDetailURL = "detail.html";
+      let url = bookDetailURL + "?id=" + id;
+      // window.document.write(bookDetailHtml);
+      window.open(url, ".blank");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
