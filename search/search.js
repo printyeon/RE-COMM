@@ -15,6 +15,7 @@ window.onload = function () {
       let link = `http://book.interpark.com/api/search.api?key=${KEY}&query=${encodeURIComponent(
         keyword
       )}&output=${TYPE}`;
+      console.log(link);
       searchBooks(link);
     }
   });
