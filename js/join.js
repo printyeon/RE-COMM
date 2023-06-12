@@ -1,9 +1,5 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-import { updateProfile } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
-
-const firebaseConfig = {
+// Initialize Firebase
+var config = {
   apiKey: "AIzaSyD-KvwhezfpQVtFejdhj1by372iON-nnJc",
   authDomain: "recomm-test.firebaseapp.com",
   projectId: "recomm-test",
@@ -12,19 +8,11 @@ const firebaseConfig = {
   appId: "1:1024841789555:web:5a33493976125f3e00fa06",
   measurementId: "G-N63J4R732X",
 };
+firebase.initializeApp(config);
+var database = firebase.database();
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-
-const auth = getAuth();
-
+// const auth = getAuth();
+// const user = auth.currentUser;
 document.getElementById("signUpButton").addEventListener("click", (event) => {
   event.preventDefault();
   const signUpEmail = document.getElementById("signUpEmail").value;
@@ -35,45 +23,51 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     alert("비번이 다릅니다");
   }
 
-  const auth = getAuth();
-  createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(signUpEmail, signUpPassword)
     .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
       console.log("111");
-      let user = userCredential.user;
       console.log(user);
+      // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
     })
-    .then((user) => {
-      console.log("222");
-      const name = document.getElementById("signUpName").value;
-      updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: "https://example.com/jane-q-user/profile.jpg",
-      });
-      console.log(user);
+    .then(() => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(signUpEmail, signUpPassword)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log("222");
+          const name = document.getElementById("signUpName").value;
+          user.updateProfile({
+            displayName: name,
+          });
+          console.log(user);
+        });
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
     })
-    .then((user) => {
+    .then(() => {
       console.log("333-1");
-      //user = user.currentUser;
-      if (user !== null) {
-        console.log("333");
-        // The user object has basic properties such as display name, email, etc.
-        const displayName = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        const emailVerified = user.emailVerified;
+      const user = firebase.auth().currentUser;
 
-        // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-        const uid = user.uid;
+      if (user !== null) {
+        user.providerData.forEach((profile) => {
+          console.log("Sign-in provider: " + profile.providerId);
+          console.log("  Provider-specific UID: " + profile.uid);
+          console.log("  Name: " + profile.displayName);
+          console.log("  Email: " + profile.email);
+          console.log("  Photo URL: " + profile.photoURL);
+        });
       } else {
         console.log("dsajlfdkghfsdkfjfhlk");
       }
@@ -83,53 +77,22 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       const errorCode = error.code;
       const errorMessage = error.message;
     })
+    // .then((user) => {
+    //   // console.log("444");
+    //   // const db = getDatabase();
+    //   // set(ref(db, "users/" + userId), {
+    //   //   email: user,
+    //   // });
+    // })
+    // .catch((error) => {
+    //   console.log(error);
+    // })
     .then(() => {
-      console.log("444");
-      location.href = "./login.html";
+      console.log("555");
+      //location.href = "../login/survey.html";
+      location.href = "../index.html";
     })
     .catch((error) => {
       console.log(error);
     });
 });
-
-// firebase
-//   .auth()
-//   .createUserWithEmailAndPassword(email, password)
-//   .then((result) => {
-//     result.user.updateProfile({
-//       displayName: name,
-//     });
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
-
-// createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-//   .then((userCredential) => {
-//     console.log(userCredential);
-//     // Signed in
-//     const user = userCredential.user;
-//   })
-//   .then((result) => {
-//     result.user.updateProfile({
-//       displayName: name,
-//     });
-//   })
-//   // .catch((err) => {
-//   //   console.error(err);
-//   // })
-//   .then(() => {
-//     console.log(name);
-//   })
-//   .catch((error) => {
-//     // An error occurred
-//     // ...
-//   });
-
-// //location.href = "./survey.html";
-// .catch((error) => {
-//   console.log("error");
-//   const errorCode = error.code;
-//   const errorMessage = error.message;
-//   // ..
-// });

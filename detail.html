@@ -7,6 +7,43 @@
   <link rel="stylesheet" href="./css/detail.css">
   <link rel="stylesheet" href="./css/nav.css">
   <title>RE:COMM</title>
+  <style>
+
+    .bbg {
+  position: absolute;
+  width: 400px;
+  height: 520px;
+  left: 570px;
+  top: 130px;
+
+  background: #ffffff;
+
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 13px;
+}
+    #modal2 {
+  display: none;
+}
+
+.modal-overlay2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 28, 28, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 99;
+}
+  </style>
 </head>
 <body>
 
@@ -39,7 +76,7 @@
                     <div class="more">더보기</div>
                     <img src="../img/books-more.png" alt="">
                 </div>
-                <div class="write-btn">작성하기</div>
+                <a href="./test.html"><div class="write-btn" >작성하기</div></a>
             </div>
             <div class="grid-content">
                 <div class="content">
@@ -291,8 +328,29 @@
                 </div>
             </div>
         </div>
-    </div>
 
+         <!--작성 창-->
+  <div id="modal2" class="modal-overlay2">
+  <div class="write">
+    <div class="bbg"></div>
+  <input
+  type="text"
+  id="message"
+  placeholder="메세지를 입력하세요"
+  size="40"
+  />
+  <button type="button" id="savedata">Save Data</button>
+  <hr />
+  <h3>Result</h3>
+  <textarea rows="10" cols="60" id="result" readonly></textarea>
+  
+  <h3>textarea</h3>
+  <div class="textarea"></div></div>
+    
+</div>
+
+    </div>
+    <script type="module" src="./test.js"></script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get('id');
@@ -336,25 +394,18 @@
                 </div>
                 <div class="info2">
                     <div class="star">
-                        <div class="star-title">읽을만 했어요!</div>
-                        <div class="star-img">
-                            <img src="../img/books-star-1.png" alt="">
-                            <img src="../img/books-star-1.png" alt="">
-                            <img src="../img/books-star-1.png" alt="">
-                            <img src="../img/books-star-2.png" alt="">
-                            <img src="../img/books-star-2.png" alt="">
-                        </div>
+                        <div class="star-title">!!</div>
+                        <div class="rating_box">
+                            <div class="rating">
+                                ★★★★★
+                                <span class="rating_star">★★★★★</span>
+                                <input type="range" value="1" step="1" min="0" max="10" />
+                            </div>
+                            </div>
                     </div>
                     <div class="tag">
                         <div class="grid-tag">
-                            <div class="tag-item">1</div>
-                            <div class="tag-item">2</div>
-                            <div class="tag-item">3</div>
-                            <div class="tag-item">4</div>
-                            <div class="tag-item">5</div>
-                            <div class="tag-item">6</div>
-                            <div class="tag-item">7</div>
-                            <div class="tag-item">8</div>
+                            
                         </div>
                     </div>
                 </div>
@@ -365,6 +416,78 @@
             </div>
         </div>
       `;
+      /*<div class="tag-item">1</div>
+                            <div class="tag-item">2</div>
+                            <div class="tag-item">3</div>
+                            <div class="tag-item">4</div>
+                            <div class="tag-item">5</div>
+                            <div class="tag-item">6</div>
+                            <div class="tag-item">7</div>
+                            <div class="tag-item">8</div>*/
+    const rating_input = document.querySelector(".rating input");
+    const rating_star = document.querySelector(".rating_star");
+    rating_star.style.width = `${book.customerReviewRank * 10}%`;
+
+    const starTitle = document.getElementsByClassName("star-title")[0];
+    console.log(starTitle.innerHTML);
+        if(book.customerReviewRank >=8.9){
+            starTitle.innerHTML = "완전 추천해요!";
+        }
+        else if(book.customerReviewRank >=6.9){
+            starTitle.innerHTML = "좋은 책이에요!";
+        }
+        
+        else if(book.customerReviewRank >=4.9){
+            starTitle.innerHTML = "나쁘지 않은 책이에요!";
+        }
+        
+        else if(book.customerReviewRank >=2.9){
+            starTitle.innerHTML = "보통인것 같아요.";
+        }
+        
+        else{
+            starTitle.innerHTML = "이 책에 대해 아직 잘 모르겠어요.";
+        }
+
+        let gridTag = document.getElementsByClassName("grid-tag")[0];
+
+// let tagg = document.createElement("tagg");
+// tagg.innerHTML = `
+// <div class="tag-item">
+// <div class="tagg">
+//   ${categoryId}<br>
+// </div>
+// </div>`;
+// gridTag.appendChild(tagg);
+
+console.log("book : " + book);
+console.log("book.categoryId : " + book.categoryId);
+let Bicla = transBCI(book.categoryId);
+console.log("Bicla : " + Bicla);
+let Biclat = document.createElement("Biclat");
+Biclat.innerHTML = `
+  <div class="tag-item">
+  <div class="Biclat">
+    #${Bicla}
+  </div>
+  </div>
+  `;
+gridTag.appendChild(Biclat);
+
+if (book.categoryId != 200 && book.categoryId != 100) {
+  let cla = transCI(book.categoryId);
+  console.log("cla : " + cla);
+  let clat = document.createElement("clat");
+  clat.innerHTML = `
+    <div class="tag-item">
+    <div class="clat">
+      #${cla}
+    </div>
+    </div>`;
+  gridTag.appendChild(clat);
+}
+
+
     } else {
       console.log('책 정보가 없습니다.');
     }
@@ -373,9 +496,60 @@
     console.log(error);
   });
 
-  // 배경 이미지
+      function transBCI(categoryId) {
+        let Bicla = "";
+        if (categoryId >= 100 && categoryId < 200) return (Bicla = "국내도서");
+        else if (categoryId >= 200 && categoryId < 300)
+          return (Bicla = "외국도서");
+        //else if (categoryId >= 300 && categoryId <= 400) return (Bicla = "국내도서");
+        //else if (categoryId >= 400 && categoryId <= 500) return (Bicla = "국내도서");
+        // if (categoryId >= 200 && categoryId <= 300)
+      }
 
-
+      function transCI(categoryId) {
+        let cla = "";
+        if (categoryId == 101) return (cla = "소설");
+        else if (categoryId == 102) return (cla = "시/에세이");
+        else if (categoryId == 103) return (cla = "예술/대중문화");
+        else if (categoryId == 104) return (cla = "사회과학");
+        else if (categoryId == 105) return (cla = "역사");
+        else if (categoryId == 107) return (cla = "잡지");
+        else if (categoryId == 108) return (cla = "만화");
+        else if (categoryId == 109) return (cla = "유아");
+        else if (categoryId == 110) return (cla = "어린이");
+        else if (categoryId == 111) return (cla = "가정 살림");
+        else if (categoryId == 112) return (cla = "청소년");
+        else if (categoryId == 113 || categoryId == 114 || categoryId == 129)
+          return (cla = "학습서");
+        //else if (categoryId == 114) return (cla = "고등학습서");
+        else if (categoryId == 115) return (cla = "국어/외국어/사전");
+        else if (categoryId == 116) return (cla = "자연과학");
+        else if (categoryId == 117) return (cla = "경제 경영");
+        else if (categoryId == 118) return (cla = "자기계발");
+        else if (categoryId == 119) return (cla = "인문");
+        else if (categoryId == 120) return (cla = "종교");
+        else if (categoryId == 122) return (cla = "IT 모바일");
+        else if (categoryId == 123) return (cla = "자격서/수험서");
+        else if (categoryId == 124) return (cla = "취미");
+        else if (categoryId == 125) return (cla = "전공도서/대학교재");
+        else if (categoryId == 126) return (cla = "건강/뷰티");
+        else if (categoryId == 128) return (cla = "여행");
+        //else if (categoryId == 129) return (cla = "중등학습서");
+        else if (categoryId == 201) return (cla = "유아/어린이");
+        else if (categoryId == 203) return (cla = "ELT/사전");
+        else if (categoryId == 205) return (cla = "문학");
+        else if (categoryId == 206) return (cla = "경영/인문");
+        else if (categoryId == 207) return (cla = "예술/디자인");
+        else if (categoryId == 208) return (cla = "실용");
+        else if (categoryId == 209) return (cla = "해외잡지");
+        else if (categoryId == 210) return (cla = "대학교재/전문서적");
+        else if (categoryId == 211) return (cla = "컴퓨터");
+        else if (categoryId == 214) return (cla = "일본도서");
+        else if (categoryId == 215) return (cla = "프랑스도서");
+        else if (categoryId == 216) return (cla = "중국도서");
+        else if (categoryId == 217) return (cla = "해외주문원서");
+      }
+ 
   </script>
 </body>
 </html>
