@@ -19,7 +19,13 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
   const reSignUpPassword = document.getElementById("reSignUpPassword").value;
 
   if (signUpPassword !== reSignUpPassword) {
-    alert("비번이 다릅니다");
+    alert("비번이 다릅니다.");
+    location.href = "../index.html";
+  }
+
+  if(signUpEmail.indexOf('@')==-1){
+    alert("이메일 형식이 아닙니다.");
+    location.href = "../index.html";
   }
 
   firebase
@@ -30,11 +36,21 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       var user = userCredential.user;
       console.log("111");
       console.log(user);
-      // ...
+
+      
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+
+      if(errorCode == 'auth/email-already-in-use'){
+        alert("사용하고 있는 이메일입니다.");
+      }
+      else{
+        alert("잘못된 접근입니다");
+      }
+      location.href = "../index.html";
+      
     })
     .then(() => {
       firebase
@@ -52,11 +68,10 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
         });
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      alert("잘못된 접근입니다");
+      location.href = "../index.html";
     })
     .then(() => {
-      console.log("333-1");
       const user = firebase.auth().currentUser;
 
       if (user !== null) {
@@ -68,13 +83,14 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
           console.log("  Photo URL: " + profile.photoURL);
         });
       } else {
-        console.log("dsajlfdkghfsdkfjfhlk");
+        alert("잘못된 접근입니다");
+        location.href = "../index.html";
       }
       console.log(user);
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      alert("잘못된 접근입니다");
+      location.href = "../index.html";
     })
     // .then((user) => {
     //   // console.log("444");

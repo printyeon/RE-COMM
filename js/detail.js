@@ -61,7 +61,6 @@ fetch(api_url)
                         <div class="rating">
                             ★★★★★
                             <span class="rating_star">★★★★★</span>
-                            <input type="range" value="1" step="1" min="0" max="10" />
                         </div>
                         </div>
                 </div>
@@ -79,10 +78,10 @@ fetch(api_url)
     </div>
   `;
       //별점
-      const rating_input = document.querySelector(".rating input");
       const rating_star = document.querySelector(".rating_star");
       rating_star.style.width = `${book.customerReviewRank * 10}%`;
 
+      //별점 위 텍스트
       const starTitle = document.getElementsByClassName("star-title")[0];
       console.log(starTitle.innerHTML);
       if (book.customerReviewRank >= 8.9) {
@@ -97,35 +96,50 @@ fetch(api_url)
         starTitle.innerHTML = "이 책에 대해 아직 잘 모르겠어요.";
       }
 
-      //태그
       let gridTag = document.getElementsByClassName("grid-tag")[0];
 
-      console.log("book : " + book);
-      console.log("book.categoryId : " + book.categoryId);
-      let Bicla = transBCI(book.categoryId);
-      console.log("Bicla : " + Bicla);
-      let Biclat = document.createElement("Biclat");
-      Biclat.innerHTML = `
-<div class="tag-item">
-<div class="Biclat">
-#${Bicla}
-</div>
-</div>
-`;
-      gridTag.appendChild(Biclat);
-
-      if (book.categoryId != 200 && book.categoryId != 100) {
-        let cla = transCI(book.categoryId);
-        console.log("cla : " + cla);
-        let clat = document.createElement("clat");
-        clat.innerHTML = `
-<div class="tag-item">
-<div class="clat">
-  #${cla}
-</div>
-</div>`;
-        gridTag.appendChild(clat);
+      //태그
+      if(book.categoryId != null){
+        
+        let Bicla = transBCI(book.categoryId);
+        let Biclat = document.createElement("Biclat");
+        Biclat.innerHTML = `
+          <div class="tag-item">
+          <div class="Biclat">
+          #${Bicla}
+          </div>
+          </div>
+          `;
+        gridTag.appendChild(Biclat);
+  
+        if (book.categoryId != 200 && book.categoryId != 100) {
+          let cla = transCI(book.categoryId);
+          console.log("cla : " + cla);
+          let clat = document.createElement("clat");
+          clat.innerHTML = `
+            <div class="tag-item">
+            <div class="clat">
+              #${cla}
+            </div>
+            </div>`;
+          gridTag.appendChild(clat);
       }
+     
+      }
+      else{
+        let non = document.createElement("non");
+        non.innerHTML = `
+  <div class="tag-item">
+  <div class="Biclat">
+  #없음
+  </div>
+  </div>
+  `;
+        gridTag.appendChild(non);
+      }
+
+      //정보 불러오기
+
     } else {
       console.log("책 정보가 없습니다.");
     }
@@ -133,6 +147,8 @@ fetch(api_url)
   .catch((error) => {
     console.log(error);
   });
+
+
 
 function transBCI(categoryId) {
   let Bicla = "";
