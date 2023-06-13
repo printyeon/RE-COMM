@@ -137,8 +137,25 @@ fetch(api_url)
   `;
         gridTag.appendChild(non);
       }
+      console.log(book.isbn);
+      		  
+				  //코멘트 읽어오기
+          var id = document.getElementsByClassName("id")[0];
+		      var comment = document.getElementsByClassName("comment")[0];
+		      var namep = document.getElementsByClassName("name")[0];
 
-      //정보 불러오기
+          var index = 0;
+				  var messageRef = database.ref("message/" + book.isbn + "/imphra"+index);
+				  messageRef.on('child_added', function(snapshot) {
+					var data = snapshot.val();
+					  var message = data.text;
+					  if(message != undefined){
+						comment.innerHTML = message + "\n";
+						id.innerHTML =data.id;
+						namep = data.name;
+					  }
+          
+				  })
 
     } else {
       console.log("책 정보가 없습니다.");

@@ -10,13 +10,18 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
 // const auth = getAuth();
 // const user = auth.currentUser;
 document.getElementById("signUpButton").addEventListener("click", (event) => {
   event.preventDefault();
+
+  const signUpname = document.getElementById("signUpName").value;
   const signUpEmail = document.getElementById("signUpEmail").value;
   const signUpPassword = document.getElementById("signUpPassword").value;
   const reSignUpPassword = document.getElementById("reSignUpPassword").value;
+  
+
 
   if (signUpPassword !== reSignUpPassword) {
     alert("비번이 다릅니다.");
@@ -60,9 +65,9 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
           // Signed in
           var user = userCredential.user;
           console.log("222");
-          const name = document.getElementById("signUpName").value;
+          
           user.updateProfile({
-            displayName: name,
+            displayName: signUpname,
           });
           console.log(user);
         });
