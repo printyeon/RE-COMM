@@ -66,6 +66,7 @@
         </div>
     </div>
 
+    <!-- 책 정보 -->
     <div id="book-detail"></div>
 
     <!-- 독자들의 인상깊은 구절 -->
@@ -77,7 +78,7 @@
                     <div class="more">더보기</div>
                     <img src="../img/books-more.png" alt="">
                 </div>
-                <div class="write-btn">작성하기</div>
+                <div class="write-btn" onclick="onReview()">작성하기</div>
             </div>
             <div class="grid-content">
                 <div class="content">
@@ -129,7 +130,7 @@
                     <div class="more">더보기</div>
                     <img src="../img/books-more.png" alt="">
                 </div>
-                <div class="write-btn" >작성하기</div>
+                <div class="write-btn" onclick="onReview()">작성하기</div>
             </div>
             <div class="grid-content">
                 <div class="content">
@@ -181,7 +182,7 @@
                     <div class="more">더보기</div>
                     <img src="../img/books-more.png" alt="">
                 </div>
-                <div class="write-btn">작성하기</div>
+                <div class="write-btn" onclick="onReview()">작성하기</div>
             </div>
             <div class="grid-content">
                 <div class="content">
@@ -333,11 +334,28 @@
     
     </div>
 
+    <!-- 작성하기 모달창 -->
+    <div id="modal1" class="modal-overlay1">
+        <div class="review">
+            <div class="review-bg"></div>
+            <div class="title">독자들의 인상 깊었던 구절들</div>
+            <form class="review-form">
+                <input type="text" class="row" placeholder="인상 깊었던 구절을 작성해보세요">
+            </form>
+            <div class="btns">
+                <button class="cancel">작성 취소하기</button>
+                <button class="post">리뷰 등록하기</button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
 <script src="./js/detail.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
 <script src="./js/nav.js"></script>
+<script src="./js/review.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

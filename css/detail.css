@@ -164,6 +164,10 @@ body {
   padding-top: 10px;
 }
 
+.write-btn:hover{
+  cursor: pointer;
+}
+
 .reader-impressive .reader-nav .title {
   width: 100%;
   height: 100px;
@@ -298,4 +302,121 @@ body > div.reader-impressive > div.reader-nav > div.title {
   right: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+
+/* 리뷰 작성하기 모달창 */
+#modal1 {
+  display: none;
+}
+
+.modal-overlay1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 28, 28, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 99;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+
+  background: rgba(28, 28, 28, 0.45);
+}
+
+.review-bg {
+  position: absolute;
+  width: 720px;
+  height: 660px;
+  left: 600px;
+  top: 220px;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 13px;
+}
+
+.title {
+  position: absolute;
+  width: 282px;
+  height: 35px;
+  left: 640px;
+  top: 250px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.review-form {
+  position: absolute;
+  width: 640px;
+  height: 425px;
+  left: 640px;
+  top: 305px;
+}
+
+input {
+  width: 600px;
+  padding: 20px 20px 400px 20px;
+  overflow-y: scroll;
+}
+
+.btns {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 305px;
+  gap: 30px;
+  height: 70px;
+  left: 640px;
+  top: 770px;
+  font-size: 24px;
+}
+
+.cancel {
+  width: 305px;
+  height: 70px;
+  left: 640px;
+  top: 770px;
+  background: #BC2638;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+  border: 0px;
+  color: #F4F4F4;
+}
+
+.post {
+  width: 305px;
+  height: 70px;
+  left: 640px;
+  top: 770px;
+  background: #BC2638;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+  border: 0px;
+  color: #F4F4F4;
+}
+
+.cancel:hover {
+  cursor: pointer;
+}
+
+.post:hover{
+  cursor: pointer;
 }

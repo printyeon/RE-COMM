@@ -123,6 +123,23 @@ function openJoin() {
   });
 }
 
+// 리뷰 작성하기 모달창 켜기
+function onReview() {
+  const modal1 = document.getElementById('modal1');
+  const modalBtn = document.getElementsByClassName("write-btn")[0];
+  modalBtn.addEventListener("click", (e) => {
+    modal1.style.display = "flex";
+    // document.body.style.filter = "blur(5px)";
+  })
+  modal1.addEventListener("click", (e) => {
+    const evTarget = e.target;
+    if (evTarget.classList.contains("modal-overlay1")) {
+      modal1.style.display = "none";
+      document.body.style.filter = "blur(0px)";
+    }
+  });
+}
+
 // 로그인/회원가입 모달창에서 입력값이 있으면 check 활성화 else 비활성화
 // let val = document.getElementsByClassName('row').value;
 // let check = document.getElementsByClassName('check');
