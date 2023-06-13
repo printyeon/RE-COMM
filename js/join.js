@@ -9,7 +9,6 @@ var config = {
   measurementId: "G-N63J4R732X",
 };
 firebase.initializeApp(config);
-var database = firebase.database();
 
 // const auth = getAuth();
 // const user = auth.currentUser;
@@ -95,4 +94,38 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     .catch((error) => {
       console.log(error);
     });
+});
+
+document.getElementById("signInButton").addEventListener("click", (event) => {
+  event.preventDefault();
+  const signInEmail = document.getElementById("signInEmail").value;
+  const signInPassword = document.getElementById("signInPassword").value;
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(signInEmail, signInPassword)
+    .then((userCredential) => {
+      // Signed in
+      console.log(userCredential);
+      const user = userCredential.user;
+
+      location.href = "../index.html";
+    })
+    .catch((error) => {
+      console.log("error");
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+});
+
+document.getElementById("logout").addEventListener("click", (event) => {
+  event.preventDefault();
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log("로그아웃 됨");
+      location.href = "../index.html";
+      // Sign-out successful.
+    })
+    .catch((error) => {});
 });
