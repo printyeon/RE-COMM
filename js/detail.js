@@ -15,6 +15,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
 console.log(bookId);
 
+
+
 let api_url =
   "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
   bookId +
@@ -139,13 +141,52 @@ fetch(api_url)
       }
       console.log(book.isbn);
       		  
+var index = 0;
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log(user);
+      //코멘트 넣기
+      var post = document.getElementsByClassName("post")[0];
+      var messageField = document.getElementsByClassName("review-form")[0];
+
+					//메세지 저장
+					post.addEventListener('click', () => {
+						var message = messageField.value;
+						console.log("message : " + message);
+						if (message == "") {
+							alert("메시지를 입력하세요");
+							return true;
+						}
+						// database.ref("message/" + book.isbn + "/imphra/"+index).set({
+              database.ref("message/"+index).set({
+							id: user.email,
+							name: user.displayName,
+							text: message,
+
+						})
+						messageField.value = "";
+						index++;
+					})
+    
+  }
+  else{
+    alert("로그인 후 사용하실 수 있습니다.");
+    location.href = "../index.html";
+
+  }
+})
+
+
+
 				  //코멘트 읽어오기
           var id = document.getElementsByClassName("id")[0];
 		      var comment = document.getElementsByClassName("comment")[0];
 		      var namep = document.getElementsByClassName("name")[0];
 
-          var index = 0;
-				  var messageRef = database.ref("message/" + book.isbn + "/imphra"+index);
+          
+				  // var messageRef = database.ref("message/" + book.isbn + "/imphra/"+index);
+          var messageRef = database.ref("message/"+index);
 				  messageRef.on('child_added', function(snapshot) {
 					var data = snapshot.val();
 					  var message = data.text;
