@@ -136,8 +136,25 @@ fetch(api_url)
       }
       console.log(book.isbn);
 
-      let index = 0;
+      //코멘트 읽어오기
+      var id = document.getElementsByClassName("id")[0];
+      var comment = document.getElementsByClassName("comment")[0];
+      var namep = document.getElementsByClassName("name")[0];
+ let index = 0;
 
+       var messageRef = database.ref("message/" + book.isbn + "/imphra/"+index);
+      messageRef.on("value", function (snapshot) {
+        var data = snapshot.val();
+        if (data.text != undefined) {
+          comment.innerHTML = data.text;
+          id.innerHTML = data.id;
+          namep.innerHTML = data.name;
+        }
+      });
+
+
+
+     
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           console.log(user);
@@ -153,11 +170,10 @@ fetch(api_url)
               alert("메시지를 입력하세요");
               return true;
             }
-            // database.ref("message/" + book.isbn + "/imphra/"+index).set({
-            database.ref("message/" + book.isbn).set({
+             database.ref("message/" + book.isbn + "/imphra/"+index).set({
               id: user.email,
               name: user.displayName,
-              text: "sdfdfjnvjcvjc",
+              text: message,
             });
             messageField.value = "";
             index++;
@@ -168,28 +184,7 @@ fetch(api_url)
         }
       });
 
-      //코멘트 읽어오기
-      var id = document.getElementsByClassName("id")[0];
-      var comment = document.getElementsByClassName("comment")[0];
-      var namep = document.getElementsByClassName("name")[0];
-
-      // var messageRef = database.ref("message/" + book.isbn + "/imphra/"+index);
-      var messageRef = database.ref("message/" + book.isbn);
-      messageRef.on("value", function (snapshot) {
-        var data = snapshot.val();
-        // console.log("data : " + data);
-        // console.log("message : " + data.text);
-        // console.log("id : " + data.id);
-        // console.log("name : " + data.name);
-        if (data.text != undefined) {
-          // console.log(message);
-          // console.log(data.id);
-          // console.log(data.name);
-          comment.innerHTML = data.text;
-          id.innerHTML = data.id;
-          namep.innerHTML = data.name;
-        }
-      });
+      
     } else {
       console.log("책 정보가 없습니다.");
     }
