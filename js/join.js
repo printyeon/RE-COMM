@@ -10,7 +10,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 // const auth = getAuth();
 // const user = auth.currentUser;
 document.getElementById("signUpButton").addEventListener("click", (event) => {
@@ -20,15 +19,13 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
   const signUpEmail = document.getElementById("signUpEmail").value;
   const signUpPassword = document.getElementById("signUpPassword").value;
   const reSignUpPassword = document.getElementById("reSignUpPassword").value;
-  
-
 
   if (signUpPassword !== reSignUpPassword) {
     alert("비번이 다릅니다.");
     location.href = "../index.html";
   }
 
-  if(signUpEmail.indexOf('@')==-1){
+  if (signUpEmail.indexOf("@") == -1) {
     alert("이메일 형식이 아닙니다.");
     location.href = "../index.html";
   }
@@ -37,25 +34,78 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     .auth()
     .createUserWithEmailAndPassword(signUpEmail, signUpPassword)
     .then((userCredential) => {
+      var user = userCredential.user;
+      console.log("회원가입 성공");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == "auth/email-already-in-use") {
+        alert("사용하고 있는 이메일입니다.");
+      } else {
+        alert("잘못된 접근입니다");
+      }
+      location.href = "../index.html";
+    })
+    .then(() => {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(signUpEmail, signUpPassword)
+        .then((userCredential) => {
+          // Signed in
+          var user = userCredential.user;
+          console.log("로그인 성공");
+
+          user
+            .updateProfile({
+              displayName: signUpname,
+            })
+            .then(() => {
+              console.log("프로필 업뎃");
+              console.log(user);
+            })
+            .catch((error) => {
+              console.log("프로필 업뎃안됨");
+            });
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+    })
+    .then(() => {
+      const user = firebase.auth().currentUser;
+
+      if (user !== null) {
+        user.providerData.forEach((profile) => {
+          console.log("Sign-in provider: " + profile.providerId);
+          console.log("  Provider-specific UID: " + profile.uid);
+          console.log("  Name: " + profile.displayName);
+          console.log("  Email: " + profile.email);
+        });
+      }
+    });
+});
+/*
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(signUpEmail, signUpPassword)
+    .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
       console.log("111");
-      console.log(user);
-
-      
+      //console.log(user);
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
 
-      if(errorCode == 'auth/email-already-in-use'){
+      if (errorCode == "auth/email-already-in-use") {
         alert("사용하고 있는 이메일입니다.");
-      }
-      else{
+      } else {
         alert("잘못된 접근입니다");
       }
       location.href = "../index.html";
-      
     })
     .then(() => {
       firebase
@@ -65,11 +115,11 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
           // Signed in
           var user = userCredential.user;
           console.log("222");
-          
+
           user.updateProfile({
             displayName: signUpname,
           });
-          console.log(user);
+          //console.log(user);
         });
     })
     .catch((error) => {
@@ -91,7 +141,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
         alert("잘못된 접근입니다");
         location.href = "../index.html";
       }
-      console.log(user);
+      //console.log(user);
     })
     .catch((error) => {
       alert("잘못된 접근입니다");
@@ -108,15 +158,23 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     //   console.log(error);
     // })
     .then(() => {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log(user);
+          // ...
+        } else {
+          console.log("로그인안함");
+        }
+      });
       console.log("555");
       //location.href = "../login/survey.html";
-      location.href = "../index.html";
+      //location.href = "../index.html";
     })
     .catch((error) => {
       console.log(error);
     });
 });
-
+*/
 document.getElementById("signInButton").addEventListener("click", (event) => {
   event.preventDefault();
   const signInEmail = document.getElementById("signInEmail").value;
