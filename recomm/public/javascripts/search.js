@@ -73,7 +73,7 @@ window.onload = function () {
       bookItem.className = "grid-books-items";
       bookItem.innerHTML = `
           <div class="books">
-            <img class="heart" src="../img/books-heart-2.png" alt="">
+            <img class="heart" src="/images/books-heart-2.png" alt="">
             <div class="books-img">
               <img src="${img}" alt="">
             </div>
@@ -84,11 +84,11 @@ window.onload = function () {
             <div class="stars">
               <p>평균 별점</p>
               <div class="stars-img">
-                <img src="../img/books-star-1.png" alt="">
-                <img src="../img/books-star-1.png" alt="">
-                <img src="../img/books-star-1.png" alt="">
-                <img src="../img/books-star-2.png" alt="">
-                <img src="../img/books-star-2.png" alt="">
+                <img src="/images/books-star-1.png" alt="">
+                <img src="/images/books-star-1.png" alt="">
+                <img src="/images/books-star-1.png" alt="">
+                <img src="/images/books-star-2.png" alt="">
+                <img src="/images/books-star-2.png" alt="">
               </div>
             </div>
           </div>`;

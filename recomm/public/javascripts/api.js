@@ -48,8 +48,8 @@ function showInterparkBook(data) {
     item.className = "grid-books-items";
     item.innerHTML = `
       <div class="books">
-        <img class="crown" src="./img/books-crown.png" alt="">
-        <img class="heart" src="./img/books-heart-2.png" alt="">
+        <img class="crown" src="/images/books-crown.png" alt="">
+        <img class="heart" src="/images/books-heart-2.png" alt="">
         <div class="books-img">
           <img src="${img}" alt="">
         </div>
@@ -61,11 +61,11 @@ function showInterparkBook(data) {
         <div class="stars">
           <p>평균 별점</p>
           <div class="stars-img">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-2.png" alt="">
-            <img src="./img/books-star-2.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-2.png" alt="">
+            <img src="/images/books-star-2.png" alt="">
           </div>
         </div>
       </div>`;
@@ -153,8 +153,8 @@ const showBooks = (jsonString) => {
     item.className = "grid-books-items";
     item.innerHTML = `
       <div class="books">
-        <img class="crown" src="./img/books-crown.png" alt="">
-        <img class="heart" src="./img/books-heart-2.png" alt="">
+        <img class="crown" src="/images/books-crown.png" alt="">
+        <img class="heart" src="/images/books-heart-2.png" alt="">
         <div class="books-img">
           <img src="${img}" alt="">
         </div>
@@ -166,11 +166,11 @@ const showBooks = (jsonString) => {
         <div class="stars">
           <p>평균 별점</p>
           <div class="stars-img">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-1.png" alt="">
-            <img src="./img/books-star-2.png" alt="">
-            <img src="./img/books-star-2.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-1.png" alt="">
+            <img src="/images/books-star-2.png" alt="">
+            <img src="/images/books-star-2.png" alt="">
           </div>
         </div>
       </div>`;
@@ -213,7 +213,7 @@ const showBookDetail = (event) => {
       // bookDetailHtml += `<img src=${book.coverLargeUrl} />`;
       // 원하는 형식에 맞게 필요한 책 정보들을 추가
 
-      let bookDetailURL = "detail.html";
+      let bookDetailURL = "/detail";
       let url = bookDetailURL + "?id=" + id;
       // window.document.write(bookDetailHtml);
       window.location.href = url;

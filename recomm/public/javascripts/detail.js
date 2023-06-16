@@ -99,8 +99,7 @@ fetch(api_url)
       let gridTag = document.getElementsByClassName("grid-tag")[0];
 
       //태그
-      if(book.categoryId != null){
-        
+      if (book.categoryId != null) {
         let Bicla = transBCI(book.categoryId);
         let Biclat = document.createElement("Biclat");
         Biclat.innerHTML = `
@@ -111,7 +110,7 @@ fetch(api_url)
           </div>
           `;
         gridTag.appendChild(Biclat);
-  
+
         if (book.categoryId != 200 && book.categoryId != 100) {
           let cla = transCI(book.categoryId);
           console.log("cla : " + cla);
@@ -123,10 +122,8 @@ fetch(api_url)
             </div>
             </div>`;
           gridTag.appendChild(clat);
-      }
-     
-      }
-      else{
+        }
+      } else {
         let non = document.createElement("non");
         non.innerHTML = `
   <div class="tag-item">
@@ -138,25 +135,72 @@ fetch(api_url)
         gridTag.appendChild(non);
       }
       console.log(book.isbn);
-      		  
-				  //코멘트 읽어오기
-          var id = document.getElementsByClassName("id")[0];
-		      var comment = document.getElementsByClassName("comment")[0];
-		      var namep = document.getElementsByClassName("name")[0];
 
-          var index = 0;
-				  var messageRef = database.ref("message/" + book.isbn + "/imphra"+index);
-				  messageRef.on('child_added', function(snapshot) {
-					var data = snapshot.val();
-					  var message = data.text;
-					  if(message != undefined){
-						comment.innerHTML = message + "\n";
-						id.innerHTML =data.id;
-						namep = data.name;
-					  }
-          
-				  })
+      let gridContent = document.getElementsByClassName("grid-content")[0];
+      let index = 0;
 
+      console.log("index : " + index);
+      var messageRef = database.ref("message/" + book.isbn + "/imphra");
+      messageRef.on("child_added", function (snapshot) {
+        var data = snapshot.val();
+        console.log("추가됨");
+
+        // data.forEach((data, index) => {
+        //   console.log(data);
+        let testcontent = document.createElement("testcontent");
+        testcontent.innerHTML = `
+      <div class="content">
+                  <div class="top">
+                      <div class="id">${data.id}</div>
+                      <div class="comment">${data.text}</div>
+                  </div>
+                  <div class="bottom">
+                      <div class="member">
+                          <div class="icon">
+                              <img src="/images/memeber-icon.png" alt="">
+                          </div>
+                          <div class="member-name"><p class="name">${data.name}</p>님의 프로필 방문하기</div>
+                      </div>
+                      <div class="heart">
+                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                      </div>
+                  </div>
+              </div> 
+             
+        `;
+        gridContent.appendChild(testcontent);
+        // });
+      });
+
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          console.log(index);
+          //코멘트 넣기
+          var post = document.getElementsByClassName("post")[0];
+          var messageField = document.getElementsByClassName("row")[0];
+
+          //메세지 저장
+          post.addEventListener("click", () => {
+            var message = messageField.value;
+            console.log("message : " + message);
+            if (message == "") {
+              alert("메시지를 입력하세요");
+              return true;
+            }
+            database.ref("message/" + book.isbn + "/imphra/" + index).set({
+              id: user.email,
+              name: user.displayName,
+              text: message,
+            });
+            messageField.value = "";
+            console.log("222222");
+            index++;
+          });
+        } else {
+          alert("로그인 후 사용하실 수 있습니다.");
+          location.href = "/index";
+        }
+      });
     } else {
       console.log("책 정보가 없습니다.");
     }
@@ -164,8 +208,6 @@ fetch(api_url)
   .catch((error) => {
     console.log(error);
   });
-
-
 
 function transBCI(categoryId) {
   let Bicla = "";

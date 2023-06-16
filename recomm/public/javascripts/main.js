@@ -14,14 +14,14 @@
 //     heart[i].addEventListener("click", function () {
 //         console.log("클릭");
 //       // 꽉 찬 하트일 때
-//       if (heart[i].getAttribute("src") == "./img/books-heart-1.png") {
+//       if (heart[i].getAttribute("src") == "/images/books-heart-1.png") {
 //         // 경로 가져오기
-//         heart[i].setAttribute("src", "./img/books-heart-2.png");
+//         heart[i].setAttribute("src", "/images/books-heart-2.png");
 //         console.log(heart[i].getAttribute("src"));
 //       }
 //       // 빈 하트일 때
-//       else if (heart[i].getAttribute("src") == "./img/books-heart-2.png") {
-//         heart[i].setAttribute("src", "./img/books-heart-1.png");
+//       else if (heart[i].getAttribute("src") == "/images/books-heart-2.png") {
+//         heart[i].setAttribute("src", "/images/books-heart-1.png");
 //         console.log(heart[i].getAttribute("src"));
 //       }
 //     });
@@ -125,12 +125,12 @@ function openJoin() {
 
 // 리뷰 작성하기 모달창 켜기
 function onReview() {
-  const modal1 = document.getElementById('modal1');
+  const modal1 = document.getElementById("modal1");
   const modalBtn = document.getElementsByClassName("write-btn")[0];
   modalBtn.addEventListener("click", (e) => {
     modal1.style.display = "flex";
     // document.body.style.filter = "blur(5px)";
-  })
+  });
   modal1.addEventListener("click", (e) => {
     const evTarget = e.target;
     if (evTarget.classList.contains("modal-overlay1")) {
@@ -170,9 +170,9 @@ function inputisEmpty() {
       // 텍스트가 비었을 경우
       if (inputStr[i] == "") {
         console.log("비엇음");
-        check[i].setAttribute("src", "./login/img/login-no-check.png");
+        check[i].setAttribute("src", "/images/login/login-no-check.png");
       } else {
-        check[i].setAttribute("src", "./login/img/login-check.png");
+        check[i].setAttribute("src", "/images/login/login-check.png");
       }
     });
   }
