@@ -136,28 +136,45 @@ fetch(api_url)
       }
       console.log(book.isbn);
 
-      //코멘트 읽어오기
-      var id = document.getElementsByClassName("id")[0];
-      var comment = document.getElementsByClassName("comment")[0];
-      var namep = document.getElementsByClassName("name")[0];
- let index = 0;
+      let gridContent = document.getElementsByClassName("grid-content")[0];
+      let index = 0;
 
-       var messageRef = database.ref("message/" + book.isbn + "/imphra/"+index);
-      messageRef.on("value", function (snapshot) {
+      console.log("index : " + index);
+      var messageRef = database.ref("message/" + book.isbn + "/imphra");
+      messageRef.on("child_added", function (snapshot) {
         var data = snapshot.val();
-        if (data.text != undefined) {
-          comment.innerHTML = data.text;
-          id.innerHTML = data.id;
-          namep.innerHTML = data.name;
-        }
+        console.log("추가됨");
+
+        // data.forEach((data, index) => {
+        //   console.log(data);
+        let testcontent = document.createElement("testcontent");
+        testcontent.innerHTML = `
+      <div class="content">
+                  <div class="top">
+                      <div class="id">${data.id}</div>
+                      <div class="comment">${data.text}</div>
+                  </div>
+                  <div class="bottom">
+                      <div class="member">
+                          <div class="icon">
+                              <img src="/images/memeber-icon.png" alt="">
+                          </div>
+                          <div class="member-name"><p class="name">${data.name}</p>님의 프로필 방문하기</div>
+                      </div>
+                      <div class="heart">
+                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                      </div>
+                  </div>
+              </div> 
+             
+        `;
+        gridContent.appendChild(testcontent);
+        // });
       });
 
-
-
-     
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-          console.log(user);
+          console.log(index);
           //코멘트 넣기
           var post = document.getElementsByClassName("post")[0];
           var messageField = document.getElementsByClassName("row")[0];
@@ -170,21 +187,20 @@ fetch(api_url)
               alert("메시지를 입력하세요");
               return true;
             }
-             database.ref("message/" + book.isbn + "/imphra/"+index).set({
+            database.ref("message/" + book.isbn + "/imphra/" + index).set({
               id: user.email,
               name: user.displayName,
               text: message,
             });
             messageField.value = "";
+            console.log("222222");
             index++;
           });
         } else {
           alert("로그인 후 사용하실 수 있습니다.");
-          location.href = "../index.html";
+          location.href = "/index";
         }
       });
-
-      
     } else {
       console.log("책 정보가 없습니다.");
     }

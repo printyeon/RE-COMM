@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/javascripts/searh.js" /> -->
+    <link rel="stylesheet" href="/stylesheets/nav.css" />
+    <link rel="stylesheet" href="/stylesheets/search.css" />
+    <title>RE;COMM</title>
+  </head>
+  <body>
+    <!-- 리콤 웹 검색 페이지 -->
+
+    <!-- 내비게이션바 -->
+    <div class="nav">
+      <!-- 왼쪽 로고 -->
+      <div class="left">
+        <a href="/index"
+          ><div class="icon"><img src="/images/logo-logo.png" alt="" /></div
+        ></a>
+      </div>
+      <!-- 오른쪽 주요 아이콘 -->
+      <div class="right">
+        <a href="/search">
+          <div class="search"><img src="/images/logo-search.png" alt="" /></div>
+        </a>
+        <div class="books"><img src="/images/logo-books.png" alt="" /></div>
+        <div class="log-in" onclick="openLogin()">로그인</div>
+        <div class="join" onclick="openJoin()">회원가입</div>
+        <div class="user" id="logout">
+          <img src="/images/logo-user.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUT TAG -->
+
+    <!-- 보고 싶은 작품 -->
+    <div class="want-to-see">
+      <!-- 드롭다운 세 개 -->
+      <p class="title">보고 싶은 작품을 찾아보세요</p>
+
+      <div class="drop-down">
+        <!-- 모든 장르 -->
+        <div class="input">
+          <form id="search">
+            <input
+              id="search-input"
+              type="text"
+              maxlength="255"
+              placeholder="책, 제목, 작가, 출판년도."
+            />
+          </form>
+          <div class="img">
+            <img id="search-btn" src="/images/logo-search.png" alt="" />
+          </div>
+        </div>
+        <select id="whole-genre" class="whole-genre">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option disabled hidden selected value="모든 장르">모든 장르</option>
+        </select>
+        <!-- 모든 국가 -->
+        <select id="whole-country" class="whole-country" name="whole">
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+          <option disabled hidden selected value="모든 국가">모든 국가</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 검색 결과 -->
+    <div class="container">
+      <p class="title">"···"의 검색 결과</p>
+      <div class="grid-books">
+        <!--<div class="books-title">
+                    <div class="title">책 제목</div>
+                    <div class="author-pubyear">책 길이가 길어지면 줄입니다...</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="grid-books-items">
+                <div class="books">
+                    <img class="crown" src="/images/books-crown.png" alt="">
+                    <img class="heart" src="/images/books-heart-1.png" alt="">
+                    <div class="books-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="books-title">
+                    <div class="title">책 제목</div>
+                    <div class="author-pubyear">책 길이가 길어지면 줄입니다...</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="grid-books-items">
+                <div class="books">
+                    <img class="crown" src="/images/books-crown.png" alt="">
+                    <img class="heart" src="/images/books-heart-1.png" alt="">
+                    <div class="books-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="books-title">
+                    <div class="title">책 제목</div>
+                    <div class="author-pubyear">책 길이가 길어지면 줄입니다...</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="grid-books-items">
+                <div class="books">
+                    <img class="crown" src="/images/books-crown.png" alt="">
+                    <img class="heart" src="/images/books-heart-1.png" alt="">
+                    <div class="books-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="books-title">
+                    <div class="title">책 제목</div>
+                    <div class="author-pubyear">책 길이가 길어지면 줄입니다...</div>
+                    <div class="stars">
+                        <p>평균 별점</p>
+                        <div class="stars-img">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+              </div> -->
+      </div>
+    </div>
+
+    <script src="/javascripts/search.js"></script>
+  </body>
+</html>

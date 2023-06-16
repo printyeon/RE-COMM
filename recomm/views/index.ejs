@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/login-style.css">
-    <link rel="stylesheet" href="./css/join-style.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/login-style.css">
+    <link rel="stylesheet" href="/stylesheets/join-style.css">
     <title>RE;COMM</title>
 </head>
 
-<body>
+  <body>
     <!-- 리콤 웹 메인 페이지 -->
 
     <!-- 내비게이션바 -->
@@ -20,17 +19,17 @@
         <!-- 왼쪽 로고 -->
         <div class="left">
             <a href="#">
-                <div class="icon"><img src="./img/logo-logo.png" alt=""></div>
+                <div class="icon"><img src="/images/logo-logo.png" alt=""></div>
         </div>
         <!-- 오른쪽 주요 아이콘 -->
         <div class="right">
-            <a href="./search/search.html">
-                <div class="search"><img src="./img/logo-search.png" alt=""></div>
+            <a href="/search">
+                <div class="search"><img src="/images/logo-search.png" alt=""></div>
             </a>
-            <div class="books"><img src="./img/logo-books.png" alt=""></div>
+            <div class="books"><img src="/images/logo-books.png" alt=""></div>
             <div class="log-in" onclick="openLogin()">로그인</div>
             <div class="join" onclick="openJoin()">회원가입</div>
-            <div class="user" id="logout"><img src="./img/logo-user.png" alt=""></div>
+            <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
         </div>
     </div>
 
@@ -40,19 +39,19 @@
         <div class="banner">
             <div class="slide">
                 <div class="banner-item">
-                    <img src="./img/banner/banner-1.png" alt="">
+                    <img src="/images/banner/banner-1.png" alt="">
                 </div>
                 <div class="banner-item">
-                    <img src="./img/banner/banner-2.png" alt="">
+                    <img src="/images/banner/banner-2.png" alt="">
                 </div>
                 <div class="banner-item">
-                    <img src="./img/banner/banner-3.png" alt="">
+                    <img src="/images/banner/banner-3.png" alt="">
                 </div>
             </div>
             <div class="banner-arrow">
-                <img class="prev" src="./img/banner/banner-arrow-prev.png" alt="">
+                <img class="prev" src="/images/banner/banner-arrow-prev.png" alt="">
                 <p class="paging">1 / 3</p>
-                <img class="next" src="./img/banner/banner-arrow-next.png" alt="">
+                <img class="next" src="/images/banner/banner-arrow-next.png" alt="">
             </div>
         </div>
     </div>
@@ -63,8 +62,8 @@
     <div class="ranking-top-5">
         <div class="title-area">
             <p class="title">리콤 랭킹 top 30</p>
-            <p class="more"><a href="../more/top50.html">더보기</a></p>
-            <img src="./img/books-more.png" alt="">
+            <p class="more"><a href="/top50">더보기</a></p>
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
@@ -72,8 +71,8 @@
                 <!-- API 삽입 -->
                 <!-- <div class="grid-books-items">
                 <div class="books">
-                    <img class="crown" src="./img/books-crown.png" alt="">
-                    <img class="heart" src="./img/books-heart-1.png" alt="">
+                    <img class="crown" src="/images/books-crown.png" alt="">
+                    <img class="heart" src="/images/books-heart-1.png" alt="">
                     <div class="books-img">
                         <img src="${img}" alt="">
                     </div>
@@ -84,11 +83,11 @@
                     <div class="stars">
                         <p>평균 별점</p>
                         <div class="stars-img">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-1.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
-                            <img src="./img/books-star-2.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-1.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
+                            <img src="/images/books-star-2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -99,11 +98,11 @@
 
         <!-- <우> 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
         <!-- <좌> 넘기기 버튼 -->
         <!-- <div id="prev-btn" class="prev-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div> -->
     </div>
 
@@ -116,7 +115,7 @@
         <div class="title-area">
             <p class="title">서점 별 베스트 셀러</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- 서점 카테고리 -->
         <div class="bookstore">
@@ -129,8 +128,8 @@
             <div class="books-container">
                 <!--<div class="grid-books-items">
                     <div class="books">
-                        <img class="crown" src="./img/books-crown.png" alt="">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="crown" src="/images/books-crown.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <img src="" alt="">
                         </div>
@@ -141,19 +140,19 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="crown" src="./img/books-crown.png" alt="">
-                        <img class="heart" src="./img/books-heart-2.png" alt="">
+                        <img class="crown" src="/images/books-crown.png" alt="">
+                        <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
                             <img src="" alt="">
                         </div>
@@ -164,19 +163,19 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="crown" src="./img/books-crown.png" alt="">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="crown" src="/images/books-crown.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <img src="" alt="">
                         </div>
@@ -187,19 +186,19 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="crown" src="./img/books-crown.png" alt="">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="crown" src="/images/books-crown.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <img src="" alt="">
                         </div>
@@ -210,19 +209,19 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="crown" src="./img/books-crown.png" alt="">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="crown" src="/images/books-crown.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <img src="" alt="">
                         </div>
@@ -233,11 +232,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -247,7 +246,7 @@
 
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
     </div>
 
@@ -258,15 +257,15 @@
         <div class="title-area">
             <p class="title">리콤의 인서진님 취향저격 추천</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
             <div class="books-container">
-                <a href="./detail/detail.html">
+                <a href="/detail">
                     <div class="grid-books-items">
                         <div class="books">
-                            <img class="heart" src="./img/books-heart-2.png" alt="">
+                            <img class="heart" src="/images/books-heart-2.png" alt="">
                             <div class="books-img">
                                 <!-- <img src="" alt=""> -->
                             </div>
@@ -279,11 +278,11 @@
                             <div class="stars">
                                 <p>평균 별점</p>
                                 <div class="stars-img">
-                                    <img src="./img/books-star-1.png" alt="">
-                                    <img src="./img/books-star-1.png" alt="">
-                                    <img src="./img/books-star-1.png" alt="">
-                                    <img src="./img/books-star-2.png" alt="">
-                                    <img src="./img/books-star-2.png" alt="">
+                                    <img src="/images/books-star-1.png" alt="">
+                                    <img src="/images/books-star-1.png" alt="">
+                                    <img src="/images/books-star-1.png" alt="">
+                                    <img src="/images/books-star-2.png" alt="">
+                                    <img src="/images/books-star-2.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -291,7 +290,7 @@
                 </a>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="./img/books-heart-2.png" alt="">
+                        <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
                             <!-- <img src="" alt=""> -->
                         </div>
@@ -304,18 +303,18 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <!-- <img src="" alt=""> -->
                         </div>
@@ -328,18 +327,18 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <!-- <img src="" alt=""> -->
                         </div>
@@ -352,18 +351,18 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                         <div class="books-img">
                             <!-- <img src="" alt=""> -->
                         </div>
@@ -376,11 +375,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -389,7 +388,7 @@
         </div>
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
     </div>
 
@@ -399,19 +398,19 @@
         <div class="banner middle-banner">
             <div class="slide2">
                 <div class="banner-item">
-                    <img src="./img/middle-banner/banner-1.png" alt="">
+                    <img src="/images/middle-banner/banner-1.png" alt="">
                 </div>
                 <div class="banner-item">
-                    <img src="./img/middle-banner/banner-2.png" alt="">
+                    <img src="/images/middle-banner/banner-2.png" alt="">
                 </div>
                 <div class="banner-item">
-                    <img src="./img/middle-banner/banner-3.png" alt="">
+                    <img src="/images/middle-banner/banner-3.png" alt="">
                 </div>
             </div>
             <p class="middle-paging paging">1 / 3</p>
             <div class="middle-banner-arrow">
-                <img class="next" src="./img/middle-banner/banner-arrow-next.png" alt="">
-                <img class="prev" src="./img/middle-banner/banner-arrow-prev.png" alt="">
+                <img class="next" src="/images/middle-banner/banner-arrow-next.png" alt="">
+                <img class="prev" src="/images/middle-banner/banner-arrow-prev.png" alt="">
             </div>
         </div>
     </div>
@@ -422,7 +421,7 @@
         <div class="title-area">
             <p class="title">좋아요 많이 받은 책</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- api 끌어올 부분 -->
         <div class="grid-books">
@@ -476,7 +475,7 @@
 
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
     </div>
 
@@ -486,7 +485,7 @@
         <div class="title-area">
             <p class="title">마음에 모음집 하나는 있겠지</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- api 끌어올 부분 -->
         <div class="grid-books">
@@ -562,7 +561,7 @@
 
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
     </div>
 
@@ -571,7 +570,7 @@
         <div class="title-area">
             <p class="title">리콤이 추천하는 이달의 신작</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <!-- 1순위 추천 -->
         <div class="recome">
@@ -584,11 +583,11 @@
                         <div class="author-pubyear">작가 · 출판연도</div>
                         <div class="stars">
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -610,11 +609,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -628,11 +627,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -646,11 +645,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -664,11 +663,11 @@
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-1.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
-                                <img src="./img/books-star-2.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-1.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
+                                <img src="/images/books-star-2.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -684,7 +683,7 @@
         <div class="title-area">
             <p class="title">좋아요를 가장 많이 받은 코멘트</p>
             <p class="more">더보기</p>
-            <img src="./img/books-more.png" alt="">
+            <img src="/images/books-more.png" alt="">
         </div>
         <div class="commend-grid">
             <div class="commend-items">
@@ -700,14 +699,14 @@
                 <div class="s-block">
                     <div class="member">
                         <div class="icon">
-                            <img src="./img/memeber-icon.png" alt="">
+                            <img src="/images/memeber-icon.png" alt="">
                         </div>
                         <div class="member-name">
                             <p>이**</p>님의 리뷰
                         </div>
                     </div>
                     <div class="heart">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -724,14 +723,14 @@
                 <div class="s-block">
                     <div class="member">
                         <div class="icon">
-                            <img src="./img/memeber-icon.png" alt="">
+                            <img src="/images/memeber-icon.png" alt="">
                         </div>
                         <div class="member-name">
                             <p>이**</p>님의 리뷰
                         </div>
                     </div>
                     <div class="heart">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -751,14 +750,14 @@
                 <div class="s-block">
                     <div class="member">
                         <div class="icon">
-                            <img src="./img/memeber-icon.png" alt="">
+                            <img src="/images/memeber-icon.png" alt="">
                         </div>
                         <div class="member-name">
                             <p>이**</p>님의 리뷰
                         </div>
                     </div>
                     <div class="heart">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -778,14 +777,14 @@
                 <div class="s-block">
                     <div class="member">
                         <div class="icon">
-                            <img src="./img/memeber-icon.png" alt="">
+                            <img src="/images/memeber-icon.png" alt="">
                         </div>
                         <div class="member-name">
                             <p>이**</p>님의 리뷰
                         </div>
                     </div>
                     <div class="heart">
-                        <img class="heart" src="./img/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -793,12 +792,12 @@
 
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
 
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="./img/next-btn.png" alt="">
+            <img src="/images/next-btn.png" alt="">
         </div>
     </div>
 
@@ -812,7 +811,7 @@
         <div class="login">
             <div class="login-bg"></div>
             <div class="login-logo">
-                <img src="./login/img/login-logo.png" width="75%" />
+                <img src="/images/login/login-logo.png" width="75%" />
             </div>
             <div class="login-txt">로그인</div>
 
@@ -827,8 +826,8 @@
             </form>
 
             <div class="login-check">
-                <div class="check check-row c1"><img src="./login/img/login-no-check.png" /></div>
-                <div class="check check-row c2"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c1"><img src="/images/login/login-no-check.png" /></div>
+                <div class="check check-row c2"><img src="/images/login/login-no-check.png" /></div>
             </div>
 
             <div class="forgot-hy">
@@ -845,7 +844,7 @@
         <div class="join">
             <div class="join-bg"></div>
             <div class="join-logo">
-                <img src="./login/img/login-logo.png" width="75%" />
+                <img src="/images/login/login-logo.png" width="75%" />
             </div>
             <div class="join-txt">회원가입</div>
 
@@ -864,10 +863,10 @@
             </form>
 
             <div class="join-check">
-                <div class="check check-row c1"><img src="./login/img/login-no-check.png" /></div>
-                <div class="check check-row c2"><img src="./login/img/login-no-check.png" /></div>
-                <div class="check check-row c3"><img src="./login/img/login-no-check.png" /></div>
-                <div class="check check-row c4"><img src="./login/img/login-no-check.png" /></div>
+                <div class="check check-row c1"><img src="/images/login/login-no-check.png" /></div>
+                <div class="check check-row c2"><img src="/images/login/login-no-check.png" /></div>
+                <div class="check check-row c3"><img src="/images/login/login-no-check.png" /></div>
+                <div class="check check-row c4"><img src="/images/login/login-no-check.png" /></div>
             </div>
 
             <div class="login-hy">
@@ -878,20 +877,19 @@
 
 
 
-    <script src="./js/main.js"></script>
-    <script src="./js/api.js"></script>
-    <script src="./js/slider.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/api.js"></script>
+    <script src="/javascripts/slider.js"></script>
     
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
-    <script src="./js/userNullTest.js"></script>
+    <script src="/javascripts/userNullTest.js"></script>
 
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
-    <script src="./js/nav.js"></script>
+    <script src="/javascripts/nav.js"></script>
 
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
-    <script src="./js/join.js"></script>
+    <script src="/javascripts/join.js"></script>
 </body>
-
 </html>

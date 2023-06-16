@@ -22,12 +22,12 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
 
   if (signUpPassword !== reSignUpPassword) {
     alert("비번이 다릅니다.");
-    location.href = "../index.html";
+    location.href = "/index";
   }
 
   if (signUpEmail.indexOf("@") == -1) {
     alert("이메일 형식이 아닙니다.");
-    location.href = "../index.html";
+    location.href = "/index";
   }
 
   firebase
@@ -45,7 +45,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       } else {
         alert("잘못된 접근입니다");
       }
-      location.href = "../index.html";
+      location.href = "/index";
     })
     .then(() => {
       firebase
@@ -105,7 +105,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       } else {
         alert("잘못된 접근입니다");
       }
-      location.href = "../index.html";
+      location.href = "/views/index.html";
     })
     .then(() => {
       firebase
@@ -124,7 +124,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     })
     .catch((error) => {
       alert("잘못된 접근입니다");
-      location.href = "../index.html";
+      location.href = "/views/index.html";
     })
     .then(() => {
       const user = firebase.auth().currentUser;
@@ -139,13 +139,13 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
         });
       } else {
         alert("잘못된 접근입니다");
-        location.href = "../index.html";
+        location.href = "/views/index.html";
       }
       //console.log(user);
     })
     .catch((error) => {
       alert("잘못된 접근입니다");
-      location.href = "../index.html";
+      location.href = "/views/index.html";
     })
     // .then((user) => {
     //   // console.log("444");
@@ -168,7 +168,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       });
       console.log("555");
       //location.href = "../login/survey.html";
-      //location.href = "../index.html";
+      //location.href = "/views/index.html";
     })
     .catch((error) => {
       console.log(error);
@@ -187,7 +187,7 @@ document.getElementById("signInButton").addEventListener("click", (event) => {
       console.log(userCredential);
       const user = userCredential.user;
 
-      location.href = "../index.html";
+      location.href = "/index";
     })
     .catch((error) => {
       console.log("error");
@@ -203,7 +203,7 @@ document.getElementById("logout").addEventListener("click", (event) => {
     .signOut()
     .then(() => {
       console.log("로그아웃 됨");
-      location.href = "../index.html";
+      location.href = "/index";
       // Sign-out successful.
     })
     .catch((error) => {});

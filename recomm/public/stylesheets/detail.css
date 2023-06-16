@@ -1,6 +1,6 @@
 body {
   background-position: 50% -10%;
-  background-image: url(../img/banner/banner-1.png);
+  background-image: url(/images/banner/banner-1.png);
   background-repeat: no-repeat;
   backdrop-filter: blur(10px);
   overflow-x: hidden;
@@ -164,7 +164,7 @@ body {
   padding-top: 10px;
 }
 
-.write-btn:hover{
+.write-btn:hover {
   cursor: pointer;
 }
 
@@ -304,7 +304,6 @@ body > div.reader-impressive > div.reader-nav > div.title {
   pointer-events: none;
 }
 
-
 /* 리뷰 작성하기 모달창 */
 #modal1 {
   display: none;
@@ -345,8 +344,8 @@ body > div.reader-impressive > div.reader-nav > div.title {
   height: 660px;
   left: 600px;
   top: 220px;
-  
-  background: #FFFFFF;
+
+  background: #ffffff;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 13px;
 }
@@ -357,7 +356,7 @@ body > div.reader-impressive > div.reader-nav > div.title {
   height: 35px;
   left: 640px;
   top: 250px;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -394,11 +393,11 @@ input {
   height: 70px;
   left: 640px;
   top: 770px;
-  background: #BC2638;
+  background: #bc2638;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 13px;
   border: 0px;
-  color: #F4F4F4;
+  color: #f4f4f4;
 }
 
 .post {
@@ -406,17 +405,17 @@ input {
   height: 70px;
   left: 640px;
   top: 770px;
-  background: #BC2638;
+  background: #bc2638;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 13px;
   border: 0px;
-  color: #F4F4F4;
+  color: #f4f4f4;
 }
 
 .cancel:hover {
   cursor: pointer;
 }
 
-.post:hover{
+.post:hover {
   cursor: pointer;
 }
