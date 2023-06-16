@@ -40,197 +40,128 @@ nextBtns.forEach(function (nextBtn, index) {
   });
 });
 
-// 슬라이드
-var prevButton = document.querySelector('.prev');
-var nextButton = document.querySelector('.next');
-var slideContainer = document.querySelector('.slide-container');
+// 상단 배너 슬라이드
+window.onload = bannerSlide;
 
-prevButton.addEventListener('click', function() {
-  var slide = slideContainer.querySelector('.slide');
-  var currentSlide = slide.querySelector('.banner-item.active');
+function bannerSlide() {
+  const slide = document.querySelector(".slide");
+  const bannerItems = slide.querySelectorAll(".banner-item");
 
-  // 현재 활성화된 슬라이드의 이전 슬라이드를 찾음
-  var prevSlide = currentSlide.previousElementSibling;
+  // 이전 버튼과 다음 버튼을 선택
+  const prevButton = document.getElementsByClassName("prev")[0];
+  const nextButton = document.getElementsByClassName("next")[0];
+  // 현재 페이지 위치
+  const currentpage = document.getElementsByClassName("paging")[0];
 
-  if (prevSlide) {
-    currentSlide.classList.remove('active');
-    prevSlide.classList.add('active');
-  } else {
-    // 첫 번째 슬라이드인 경우 마지막 슬라이드로 이동
-    var lastSlide = slide.lastElementChild;
-    currentSlide.classList.remove('active');
-    lastSlide.classList.add('active');
-  }
+  // 현재 보여지는 슬라이드의 인덱스
+  let currentIndex = 0;
 
-  // 페이지 번호 업데이트
-  var currentPage = slideContainer.querySelector('.paging');
-  var currentIndex = Array.from(slide.children).indexOf(slide.querySelector('.banner-item.active'));
-  currentPage.textContent = currentIndex + 1 + ' / ' + slide.childElementCount;
-});
+  // 다음 슬라이드 이동
+  const prevSlide = () => {
+    currentIndex--;
 
-nextButton.addEventListener('click', function() {
-  var slide = slideContainer.querySelector('.slide');
-  var currentSlide = slide.querySelector('.banner-item.active');
+    if (currentIndex < 0) {
+      currentIndex = bannerItems.length - 1;
+      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동
+      slide.style.transform = `translateX(-${
+        (bannerItems.length - 1) * 1920
+      }px)`; // 마지막 슬라이드로 이동
+    } else {
+      slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    }
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  };
 
-  // 현재 활성화된 슬라이드의 다음 슬라이드를 찾음
-  var nextSlide = currentSlide.nextElementSibling;
+  // 이전 슬라이드로 이동하는 함수
+  const nextSlide = () => {
+    // 현재 인덱스에서 1++
+    currentIndex++;
+    console.log("클릭" + currentIndex);
 
-  if (nextSlide) {
-    currentSlide.classList.remove('active');
-    nextSlide.classList.add('active');
-  } else {
-    // 마지막 슬라이드인 경우 첫 번째 슬라이드로 이동
-    var firstSlide = slide.firstElementChild;
-    currentSlide.classList.remove('active');
-    firstSlide.classList.add('active');
-  }
+    // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
+    if (currentIndex >= bannerItems.length) {
+      currentIndex = 0;
+    }
 
-  // 페이지 번호 업데이트
-  var currentPage = slideContainer.querySelector('.paging');
-  var currentIndex = Array.from(slide.children).indexOf(slide.querySelector('.banner-item.active'));
-  currentPage.textContent = currentIndex + 1 + ' / ' + slide.childElementCount;
-});
+    // 슬라이드 요소를 이동
+    slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  };
 
-// bannerslide();
-// function bannerslide() {
-//   let slideWrap = document.querySelector(".slide");
-//   let slide = slideWrap.querySelectorAll(".banner-item");
-//   let paging = document.getElementsByClassName("paging")[0];
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
 
-//   // 처음, 마지막 슬라이드 복제
-//   const firstEl = slideWrap.firstElementChild;
-//   const lastEl = slideWrap.lastElementChild;
-//   let clone1 = firstEl.cloneNode(true);
-//   let cloneLast = lastEl.cloneNode(true);
+  let slideInterval = setInterval(nextSlide, 3000);
 
-//   // 끝 슬라읻느느 앞에 추가, 처음 슬라이드는 뒤에 추가 시키기
-//   slideWrap.appendChild(clone1);
-//   slideWrap.insertBefore(cloneLast, slideWrap.firstElementChild);
+  // 마우스 올리면 슬라이드 멈추기
+  slide.addEventListener("mouseover", () => {
+    clearInterval(slideInterval);
+  });
 
-//   // (슬라이드 개수 + 복제된 슬라이드 2개) X 슬라이드 1개의 넓이
-//   slideWrap.style.width = `${100 * (slide.length + 2)}%`;
-//   slideWrap.style.left = `-${1903}px`;
+  // 마우스 나가면 슬라이드 재생
+  slide.addEventListener("mouseout", () => {
+    setInterval(slideInterval);
+  });
+}
+bannerSlide1();
 
-//   let next = document.querySelectorAll(".next")[0];
-//   let prev = document.querySelectorAll(".prev")[0];
-//   let current = 0;
+function bannerSlide1() {
+  const slide = document.querySelector(".slide2");
+  const bannerItems = slide.querySelectorAll(".banner-item");
 
-//   next.addEventListener("click", nextSlide);
-//   prev.addEventListener("click", prevSlide);
+  // 이전 버튼과 다음 버튼을 선택
+  const prevButton = document.getElementsByClassName("prev")[1];
+  const nextButton = document.getElementsByClassName("next")[1];
+  // 현재 페이지 위치
+  const currentpage = document.getElementsByClassName("paging")[1];
 
-//   function nextSlide() {
-//     console.log("클릭");
-//     if (current < slide.length - 1) {
-//       current++;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       console.log("현재 페이지 : ", current);
-//     } else {
-//       current++;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       current = 0;
-//       console.log("현재 페이지 : ", current);
-//       setTimeout(function () {
-//         slideWrap.style.transition = "0s";
-//         slideWrap.style.left = `-${100 * (current + 1)}%`;
-//         console.log("현재 페이지 : ", current);
-//       }, 550);
-//     }
-//     paging.innerHTML = `${current + 1} / 3`;
-//   }
+  // 현재 보여지는 슬라이드의 인덱스
+  let currentIndex = 0;
 
-//   function prevSlide() {
-//     console.log("클릭");
-//     if (current > 0) {
-//       current--;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       console.log("현재 페이지 : ", current);
-//     } else {
-//       slide.style.transition = "ease 0.5s";
-//       slideWrap.style.left = "0%";
-//       current = slide.length - 1;
-//       console.log("현재 페이지 : ", current);
-//       setTimeout(function () {
-//         slide.style.transition = "ease 0s";
-//         slideWrap.style.left = `-${100 * (current + 1)}%`;
-//         console.log("현재 페이지 : ", current);
-//       });
-//     }
-//     paging.innerHTML = `${current + 1} / 3`;
-//   }
-// }
+  // 다음 슬라이드 이동
+  const prevSlide = () => {
+    currentIndex--;
 
-// window.onload = bannerslide1;
+    if (currentIndex < 0) {
+      currentIndex = bannerItems.length - 1;
+      // 첫 번째 슬라이드에서 이전 버튼을 클릭하면 마지막 슬라이드로 이동
+      slide.style.transform = `translateX(-${
+        (bannerItems.length - 1) * 1920
+      }px)`; // 마지막 슬라이드로 이동
+    } else {
+      slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    }
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  };
 
-// function bannerslide1() {
-//   let slideWrap = document.querySelector(".slide2");
-//   let slide = slideWrap.querySelectorAll(".banner-item");
-//   let paging = slideWrap.getElementsByClassName("middle-paging");
+  // 이전 슬라이드로 이동하는 함수
+  const nextSlide = () => {
+    // 현재 인덱스에서 1++
+    currentIndex++;
+    console.log("클릭" + currentIndex);
 
-//   // 처음, 마지막 슬라이드 복제
-//   const firstEl = slideWrap.firstElementChild;
-//   const lastEl = slideWrap.lastElementChild;
-//   let clone1 = firstEl.cloneNode(true);
-//   let cloneLast = lastEl.cloneNode(true);
+    // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
+    if (currentIndex >= bannerItems.length) {
+      currentIndex = 0;
+    }
 
-//   // 끝 슬라이드는 앞에 추가, 처음 슬라이드는 뒤에 추가
-//   slideWrap.appendChild(clone1);
-//   slideWrap.insertBefore(cloneLast, slideWrap.firstElementChild);
+    // 슬라이드 요소를 이동
+    slide.style.transform = `translateX(-${currentIndex * 1920}px)`;
+    currentpage.innerHTML = `${currentIndex + 1} / 3`;
+  };
 
-//   // (슬라이드 개수 + 복제된 슬라이드 2개) X 슬라이드 1개의 넓이
-//   slideWrap.style.width = `${100 * (slide.length + 2)}%`;
-//   slideWrap.style.left = `-${slideWrap.offsetWidth}px`;
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
 
-//   let next = document.querySelectorAll(".next")[1];
-//   let prev = document.querySelectorAll(".prev")[1];
-//   let current = 0;
+  let slideInterval = setInterval(nextSlide, 3000);
 
-//   next.addEventListener("click", nextSlide);
-//   prev.addEventListener("click", prevSlide);
+  // 마우스 올리면 슬라이드 멈추기
+  slide.addEventListener("mouseover", () => {
+    clearInterval(slideInterval);
+  });
 
-//   function nextSlide() {
-//     console.log("클릭");
-//     if (current < slide.length - 1) {
-//       current++;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       console.log("현재 페이지 : ", current);
-//     } else {
-//       current++;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       current = 0;
-//       console.log("현재 페이지 : ", current);
-//       setTimeout(function () {
-//         slideWrap.style.transition = "0s";
-//         slideWrap.style.left = `-${100 * (current + 1)}%`;
-//         console.log("현재 페이지 : ", current);
-//       }, 550);
-//     }
-//     paging.innerHTML = `${current + 1} / ${slide.length}`;
-//   }
-
-//   function prevSlide() {
-//     console.log("클릭");
-//     if (current > 0) {
-//       current--;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       console.log("현재 페이지 : ", current);
-//     } else {
-//       slideWrap.style.left = `-${100 * (current + 1)}%`;
-//       slideWrap.style.transition = "ease 0.5s";
-//       slideWrap.style.left = "0%";
-//       current = slide.length - 1;
-//       console.log("현재 페이지 : ", current);
-//       setTimeout(function () {
-//         slideWrap.style.transition = "ease 0s";
-//         slideWrap.style.left = `-${100 * (current + 1)}%`;
-//         console.log("현재 페이지 : ", current);
-//       });
-//     }
-//     paging.innerHTML = `${current + 1} / ${slide.length}`;
-//   }
-// }
+  // 마우스 나가면 슬라이드 재생
+  slide.addEventListener("mouseout", () => {
+    setInterval(slideInterval);
+  });
+}
