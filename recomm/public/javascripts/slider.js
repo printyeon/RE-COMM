@@ -16,9 +16,13 @@ nextBtns.forEach(function (nextBtn, index) {
     console.log(maxSlides);
     let nextSlide = current + 1;
 
-    // 한번 슬라이드 하는 크기 * 슬라이드 개수 / 한 섹션당 보이는 책 개수
-    // 슬라이드 몇 번 할지
-    let maxWidth = (slideWidth * maxSlides) / (maxSlides / 2);
+    let maxWidth = (slideWidth * maxSlides) / 5;
+
+    // 만약 index가 (슬라이드 index) 3, 4면 maxWidth = (slideWidth * maxSlides) / 4로
+    // 왜냐하면 한 번 슬라이드 하는 요소의 개수가 슬라이드 3, 4번째는 4개이기 때문에
+    if (index == 3 || index == 4) {
+      maxWidth = (slideWidth * maxSlides) / 4;
+    }
 
     // 현재 위치 계산
     let transformX = nextSlide * slideWidth;
