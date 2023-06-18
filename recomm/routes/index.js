@@ -22,4 +22,8 @@ router.get("/search", function (req, res, next) {
   res.render("search", { title: "Express" });
 });
 
+router.get("/type", function (req, res, next) {
+  res.render("type", { title: "Express" });
+});
+
 module.exports = router;
