@@ -30,24 +30,14 @@ body {
 .ranking-top-5 .next-btn {
   position: absolute;
   left: 1738px;
-  top: 1255px;
-}
-
-.ranking-top-5 .prev-btn {
-  transform: scaleX(-1);
-  position: absolute;
-  display: block;
-  width: 70px;
-  height: 70px;
-  top: 930px;
-  left: 130px;
+  top: 1215px;
 }
 
 /* 서점별 베스트셀러 넘기기 버튼 */
 .bookstore-best .next-btn {
   position: absolute;
   left: 1738px;
-  top: 2125px;
+  top: 2060px;
 }
 
 /* 리콤의 000님 취향저격 추천 */
@@ -66,8 +56,8 @@ body {
 /* 마음에 드는 모음집 하나는 있겠지 */
 .guess-you-want .next-btn {
   position: absolute;
-  margin-top: -340px;
-  left: 1560px;
+  margin-top: -520px;
+  left: 1590px;
 }
 
 body > div.best-commend > div:nth-child(3) {
@@ -188,9 +178,9 @@ body > div.best-commend > div:nth-child(4) {
   overflow: hidden;
 }
 
-.grid-books .books {
+/* .grid-books .books {
   height: 395px;
-}
+} */
 
 .grid-books .books-img {
   height: 100%;
@@ -204,7 +194,7 @@ body > div.best-commend > div:nth-child(4) {
   display: flex;
   position: relative;
   justify-content: space-between;
-  margin: 50px 0px 150px 0;
+  margin: 30px 0px 150px 0;
   gap: 30px;
   /* overflow: hidden; */
   transition: all ease 1s;
@@ -393,6 +383,7 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 body > div:nth-child(6) {
+  width: 1651px;
   position: relative;
   overflow: hidden;
 }
@@ -473,7 +464,7 @@ body > div:nth-child(6) {
 
 .best-good .grid-books-items {
   width: 382px;
-  height: 560px;
+  height: 586px;
   background: #fffffe;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 13px;
@@ -499,16 +490,18 @@ body > div:nth-child(6) {
 }
 
 .best-good .books-title {
-  width: 267px;
-  height: 35px;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: 24px;
+    /* width: 267px; */
+    /* height: 35px; */
+    text-align: center;
+    /* margin-bottom: 74px; */
+    padding: 5px 0px 30px 0px;
 }
 
 .best-good .books-title .title {
   /* 제목이 넘칠 때 텍스트 말줄임표 */
+  font-weight: 700;
+  font-size: 24px;
+  width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -527,7 +520,6 @@ body > div:nth-child(6) {
   justify-content: space-between;
   padding-right: 40px;
   gap: 28px;
-  margin-top: 40px;
 }
 
 .guess-you-want .grid-books-items {
@@ -556,19 +548,19 @@ body > div:nth-child(6) {
   margin: 3px;
 }
 
-.guess-you-want .books-img:nth-child(1) {
+.guess-you-want .books-img:nth-child(1) img{
   border-radius: 15px 0 0 0;
 }
 
-.guess-you-want .books-img:nth-child(2) {
+.guess-you-want .books-img:nth-child(2) img{
   border-radius: 0 15px 0 0;
 }
 
-.guess-you-want .books-img:nth-child(3) {
+.guess-you-want .books-img:nth-child(3) img{
   border-radius: 0 0 0 15px;
 }
 
-.guess-you-want .books-img:nth-child(4) {
+.guess-you-want .books-img:nth-child(4) img{
   border-radius: 0 0 15px 0;
 }
 
