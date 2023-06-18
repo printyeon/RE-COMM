@@ -4,6 +4,7 @@
 let containers = document.querySelectorAll(".books-container");
 let nextBtns = document.querySelectorAll(".next-btn");
 
+// 모든 nextBtn에 같은 이벤트 함수 부여
 nextBtns.forEach(function (nextBtn, index) {
   nextBtn.addEventListener("click", function () {
     let container = containers[index];
@@ -15,7 +16,9 @@ nextBtns.forEach(function (nextBtn, index) {
     console.log(maxSlides);
     let nextSlide = current + 1;
 
-    let maxWidth = (slideWidth * maxSlides) / 5;
+    // 한번 슬라이드 하는 크기 * 슬라이드 개수 / 한 섹션당 보이는 책 개수
+    // 슬라이드 몇 번 할지
+    let maxWidth = (slideWidth * maxSlides) / (maxSlides / 2);
 
     // 현재 위치 계산
     let transformX = nextSlide * slideWidth;
@@ -105,6 +108,7 @@ function bannerSlide() {
 }
 bannerSlide1();
 
+// 중간 슬라이드
 function bannerSlide1() {
   const slide = document.querySelector(".slide2");
   const bannerItems = slide.querySelectorAll(".banner-item");
