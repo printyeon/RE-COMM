@@ -12,7 +12,7 @@ function chkHeart() {
   // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
   for (let i = 0; i < heartLength; i++) {
     heart[i].addEventListener("click", function () {
-        console.log("클릭");
+      console.log("클릭");
       // 꽉 찬 하트일 때
       if (heart[i].getAttribute("src") == "/images/books-heart-1.png") {
         // 경로 가져오기
@@ -123,14 +123,20 @@ function openJoin() {
   });
 }
 
-// 리뷰 작성하기 모달창 켜기
+// 위로 이동하고 모달창이 열려야 하기 때문에 함수 선언
+function moveToNavAndReview() {
+  let nav = document.getElementById("nav");
+  if (nav) {
+    nav.scrollIntoView({ behavior: "smooth" });
+    setTimeout(onReview, 200); // 스크롤 후에 모달창을 열기 위해 setTimeout 사용
+  }
+}
+
 function onReview() {
   const modal1 = document.getElementById("modal1");
-  const modalBtn = document.getElementsByClassName("write-btn")[0];
-  modalBtn.addEventListener("click", (e) => {
-    modal1.style.display = "flex";
-    // document.body.style.filter = "blur(5px)";
-  });
+  modal1.style.display = "flex";
+  // document.body.style.filter = "blur(5px)";
+
   modal1.addEventListener("click", (e) => {
     const evTarget = e.target;
     if (evTarget.classList.contains("modal-overlay1")) {

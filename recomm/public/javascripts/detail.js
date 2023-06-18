@@ -50,8 +50,8 @@ fetch(api_url)
         <div class="profile">
             <div class="title">${book.title}</div>
             <div class="info1"> 
-                <div class="author">${book.author}</div>
-                <div class="pub">${book.publisher}</div>
+                <div class="author">${book.author} </div>
+                <div class="pub">${book.publisher} </div>
                 <div class="pubyear">${pubYear}년 ${pubMonth}월 ${pubDay}일</div>
             </div>
             <div class="info2">
@@ -136,6 +136,7 @@ fetch(api_url)
       }
       console.log(book.isbn);
 
+      // 이제 컨테이너가 세개네요.. 이 세 개 처리를 어케학ㄱㅈ
       let gridContent = document.getElementsByClassName("grid-content")[0];
       let index = 0;
 
@@ -159,7 +160,7 @@ fetch(api_url)
                           <div class="icon">
                               <img src="/images/memeber-icon.png" alt="">
                           </div>
-                          <div class="member-name"><p class="name">${data.name}</p>님의 프로필 방문하기</div>
+                          <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
                       </div>
                       <div class="heart">
                           <img class="heart" src="/images/books-heart-1.png" alt="">
@@ -170,6 +171,19 @@ fetch(api_url)
         `;
         gridContent.appendChild(testcontent);
         // });
+
+        // 리뷰 없을 때 처리
+        let grids = document.querySelectorAll(".grid-content");
+        grids.forEach(function (grid) {
+          let childCount = grid.childElementCount;
+          if (childCount === 0) {
+            let noReview = document.createElement("div");
+            noReview.style.fontSize = "24px";
+            noReview.style.color = "#777777";
+            noReview.innerHTML = `리뷰가 없네요. <b>${data.name}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
+            grid.appendChild(noReview);
+          }
+        });
       });
 
       firebase.auth().onAuthStateChanged((user) => {

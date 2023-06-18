@@ -128,6 +128,11 @@ body {
 }
 
 .book-profile .summary-content {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #777777;
   margin-top: 5px;
   color: rgba(119, 119, 119, 1);
 }
@@ -135,33 +140,39 @@ body {
 /* 독자들의 인상깊은 구절 */
 .reader {
   width: 100%;
+  height: auto;
   background-color: #fff;
   margin-top: -17px;
+  padding-bottom: 550px;
 }
 
 .reader-impressive {
   width: 1620px;
-  height: 531px;
-  margin: 0 auto;
+  height: auto;
+  margin: 0px auto 30px auto;
   background-color: #3f3f3f;
   background: #fbfbfb;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding: 30px;
+  padding: 30px 30px 60px 30px;
 }
 
 .reader-impressive .reader-nav {
   display: flex;
+  margin-bottom: 40px;
 }
 
 .reader-impressive .reader-nav .write-btn {
-  width: 120px;
-  height: 30px;
+  width: 179px;
+  height: 40px;
   background-color: #bc2638;
   border-radius: 10px;
   color: #fff;
   text-align: center;
-  padding-top: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 20px 40px;
 }
 
 .write-btn:hover {
@@ -202,12 +213,12 @@ body > div.reader-impressive > div.reader-nav > div.title {
 .reader-impressive .grid-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 35px;
 }
 
 .reader-impressive .content {
   display: grid;
-  grid-template-rows: 230px 1fr;
+  grid-template-rows: 240px 1fr;
   background: #fbfbfb;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 13px;
@@ -218,12 +229,18 @@ body > div.reader-impressive > div.reader-nav > div.title {
   font-size: 18px;
   font-weight: 600;
   padding: 20px;
+  overflow-x: hidden;
+  word-break: break-all;
+}
+
+.top::-webkit-scrollbar {
+  width: 1px;
 }
 
 .reader-impressive .content .top .comment {
-  font-size: 16px;
-  color: rgba(119, 119, 119, 1);
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 24px;
+  color: #777777;
   margin-top: 10px;
 }
 
@@ -260,6 +277,13 @@ body > div.reader-impressive > div.reader-nav > div.title {
 
 .reader-impressive .content .bottom .heart {
   margin-right: 10px;
+}
+
+/* 리뷰 div */
+.id {
+  font-weight: 700;
+  font-size: 24px;
+  color: black;
 }
 
 /* 독자들의 인상깊은 구절들 넘기기 버튼 */
@@ -309,6 +333,17 @@ body > div.reader-impressive > div.reader-nav > div.title {
   display: none;
 }
 
+.title1 {
+  position: absolute;
+  width: 282px;
+  height: 35px;
+  left: 640px;
+  top: 250px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
 .modal-overlay1 {
   width: 100%;
   height: 100%;
@@ -350,18 +385,6 @@ body > div.reader-impressive > div.reader-nav > div.title {
   border-radius: 13px;
 }
 
-.title {
-  position: absolute;
-  width: 282px;
-  height: 35px;
-  left: 640px;
-  top: 250px;
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-}
-
 .review-form {
   position: absolute;
   width: 640px;
@@ -374,6 +397,9 @@ input {
   width: 600px;
   padding: 20px 20px 400px 20px;
   overflow-y: scroll;
+  background: #f4f4f4;
+  border-radius: 14px;
+  border: none;
 }
 
 .btns {

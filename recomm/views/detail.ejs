@@ -48,7 +48,7 @@
 <body>
 
     <!-- 내비게이션바 -->
-    <div class="nav">
+    <div class="nav" id="nav">
         <!-- 왼쪽 로고 -->
         <div class="left">
             <a href="/index">
@@ -65,7 +65,7 @@
             <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
         </div>
     </div>
-
+ 
     <!-- 책 정보 -->
     <div id="book-detail"></div>
 
@@ -78,56 +78,33 @@
                     <div class="more">더보기</div>
                     <img src="/images/books-more.png" alt="">
                 </div>
-                <div class="write-btn" onclick="onReview()">작성하기</div>
+                <div class="write-btn" onclick="moveToNavAndReview()">작성하기</div>
             </div>
+            <!-- 인상 깊은 구절 리뷰 -->
             <div class="grid-content"></div>
         </div>
-
-        <div class="reader-impressive">
+        <div class="reader-impressive reader-feel">
             <div class="reader-nav">
                 <div class="title">
-                    <p>독자들의 인상 깊었던 구절들</p>
+                    <p>독자들의 느낀점들</p>
                     <div class="more">더보기</div>
                     <img src="/images/books-more.png" alt="">
                 </div>
-                <div class="write-btn" onclick="onReview()">작성하기</div>
+                <div class="write-btn" onclick="moveToNavAndReview()">작성하기</div>
             </div>
+            <!-- 느낀점 리뷰 -->
             <div class="grid-content"></div>
         </div>
-
-        <div class="reader-impressive">
+        <div class="reader-impressive reader-free">
             <div class="reader-nav">
                 <div class="title">
-                    <p>독자들의 인상 깊었던 구절들</p>
+                    <p>자유롭게 작성해 주세요</p>
                     <div class="more">더보기</div>
                     <img src="/images/books-more.png" alt="">
                 </div>
-                <div class="write-btn" onclick="onReview()">작성하기</div>
+                <div class="write-btn" onclick="moveToNavAndReview()">작성하기</div>
             </div>
-            <div class="grid-content"></div>
-        </div>
-
-        <div class="reader-impressive">
-            <div class="reader-nav">
-                <div class="title">
-                    <p>독자들의 인상 깊었던 구절들</p>
-                    <div class="more">더보기</div>
-                    <img src="/images/books-more.png" alt="">
-                </div>
-                <div class="write-btn" onclick="onReview()">작성하기</div>
-            </div>
-            <div class="grid-content"></div>
-        </div>
-
-        <div class="reader-impressive">
-            <div class="reader-nav">
-                <div class="title">
-                    <p>독자들의 인상 깊었던 구절들</p>
-                    <div class="more">더보기</div>
-                    <img src="/images/books-more.png" alt="">
-                </div>
-                <div class="write-btn" onclick="onReview()">작성하기</div>
-            </div>
+            <!-- 자유롭게 작성 리뷰 -->
             <div class="grid-content"></div>
         </div>
     </div>
@@ -135,7 +112,7 @@
     <div id="modal1" class="modal-overlay1">
         <div class="review">
             <div class="review-bg"></div>
-            <div class="title">독자들의 인상 깊었던 구절들</div>
+            <div class="title1">독자들의 인상 깊었던 구절들</div>
             <form class="review-form">
                 <input type="text" class="row" placeholder="인상 깊었던 구절을 작성해보세요">
             </form>
