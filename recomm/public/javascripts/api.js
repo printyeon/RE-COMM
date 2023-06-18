@@ -55,7 +55,6 @@ function showInterparkBook(data) {
         </div>
       </div>
       <div class="books-title">
-        <div class="isbn">${id}, ${review}</div>
         <div class="title">${title}</div>
         <div class="author-pubyear">${author} · ${pubDate}</div>
         <div class="stars">
@@ -160,7 +159,6 @@ const showBooks = (jsonString) => {
         </div>
       </div>
       <div class="books-title">
-        <div class="isbn">${id}</div>
         <div class="title">${title}</div>
         <div class="author-pubyear">${author} · ${pubDate}</div>
         <div class="stars">
