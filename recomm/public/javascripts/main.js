@@ -147,39 +147,20 @@ function onReview() {
 }
 
 // 로그인/회원가입 모달창에서 입력값이 있으면 check 활성화 else 비활성화
-// let val = document.getElementsByClassName('row').value;
-// let check = document.getElementsByClassName('check');
+let inputs = document.querySelectorAll(".row");
 
-// console.log(val);
+function inputIsInit() {
+  let check = this.parentElement.querySelector(".check img");
 
-// function inputisInit() {
-//   // 값이 없을 때
-//   if(val === '') {
-//     check.setAttribute("src") == "./login/img/login-no-check.png";
-//     console.log("값 안 들어옴")
-//   }
-//   else {
-//     check.setAttribute("src") == "./login/img/login-check.png";
-//     console.log("값 들어옴")
-//   }
-// }
-
-// inputisInit();
-
-window.onload = inputisEmpty;
-
-function inputisEmpty() {
-  let inputStr = document.getElementsByClassName("row");
-  let check = document.getElementsByClassName("check");
-  for (let i = 0; i < inputStr.length; i++) {
-    inputStr[i].addEventListener("change", function (e) {
-      // 텍스트가 비었을 경우
-      if (inputStr[i] == "") {
-        console.log("비엇음");
-        check[i].setAttribute("src", "/images/login/login-no-check.png");
-      } else {
-        check[i].setAttribute("src", "/images/login/login-check.png");
-      }
-    });
+  if (this.value === "") {
+    check.setAttribute("src", "/images/login/login-no-check.png");
+    console.log("값 안 들어옴");
+  } else {
+    check.setAttribute("src", "/images/login/login-check.png");
+    console.log("값 들어옴");
   }
 }
+
+inputs.forEach(function (input) {
+  input.addEventListener("input", inputIsInit);
+});
