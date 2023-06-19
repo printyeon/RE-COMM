@@ -16,7 +16,17 @@
   width: auto;
 }
 .grid-books {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 20px 170px;
+  gap: 30px;
+  overflow: hidden;
   flex-wrap: wrap;
+}
+
+.grid-books-items{
+  margin-bottom: 220px;
 }
 
 .books .heart {

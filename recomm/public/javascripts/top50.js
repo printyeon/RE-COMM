@@ -54,7 +54,6 @@ const showBook = (jsonString) => {
     item.innerHTML = `
     <div class="grid-books-items">
       <div class="books">
-            <img class="heart" src="/images/books-heart-1.png" alt="">
           <div class="books-img">
               <img src="${img}" alt="">
           </div>

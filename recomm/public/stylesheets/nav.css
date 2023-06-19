@@ -33,7 +33,7 @@ a {
 .right {
   display: flex;
   justify-content: space-evenly;
-  width: 500px;
+  width: 501px;
   height: 100%;
   align-items: center;
   gap: 50px; /* 간격 */
