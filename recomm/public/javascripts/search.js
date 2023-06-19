@@ -27,7 +27,7 @@ window.onload = function () {
     let country = document.getElementById("whole-country").value;
     if (keyword !== "") {
       if (e.keyCode === 13) {
-        e.preventDefault(); // 기본 동작 중지 - form 태그는 제출되면 페이지가 새로고침되기 떄문에 막아야 함
+        e.preventDefault(); // 기본 동작 중지 - form 태그는 제출되면 페이지가 새로고침되기 떄문에 preventDefault 주면 됨
         console.log("엔터 클릭");
         resultText.innerHTML = `"${keyword}"의 검색 결과`;
       }
