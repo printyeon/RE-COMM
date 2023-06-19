@@ -19,7 +19,7 @@ nextBtns.forEach(function (nextBtn, index) {
     let maxWidth = (slideWidth * maxSlides) / 5;
 
     // 만약 index가 (슬라이드 index) 3, 4면 maxWidth = (slideWidth * maxSlides) / 4로
-    // 왜냐하면 한 번 슬라이드 하는 요소의 개수가 슬라이드 3, 4번째는 4개이기 때문에
+    // 왜냐하면 한 번 슬라이드 하는 요소의 개수가 슬라이드 3, 4번째는 4개이기 때문에 배너 수정 완
     if (index == 3 || index == 4) {
       maxWidth = (slideWidth * maxSlides) / 4;
     }
