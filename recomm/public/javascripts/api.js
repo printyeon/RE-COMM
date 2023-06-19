@@ -85,7 +85,7 @@ const recommendBtn = document.querySelector("#naver");
 const newBtn = document.querySelector("#daum");
 
 bestSellerBtn.addEventListener("click", () => {
-  let link = `http://book.interpark.com/api/bestSeller.api?key=${KEY}&categoryId=200&output=${TYPE}`;
+  let link = `http://book.interpark.com/api/bestSeller.api?key=${KEY}&categoryId=105&output=${TYPE}`;
   APIS(link);
   let btn = document.getElementsByClassName("next-btn")[1];
   btn.style.display = "block";
