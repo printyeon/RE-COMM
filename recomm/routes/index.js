@@ -26,4 +26,8 @@ router.get("/type", function (req, res, next) {
   res.render("type", { title: "Express" });
 });
 
+router.get("/my", function(req, res, next) {
+  res.render("my", {title : "Express"});
+});
+
 module.exports = router;

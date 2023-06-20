@@ -26,7 +26,9 @@
             <a href="/search">
                 <div class="search"><img src="/images/logo-search.png" alt=""></div>
             </a>
-            <div class="books"><img src="/images/logo-books.png" alt=""></div>
+            <a href="/my">
+                <div class="books"><img src="/images/logo-books.png" alt=""></div>
+            </a>
             <div class="log-in" onclick="openLogin()">로그인</div>
             <div class="join" onclick="openJoin()">회원가입</div>
             <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
@@ -263,19 +265,18 @@
         <!-- api 끌어와서 넣을 부분 -->
         <div class="grid-books">
             <div class="books-container">
-                <a href="/detail">
                     <div class="grid-books-items">
                         <div class="books">
                             <img class="heart" src="/images/books-heart-2.png" alt="">
                             <div class="books-img">
-                                <!-- <img src="" alt=""> -->
+                                <img src="https://minumsa.minumsa.com/wp-content/uploads/bookcover/003_%ED%96%84%EB%A6%BF-500x845.jpg" alt="">
                             </div>
                             <!-- 선호하는... 뭐시기 -->
                             <div class="prefer">#선호하는 작가</div>
                         </div>
                         <div class="books-title">
-                            <div class="title">책 제목입니다.</div>
-                            <div class="author-pubyear">작가 · 출판연도</div>
+                            <div class="title">햄릿</div>
+                            <div class="author-pubyear">셰익스피어 · 1601</div>
                             <div class="stars">
                                 <p>평균 별점</p>
                                 <div class="stars-img">
@@ -288,19 +289,18 @@
                             </div>
                         </div>
                     </div>
-                </a>
                 <div class="grid-books-items">
                     <div class="books">
                         <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
-                            <!-- <img src="" alt=""> -->
+                            <img src="https://m.media-amazon.com/images/I/51TFGiukgvL._AC_UF1000,1000_QL80_.jpg" alt="">
                         </div>
                         <!-- 선호하는... 뭐시기 -->
-                        <div class="prefer">#선호하는 장르</div>
+                        <div class="prefer" style="margin-left: 53px;">#선호하는 장르</div>
                     </div>
                     <div class="books-title">
-                        <div class="title">책 제목이 길어지면 줄임 ⋯</div>
-                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="title">세상의 마지막 기차역</div>
+                        <div class="author-pubyear">무라세 다케시 · 2022</div>
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
@@ -315,16 +315,16 @@
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="/images/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
-                            <!-- <img src="" alt=""> -->
+                            <img src="https://i.namu.wiki/i/ikEUzKQINdVKho9TCFNGfatrCsp8pJ8KEJ2YDew1R8sRJSgYtvDE8hxw-_Y_7dG3FGzE84TlQ_eAV9JX-jcmHA.webp" alt="">
                         </div>
                         <!-- 선호하는... 뭐시기 -->
-                        <div class="prefer">#선호하는 카테고리</div>
+                        <div class="prefer" style="margin-left: 40px;">#선호하는 카테고리</div>
                     </div>
                     <div class="books-title">
-                        <div class="title">책 제목입니다.</div>
-                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="title">어린 왕자</div>
+                        <div class="author-pubyear">생덱쥐페리 · 1943</div>
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
@@ -339,16 +339,16 @@
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="/images/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
-                            <!-- <img src="" alt=""> -->
+                            <img src="https://image.yes24.com/goods/54233937/XL" alt="">
                         </div>
                         <!-- 선호하는... 뭐시기 -->
-                        <div class="prefer">#선호하는 카테고리</div>
+                        <div class="prefer" style="margin-left: 40px;">#선호하는 카테고리</div>
                     </div>
                     <div class="books-title">
-                        <div class="title">책 제목입니다.</div>
-                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="title">신경 끄기의 기술</div>
+                        <div class="author-pubyear">마크 맨슨 · 2016</div>
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
@@ -363,16 +363,16 @@
                 </div>
                 <div class="grid-books-items">
                     <div class="books">
-                        <img class="heart" src="/images/books-heart-1.png" alt="">
+                        <img class="heart" src="/images/books-heart-2.png" alt="">
                         <div class="books-img">
-                            <!-- <img src="" alt=""> -->
+                            <img src="data:image/jpeg;base64,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" alt="">
                         </div>
                         <!-- 선호하는... 뭐시기 -->
-                        <div class="prefer">#선호하는 카테고리</div>
+                        <div class="prefer" style="margin-left: 40px;">#선호하는 카테고리</div>
                     </div>
                     <div class="books-title">
-                        <div class="title">누가 내 머리에 똥쌌어! 비하인드</div>
-                        <div class="author-pubyear">작가 · 출판연도</div>
+                        <div class="title">누가 내 머리에 똥쌌어!</div>
+                        <div class="author-pubyear">홀즈워스 · 1989</div>
                         <div class="stars">
                             <p>평균 별점</p>
                             <div class="stars-img">
@@ -389,7 +389,7 @@
         </div>
         <!-- 넘기기 버튼 -->
         <div id="next-btn" class="next-btn">
-            <img src="/images/next-btn.png" alt="">
+            <!-- <img src="/images/next-btn.png" alt=""> -->
         </div>
     </div>
 
@@ -409,7 +409,7 @@
                 </div>
             </div>
             <p class="middle-paging paging">1 / 3</p>
-            <div class="middle-banner-arrow">
+            <div class="middle-banner-arrow"> 
                 <img class="next" src="/images/middle-banner/banner-arrow-next.png" alt="">
                 <img class="prev" src="/images/middle-banner/banner-arrow-prev.png" alt="">
             </div>
@@ -731,12 +731,12 @@
                     <div class="books-img"><img src="https://image.yes24.com/momo/TopCate42/MidCate07/4166074.jpg" alt=""></div>
                 </div>
                 <div class="books-comment">
-                    <div class="title">더운 여름에 스릴러 소설 어때요?</div>
+                    <div class="title">더운 여름에 등골이 오싹!</div>
                     <div class="tag">
-                        <div class="tag-type1">#4월</div>
-                        <div class="tag-type2">#똥</div>
-                        <div class="tag-type3">#클라나드</div>
-                        <div class="tag-type4">#감성자극</div>
+                        <div class="tag-type1">#스릴러</div>
+                        <div class="tag-type2">#개구리</div>
+                        <div class="tag-type3">#오직리콤</div>
+                        <div class="tag-type4">#에서추천</div>
                     </div>
                 </div>
             </div>

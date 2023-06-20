@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/my.css">
+    <title>RE;COMM</title>
+</head>
+<body>
+    <!-- 리콤 웹 메인 페이지 -->
+
+    <!-- 내비게이션바 -->
+    <div class="nav">
+        <!-- 왼쪽 로고 -->
+        <div class="left">
+            <a href="/">
+                <div class="icon"><img src="/images/logo-logo.png" alt=""></div>
+        </div>
+        <!-- 오른쪽 주요 아이콘 -->
+        <div class="right">
+            <a href="/search">
+                <div class="search"><img src="/images/logo-search.png" alt=""></div>
+            </a>
+            <div class="books"><img src="/images/logo-books.png" alt=""></div>
+            <div class="log-in" onclick="openLogin()">로그인</div>
+            <div class="join" onclick="openJoin()">회원가입</div>
+            <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="user-books">
+        <div class="user-title">`사용자(id)`님의 책장</div>
+
+        <!-- 빨간 밑줄 -->
+        <div class="line-img1"></div>
+
+        <!-- 최근 열람 기록 -->
+        <div class="recent-book">
+            <div class="recent-title">
+                <img src="/images/my-book-icon1.png" alt="" class="icon">
+                <div class="title">최근 열람 기록</div>
+            </div>
+            <div class="grid-books">
+                <div class="books-container">
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            <!-- 넘기기 버튼 -->
+            <div id="next-btn" class="next-btn">
+                <img src="/images/next-btn.png" alt="">
+            </div>
+        </div>
+
+        <!-- 빨간 밑줄 -->
+        <div class="line-img2"></div>
+
+        <!-- 작성한 리뷰 -->
+        <div class="written-review">
+            <div class="recent-title">
+                <img src="/images/my-book-icon2.png" alt="" class="icon">
+                <div class="title">작성한 리뷰</div>
+            </div>
+            <div class="grid-books">
+                <div class="books-container">
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-title">
+                                    <div class="title">불편한 편의점</div>
+                                </div>
+                                <!-- 리뷰 들어갈 곳 -->
+                                <div class="review-content">
+                                    너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니……
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-title">
+                                    <div class="title">불편한 편의점</div>
+                                </div>
+                                <!-- 리뷰 들어갈 곳 -->
+                                <div class="review-content">
+                                    너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니……
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                <!-- 넘기기 버튼 -->
+                <div id="next-btn" class="next-btn">
+                    <img src="/images/next-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 찜한 도서 -->
+        <!-- 빨간 밑줄 -->
+        <div class="line-img3"></div>
+
+        <!-- 최근 열람 기록 -->
+        <div class="zzim-book">
+            <div class="recent-title">
+                <img src="/images/books-heart-2.png" alt="" class="icon">
+                <div class="title">찜한 도서</div>
+            </div>
+            <div class="grid-books">
+                <div class="books-container">
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <!-- 넘기기 버튼 -->
+            <div id="next-btn" class="next-btn">
+                <img src="/images/next-btn.png" alt="">
+            </div>
+        </div>
+
+
+        <!-- 좋아요 누른 리뷰 -->
+        <!-- 빨간 밑줄 -->
+        <div class="line-img4"></div>
+
+        <!-- 최근 열람 기록 -->
+        <div class="love-review">
+            <div class="recent-title">
+                <img src="/images/my-book-icon3.png" alt="" class="icon">
+                <div class="title">좋아요한 리뷰</div>
+            </div>
+            <div class="grid-books">
+                <div class="books-container">
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-title">
+                                    <div class="title">불편한 편의점</div>
+                                    <div class="stars">
+                                        <div class="stars-img">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-2.png" alt="">
+                                            <img src="/images/books-star-2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 리뷰 들어갈 곳 -->
+                                <div class="review-content">
+                                    너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니……
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-books-items">
+                            <div class="books">
+                                <div class="books-img">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8AAAC9vb2zs7Pn5+eIiIhjY2NcXFxKSkra2tqMjIxGRka3t7coKCijo6OZmZng4OD19fVtbW3w8PBRUVHJycmgoKBWVlbT09Pc3NwlJSUyMjKtra2Tk5MUFBQ4ODiAgIB3d3cTExMbGxtAQEAdSXyQAAAEfklEQVR4nO3a63aiMABGUYsoihWKiFJFxeL7P+NQTSBAUDBepmud/WNGMQY+IRdCBwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/5Xg7N1H8QS7Uc61BsOP/X6fzcev2q8dJ6PjYuysx4tj6kdfT9vR9ONi6ooXul0F8dnjTnCUnj5qtovoYdVXyITfMqGu0FF8Nmyrxb6uVjqZ1+NdZL5hmHjn14RlwsHo8r+j+6YjCq1bap7oj7iwUQt/ba+UjI0SLhv1+c2EunYYHEShpKXm2Y2E6oURXy/Zepl04TSq65jwS5Zvayk9EoY/N4qanMW7E/qy/MI8oVtudEb+Ksl5vrvYFFuX70hY/uxT44R7scWtdT9BIsvW+6UXJFR+9pNxQrHBa1Yi24LBoNFMOOyS8Fv9xuhawuXO1RpZjYTj5tjqiY8MGqJI6ITqOHUzYVAdvDQ/fpFw1+Eg5Omeu5FyOYaxV1wH4b35ioTVDDcT1scYXURxdGl4e8QfKlVl29lyuVxPDhtlY1tv9rSEzUtbc6HeaoebqxVWZAan8J6EQXEG96PiINaN3q7PiB80Jx5qwG+DgPqEcoqhTfhdTrD8wbg8jvrcpk/C/G6mvdzY5AwWCX+287MsirP5XDYBXUK/3HU+DgfKfPL0aZBwYLv6UguzWWmzBXif6jE0Eg6z8tPD74bqhGunjP49E+bGzTJbw3j9EgbTyqV0ulw8Ye2mbi0Htf4JF6KGZLXyRFqT6VrvhHZLEnlgkuwWRMKx9anXnOyJitLf17s3JAwztVyq1JGoHxSNsceILxzfnLAS0apUYpd3u+XA2DFh4EmJqGWZ5K/FcW0T+enq3qmpqCmbzM5OUzv/V97c1noaW/YqzQmkJfrUWblJJNzP9TaHSztWf9Gr5neuCImE1WmRnNHX+9LLODnT/prW+QwoS1Y3e5pLNVbXhAezhB3nNHmLc1qvlu/dTF01+psJB0n3W9E/mrCH/zVhEMbhYxI2lnf1CdVltn1WXZKqvG9bteyYcBJZ1tAfHZ381nb1mITubHLVTEyo7a8L+8sazSpj7sdmuYps+fm9i+uaO7P1YxL2FHjaJeQfx7r93at0957vSOhpjkOeSbNnF7qEcdt4+DTB9UcAqUnduoS+NmHeUjuJepSV935Xb/ENI+oSprqE4Y2DKJV98W2Xg1gpWzbL8eKXM9krWw0u1HV1j5ux60217bB283SFfetBSyNh8daPlQfOQRgV60AG7cQeitu1/JIp5isvTigvD82IV6yS3J9Q68UJ5QK67iHaTi34ZxMG4s2hOemNRWPMXpCwe09j9+5piilsGqkrh7ZVLJCkL0g4iIbd/HZ7VseyYrSIlMybiXNM03SxPqkzOIOna90TPpM6XOiYztwaXj9rS1rDfRhP23TeMC+1F60B3Sf8TVZwPE8r/EF62Yf2r00ezfYPmnjO8Ll/cxYmZ49u520CyzvOxEOT/XbtJqbPLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABz/wAFjEI3yFpj/QAAAABJRU5ErkJggg==" alt="">
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-title">
+                                    <div class="title">불편한 편의점</div>
+                                    <div class="stars">
+                                        <div class="stars-img">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-1.png" alt="">
+                                            <img src="/images/books-star-2.png" alt="">
+                                            <img src="/images/books-star-2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 리뷰 들어갈 곳 -->
+                                <div class="review-content">
+                                    너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니다. 이런 책들은 시간이 지나면 기억에 안남긴 하지만 읽을때는 잼있네요. 너무 재미있고요 최고입니다 소설임에도 저를 울리게 하였습니……
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- 넘기기 버튼 -->
+                    <div id="next-btn" class="next-btn">
+                        <img src="/images/next-btn.png" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/slider.js"></script>
+</body>
+</html>
