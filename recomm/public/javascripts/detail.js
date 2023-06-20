@@ -10,6 +10,16 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
+var type;
+// 위로 이동하고 모달창이 열려야 하기 때문에 함수 선언
+function moveToNavAndReview(comtype) {
+  type = comtype;
+  let nav = document.getElementById("nav");
+  if (nav) {
+    nav.scrollIntoView({ behavior: "smooth" });
+    setTimeout(onReview, 200); // 스크롤 후에 모달창을 열기 위해 setTimeout 사용
+  }
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
@@ -138,9 +148,16 @@ fetch(api_url)
 
       // 이제 컨테이너가 세개네요.. 이 세 개 처리를 어케학ㄱㅈ
       let gridContent = document.getElementsByClassName("grid-content")[0];
+      let gridContent1 = document.getElementsByClassName("grid-content")[1];
+      let gridContent2 = document.getElementsByClassName("grid-content")[2];
       let index = 0;
 
-      console.log("index : " + index);
+      var messageRef = database.ref("index/index");
+      messageRef.on("value", function (snapshot) {
+        index = snapshot.val();
+        setTimeout(() => index++, 1);
+      });
+
       var messageRef = database.ref("message/" + book.isbn + "/imphra");
       messageRef.on("child_added", function (snapshot) {
         var data = snapshot.val();
@@ -173,38 +190,125 @@ fetch(api_url)
         // });
 
         // 리뷰 없을 때 처리
-        let grids = document.querySelectorAll(".grid-content");
-        grids.forEach(function (grid) {
-          let childCount = grid.childElementCount;
-          if (childCount === 0) {
-            let noReview = document.createElement("div");
-            noReview.style.fontSize = "24px";
-            noReview.style.color = "#777777";
-            noReview.innerHTML = `리뷰가 없네요. <b>${data.name}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
-            grid.appendChild(noReview);
-          }
-          else {
-            noReview.innerHTML = ``;
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            let grids = document.querySelectorAll(".grid-content");
+            grids.forEach(function (grid) {
+              let childCount = grid.childElementCount;
+              let noReview = document.createElement("div");
+              if (childCount === 0) {
+                noReview.style.fontSize = "24px";
+                noReview.style.color = "#777777";
+                noReview.innerHTML = `리뷰가 없네요. <b>${user.displayName}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
+                grid.appendChild(noReview);
+              } else {
+                noReview.innerHTML = ``;
+              }
+            });
+          } else {
+            let grids = document.querySelectorAll(".grid-content");
+            grids.forEach(function (grid) {
+              let childCount = grid.childElementCount;
+              let noReview = document.createElement("div");
+              if (childCount === 0) {
+                noReview.style.fontSize = "24px";
+                noReview.style.color = "#777777";
+                noReview.innerHTML = `리뷰가 없네요. 로그인 하시고 첫 리뷰를 달아주시는 건 어때요?`;
+                grid.appendChild(noReview);
+              } else {
+                noReview.innerHTML = ``;
+              }
+            });
           }
         });
       });
 
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          console.log(index);
-          //코멘트 넣기
-          var post = document.getElementsByClassName("post")[0];
-          var messageField = document.getElementsByClassName("row")[0];
+      var messageRef = database.ref("message/" + book.isbn + "/felt");
+      messageRef.on("child_added", function (snapshot) {
+        var data = snapshot.val();
+        console.log("추가됨");
 
-          //메세지 저장
-          post.addEventListener("click", () => {
+        // data.forEach((data, index) => {
+        //   console.log(data);
+        let testcontent = document.createElement("testcontent");
+        testcontent.innerHTML = `
+      <div class="content">
+                  <div class="top">
+                      <div class="id">${data.id}</div>
+                      <div class="comment">${data.text}</div>
+                  </div>
+                  <div class="bottom">
+                      <div class="member">
+                          <div class="icon">
+                              <img src="/images/memeber-icon.png" alt="">
+                          </div>
+                          <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
+                      </div>
+                      <div class="heart">
+                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                      </div>
+                  </div>
+              </div> 
+             
+        `;
+        gridContent1.appendChild(testcontent);
+        // });
+      });
+
+      var messageRef = database.ref("message/" + book.isbn + "/free");
+      messageRef.on("child_added", function (snapshot) {
+        var data = snapshot.val();
+        console.log("추가됨");
+
+        // data.forEach((data, index) => {
+        //   console.log(data);
+        let testcontent = document.createElement("testcontent");
+        testcontent.innerHTML = `
+      <div class="content">
+                  <div class="top">
+                      <div class="id">${data.id}</div>
+                      <div class="comment">${data.text}</div>
+                  </div>
+                  <div class="bottom">
+                      <div class="member">
+                          <div class="icon">
+                              <img src="/images/memeber-icon.png" alt="">
+                          </div>
+                          <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
+                      </div>
+                      <div class="heart">
+                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                      </div>
+                  </div>
+              </div> 
+             
+        `;
+        gridContent2.appendChild(testcontent);
+        // });
+      });
+
+      var post = document.getElementsByClassName("post")[0];
+      var messageField = document.getElementsByClassName("row")[0];
+
+      post.addEventListener("click", () => {
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
             var message = messageField.value;
             console.log("message : " + message);
+            console.log("type : " + type);
             if (message == "") {
               alert("메시지를 입력하세요");
               return true;
             }
-            database.ref("message/" + book.isbn + "/imphra/" + index).set({
+            let uid = user.uid;
+            database
+              .ref("message/" + book.isbn + "/" + type + "/" + index)
+              .set({
+                id: user.email,
+                name: user.displayName,
+                text: message,
+              });
+            database.ref("user/" + uid + "/message/" + index).set({
               id: user.email,
               name: user.displayName,
               text: message,
@@ -212,11 +316,12 @@ fetch(api_url)
             messageField.value = "";
             console.log("222222");
             index++;
-          });
-        } else {
-          alert("로그인 후 사용하실 수 있습니다.");
-          location.href = "/index";
-        }
+            database.ref("index").update({ index: index++ });
+          } else {
+            alert("로그인 후 사용하실 수 있습니다.");
+            location.href = "/index";
+          }
+        });
       });
     } else {
       console.log("책 정보가 없습니다.");
@@ -224,6 +329,21 @@ fetch(api_url)
   })
   .catch((error) => {
     console.log(error);
+  })
+  .then(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        let uid = user.uid;
+        var messageRef = database.ref("user/" + uid + "/message");
+        messageRef.on("value", function (snapshot) {
+          var data = snapshot.val();
+          console.log(data);
+          for (const i in data) {
+            console.log(data[i].text);
+          }
+        });
+      }
+    });
   });
 
 function transBCI(categoryId) {

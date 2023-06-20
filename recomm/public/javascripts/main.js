@@ -123,14 +123,14 @@ function openJoin() {
   });
 }
 
-// 위로 이동하고 모달창이 열려야 하기 때문에 함수 선언
-function moveToNavAndReview() {
-  let nav = document.getElementById("nav");
-  if (nav) {
-    nav.scrollIntoView({ behavior: "smooth" });
-    setTimeout(onReview, 200); // 스크롤 후에 모달창을 열기 위해 setTimeout 사용
-  }
-}
+// // 위로 이동하고 모달창이 열려야 하기 때문에 함수 선언
+// function moveToNavAndReview() {
+//   let nav = document.getElementById("nav");
+//   if (nav) {
+//     nav.scrollIntoView({ behavior: "smooth" });
+//     setTimeout(onReview, 200); // 스크롤 후에 모달창을 열기 위해 setTimeout 사용
+//   }
+// }
 
 function onReview() {
   const modal1 = document.getElementById("modal1");

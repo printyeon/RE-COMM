@@ -10,6 +10,39 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+/* 별점 스타일 수정 */
+.rating_box {
+  display: flex;
+}
+
+.rating {
+  position: relative;
+  color: #ddd;
+  font-size: 15px;
+  text-align: center;
+}
+
+.rating input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rating_star {
+  width: 0;
+  color: #bc2638;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 /* 넘기기 버튼 슬라이드 버튼 */
 .next-btn:hover {
   cursor: pointer;
@@ -83,7 +116,8 @@ body > div.best-commend > div:nth-child(4) {
   position: relative;
 }
 
-.slide, .slide2 {
+.slide,
+.slide2 {
   display: flex;
   height: 100%;
   /* overflow: hidden; */
@@ -490,11 +524,11 @@ body > div:nth-child(6) {
 }
 
 .best-good .books-title {
-    /* width: 267px; */
-    /* height: 35px; */
-    text-align: center;
-    /* margin-bottom: 74px; */
-    padding: 5px 0px 30px 0px;
+  /* width: 267px; */
+  /* height: 35px; */
+  text-align: center;
+  /* margin-bottom: 74px; */
+  padding: 5px 0px 30px 0px;
 }
 
 .best-good .books-title .title {
@@ -548,19 +582,19 @@ body > div:nth-child(6) {
   margin: 3px;
 }
 
-.guess-you-want .books-img:nth-child(1) img{
+.guess-you-want .books-img:nth-child(1) img {
   border-radius: 15px 0 0 0;
 }
 
-.guess-you-want .books-img:nth-child(2) img{
+.guess-you-want .books-img:nth-child(2) img {
   border-radius: 0 15px 0 0;
 }
 
-.guess-you-want .books-img:nth-child(3) img{
+.guess-you-want .books-img:nth-child(3) img {
   border-radius: 0 0 0 15px;
 }
 
-.guess-you-want .books-img:nth-child(4) img{
+.guess-you-want .books-img:nth-child(4) img {
   border-radius: 0 0 15px 0;
 }
 

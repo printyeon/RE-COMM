@@ -208,3 +208,15 @@ document.getElementById("logout").addEventListener("click", (event) => {
     })
     .catch((error) => {});
 });
+
+//이름 넣기
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    let uname = document.getElementById("uname");
+
+    console.log(uname.innerHTML);
+    uname.innerHTML = user.displayName;
+  } else {
+    console.log("로그인안함");
+  }
+});
