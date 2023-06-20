@@ -157,7 +157,7 @@ let APIS = (link) => {
 };
 
 // 기본 호출
-let link2 = `http://book.interpark.com/api/bestSeller.api?key=${KEY}&categoryId=200&output=${TYPE}`;
+let link2 = `http://book.interpark.com/api/bestSeller.api?key=${KEY}&categoryId=105&output=${TYPE}`;
 APIS(link2);
 
 const showBooks = (jsonString) => {
