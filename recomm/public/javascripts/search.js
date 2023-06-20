@@ -76,7 +76,6 @@ window.onload = function () {
       bookItem.className = "grid-books-items";
       bookItem.innerHTML = `
           <div class="books">
-            <img class="heart" src="/images/books-heart-2.png" alt="">
             <div class="books-img">
               <img src="${img}" alt="">
             </div>

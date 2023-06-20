@@ -6,108 +6,127 @@
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.survey-txt1 {
-  position: absolute;
-  width: 614px;
-  height: 70px;
-  left: 150px;
-  top: 130px;
+body {
+  background: #FBFBFB;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+}
+ /* ::-webkit-scrollbar {
+  overflow-x: hidden;
+ } */
 
-  font-family: "Noto Sans KR";
+
+.sur-title {
+  margin-top: 110px;
+  margin-left: 150px;
+}
+
+.survey-txt1 {
+  display: flex;
+  font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 38px;
-  line-height: 70px;
+  font-size: 48px;
+  color: #BC2638;
+}
 
-  display: flex;
-  align-items: center;
-
-  color: #bc2638;
+.survey-txt1 img {
+  width: 32px;
+  height: 32px;
+  margin-top: 22px;
+  margin-left: 10px;
 }
 
 .survey-txt2 {
-  position: absolute;
-  width: 498px;
-  height: 35px;
-  left: 150px;
-  top: 200px;
-
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 35px;
-
   display: flex;
-  align-items: center;
-
   color: #a4a4a4;
+  margin-top: 10px;
 }
 
-.survey-category {
-  position: absolute;
-  width: 165px;
-  height: 49px;
-  left: 150px;
-  top: 300px;
+.category {
+  width: 100%;
+  height: 300px;
+  margin: 100px 205px 280px 150px;
+}
 
-  font-family: "Noto Sans KR";
-  font-style: normal;
+.category .title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 49px;
-  display: flex;
-  align-items: center;
-
-  color: #000000;
+  font-size: 34px;
+  color: black;
+  margin-bottom: 30px;
 }
+
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 400px;
+}
+
 
 .survey-btn {
-  position: absolute;
+    /* width: 150px; */
+    padding: 5px 50px;
+    height: 62px;
+    text-align: center;
+    line-height: 61px;
+    background-color: #ffffff;
+    border: 1px solid #E8E8E8;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 26px;
+    color: #777777;
+    margin-right: 13px;
+    margin-bottom: 31px;
+    display: inline-block;
 
-  left: 150px;
-  top: 370px;
-
-  justify-content: center;
-  align-items: center;
-  padding: 8px 24px;
-  gap: 10px;
-
-  border: 1px solid #e8e8e8;
-  border-radius: 50px;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 35px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    /* 클릭 비활성화 */
+    user-select : none;
 }
+
+.survey-btn:hover {
+  cursor: pointer;
+}
+
+/* 앞에 9개까지 선택 가정살림 ~ 인물 (첫번째줄)
+.survey-btn:nth-child(-n+9) {
+  margin-right: 13px;
+  margin-bottom: 31px;
+} 
+
+/* 두번째 줄
+.survey-btn:nth-child(n+10):nth-child(-n+21) {
+  margin-right: ;
+} */
 
 .survey-btn2 {
   position: absolute;
-
+  
   left: 285px;
   top: 370px;
+}
 
-  justify-content: center;
-  align-items: center;
-  padding: 8px 24px;
-  gap: 10px;
+/* 클릭 활성화 */
+.clicked {
+  background-color: #BC2638;
+  color: #fff;
+}
 
-  border: 1px solid #e8e8e8;
-  border-radius: 50px;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 35px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.next-btn:hover {
+  cursor: pointer;
+}
+.next-btn {
+  position: absolute;
+  width: 36.39px;
+  height: 35px;
+  left: 942px;
+  top: 995px;
+  
+}
+.next-btn img {
+  width: 100%;
+  height: 100%;
 }

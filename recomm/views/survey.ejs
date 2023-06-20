@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylestheets/nav.css" />
-    <link rel="stylesheet" href="/stylestheets/survey-style.css" />
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/survey-style.css">
     <title>RE;COMM</title>
   </head>
   <div>
@@ -15,82 +15,77 @@
     <div class="nav">
       <!-- 왼쪽 로고 -->
       <div class="left">
-        <div class="icon"><img src="/images/logo-logo.png" alt="" /></div>
+          <a href="/">
+              <div class="icon"><img src="/images/logo-logo.png" alt=""></div>
       </div>
       <!-- 오른쪽 주요 아이콘 -->
       <div class="right">
-        <a href="/search">
-            <div class="search"><img src="/images/logo-search.png" alt=""></div>
-        </a>
-        <div class="books"><img src="/images/logo-books.png" alt=""></div>
-        <div class="log-in" onclick="openLogin()">로그인</div>
-        <div class="join" onclick="openJoin()">회원가입</div>
-        <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
-    </div>
-    </div>
+          <a href="/search">
+              <div class="search"><img src="/images/logo-search.png" alt=""></div>
+          </a>
+          <a href="/my">
+              <div class="books"><img src="/images/logo-books.png" alt=""></div>
+          </a>
+          <div class="log-in" onclick="openLogin()">로그인</div>
+          <div class="join" onclick="openJoin()">회원가입</div>
+          <div class="user" id="logout"><img src="/images/logo-user.png" alt=""></div>
+      </div>
+  </div>
 
     <!--이거는 그 피그마에 밑에 화살표 버튼 누르면 
       그냥 화면전환말고 js 써서 안보이고 다른 버튼 보이는걸로 할게요-->
     
       <!--이름 입력 받은거 잘 넣기  어라 여기 js 써야하나? 당연하지 나야-->
-    <div class="survey-txt1">
-    <div id="surveyName"></div>
-    님의 취향을 알려주세요!</div>
-    <br />
+      <div class="sur-title">
+        <div class="survey-txt1">
+          <div id="surveyName"></div>
+          <div class="img">
+            <img src="/images/login/login-check.png" alt="">
+          </div>
+        </div>
+        <div class="survey-txt2">리콤에게 알려주시면 맞춤서비스를 받을 수 있어요.</div>
+      </div>
+      
 
-    <div class="survey-txt2">리콤에게 알려주시면 맞춤서비스를 받을 수 있어요.</div>
+    <div class="category">
+      <p class="title">책 카테고리</p>
+      <div class="tag">
+          <div class="survey-btn" id="surveyBtn">가정살림</div>
+          <div class="survey-btn" id="surveyBtn">IT모바일</div>
+          <div class="survey-btn" id="surveyBtn">에세이</div>
+          <div class="survey-btn" id="surveyBtn">여행</div>
+          <div class="survey-btn" id="surveyBtn">역사</div>
+          <div class="survey-btn" id="surveyBtn">시리즈</div>
+          <div class="survey-btn" id="surveyBtn">사회 정치</div>
+          <div class="survey-btn" id="surveyBtn">유아/어린이</div>
+          <div class="survey-btn" id="surveyBtn">인물</div>
+          <div class="survey-btn" id="surveyBtn">소설/시/희곡</div>
+          <div class="survey-btn" id="surveyBtn">잡지</div>
+          <div class="survey-btn" id="surveyBtn">취미</div>
+          <div class="survey-btn" id="surveyBtn">인문</div>
+          <div class="survey-btn" id="surveyBtn">외국어 사전</div>
+          <div class="survey-btn" id="surveyBtn">청소년</div>
+          <div class="survey-btn" id="surveyBtn">스포츠/건강</div>
+          <div class="survey-btn" id="surveyBtn">만화</div>
+          <div class="survey-btn" id="surveyBtn">자연과학</div>
+          <div class="survey-btn" id="surveyBtn">예술</div>
+          <div class="survey-btn" id="surveyBtn">경제 경영</div>
+          <div class="survey-btn" id="surveyBtn">종교</div>
+          <div class="survey-btn" id="surveyBtn">국어사전</div>
+          <div class="survey-btn" id="surveyBtn">참고서/교재</div>
+          <div class="survey-btn" id="surveyBtn">음악</div>
+      </div>
+  </div>
 
-    <!--카테고리-->
-    <div class="survey-category">책 카테고리</div>
-    <!--버튼들-->
+  <a href="/">
+    <div class="next-btn">
+        <img src="/images/type-arrow.png" alt="">
+    </div>
+  </a>
   
-    <button id="surveyBtn" class="survey-btn">가정 살림</button>
-    <button id="surveyBtn" class="survey-btn2">IT 모바일</button>
-    <!-- <button id="surveyBtn" class="survey-btn">에세이</button>
-    <button id="surveyBtn" class="survey-btn">여행</button> -->
-    <!-- <button id="surveyBtn" class="survey-btn">역사</button>
-    <button id="surveyBtn" class="survey-btn">시리즈</button>
-    <button id="surveyBtn" class="survey-btn">사회 정치</button>
-    <button id="surveyBtn" class="survey-btn">유아/어린이</button>
-    <button id="surveyBtn" class="survey-btn">인물</button>
-    <button id="surveyBtn" class="survey-btn">소설/시/희극</button>
-    <button id="surveyBtn" class="survey-btn">잡지</button>
-    <button id="surveyBtn" class="survey-btn">취미</button>
-    <button id="surveyBtn" class="survey-btn">인문</button>
-    <button id="surveyBtn" class="survey-btn">외국어 사전</button>
-    <button id="surveyBtn" class="survey-btn">???</button>
-    <button id="surveyBtn" class="survey-btn">청소년</button>
-    <button id="surveyBtn" class="survey-btn">스포츠/건강</button>
-    <button id="surveyBtn" class="survey-btn">만화</button>
-    <button id="surveyBtn" class="survey-btn">자연과학</button>
-    <button id="surveyBtn" class="survey-btn">예술</button>
-    <button id="surveyBtn" class="survey-btn">경제 경영</button>
-    <button id="surveyBtn" class="survey-btn">종교</button>
-    <button id="surveyBtn" class="survey-btn">국어사전</button>
-    <button id="surveyBtn" class="survey-btn">참고서/교재</button>
-    <button id="surveyBtn" class="survey-btn">음악</button>-->
 
-    <!-- 카테고리-->
-    <div class="survey-genre">책 장르</div>
-    <!--버튼들-->
-    <button id="surveyBtn" class="survey-btn2">로멘스</button>
-    <button id="surveyBtn" class="survey-btn2">스릴러</button>
-    <button id="surveyBtn" class="survey-btn2">사극</button>
-    <button id="surveyBtn" class="survey-btn2">판타지</button>
-    <button id="surveyBtn" class="survey-btn2">시리즈</button>
-    <button id="surveyBtn" class="survey-btn2">코미디</button>
-    <button id="surveyBtn" class="survey-btn2">공포</button>
-    <button id="surveyBtn" class="survey-btn2">GL/BL</button>
-    <button id="surveyBtn" class="survey-btn2">추리/범죄</button>
-    <button id="surveyBtn" class="survey-btn2">SF</button>
-    <button id="surveyBtn" class="survey-btn2">무협</button>
-    <button id="surveyBtn" class="survey-btn2">게임</button>
-    <button id="surveyBtn" class="survey-btn2">먼치킨</button>
-    <button id="surveyBtn" class="survey-btn2">시대</button>
-    <button id="surveyBtn" class="survey-btn2">순정</button>
-
-
-    <script src="./javascripts/survey.js" type="module"></script>
+  <script src="/javascripts/survey.js" type="module"></script>
+    <script src="/javascripts/event.js"></script>
 
     
   </body>

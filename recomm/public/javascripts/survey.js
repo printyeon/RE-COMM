@@ -40,7 +40,10 @@ onAuthStateChanged(auth, (user) => {
       console.log(user);
       console.log(displayName);
       const surveyName = document.getElementById("surveyName");
-      surveyName.innerHTML = displayName;
+      surveyName.innerHTML = `${displayName}님의 취향을 알려주세요!`;
+      surveyName.style.fontSize = '48px';
+      surveyName.style.color = '#BC2638';
+      surveyName.style.fontWeight = '700';
     } else {
       console.log("d이름 가져오기 오류");
     }
@@ -52,9 +55,6 @@ onAuthStateChanged(auth, (user) => {
 });
 
 ////////////////////////////////////////////////////
-const surveyBtn = document.getElementById("surveyBtn");
-surveyBtn.style.backgroundColor = "#ffffff";
-surveyBtn.style.color = "#777777";
 
 // import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
@@ -75,45 +75,34 @@ surveyBtn.style.color = "#777777";
 // const auth = getAuth();
 // const user = auth.currentUser;
 
-// if (user !== null) {
-//   // The user object has basic properties such as display name, email, etc.
-//   const displayName = user.displayName;
-//   console.log(displayName);
-//   const uid = user.uid;
-// }
+if (user !== null) {
+  // The user object has basic properties such as display name, email, etc.
+  const displayName = user.displayName;
+  console.log(displayName);
+  const uid = user.uid;
+}
 
-// surveyBtn.addEventListener("click", surveyBtnClick);
+// // 버튼 클릭 이벤트 활/비활
+let btn = document.getElementsByClassName("survey-btn");
+console.log(btn);
 
-// function surveyBtnClick() {
-//   if (surveyBtn.style.backgroundColor == "rgb(188, 38, 56)") {
-//     surveyBtn.style.backgroundColor = "#ffffff";
-//     surveyBtn.style.color = "#777777";
-//   } else if (surveyBtn.style.backgroundColor == "rgb(255, 255, 255)") {
-//     surveyBtn.style.backgroundColor = "#bc2638";
-//     surveyBtn.style.color = "#FBFBFB";
+function handleClick(event) {
+  if (event.target.classList[0] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    console.log("클릭")
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+// function init() {
+//   for (let i = 0; i < btn.length; i++) {
+//     btn[i].addEventListener("click", handleClick);
 //   }
 // }
 
-// surveyBtn.addEventListener("click", () => {
-//   if (surveyBtn.style.backgroundColor == "rgb(188, 38, 56)") {
-//     surveyBtn.style.backgroundColor = "#ffffff";
-//     surveyBtn.style.color = "#777777";
-//   } else if (surveyBtn.style.backgroundColor == "rgb(255, 255, 255)") {
-//     surveyBtn.style.backgroundColor = "#bc2638";
-//     surveyBtn.style.color = "#FBFBFB";
-//   }
-// });
-
-// const surveyBtn2 = document.getElementById("surveyBtn2");
-// surveyBtn2.style.backgroundColor = "#ffffff";
-// surveyBtn2.style.color = "#777777";
-
-// surveyBtn2.onclick = function () {
-//   if (surveyBtn2.style.backgroundColor == "rgb(188, 38, 56)") {
-//     surveyBtn2.style.backgroundColor = "#ffffff";
-//     surveyBtn2.style.color = "#777777";
-//   } else if (surveyBtn2.style.backgroundColor == "rgb(255, 255, 255)") {
-//     surveyBtn2.style.backgroundColor = "#bc2638";
-//     surveyBtn2.style.color = "#FBFBFB";
-//   }
-// };
+// init();

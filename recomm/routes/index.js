@@ -30,4 +30,8 @@ router.get("/my", function(req, res, next) {
   res.render("my", {title : "Express"});
 });
 
+router.get("/survey", function(req, res, next) {
+  res.render("survey", {title : "Express"});
+});
+
 module.exports = router;
