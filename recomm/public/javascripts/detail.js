@@ -183,6 +183,9 @@ fetch(api_url)
             noReview.innerHTML = `리뷰가 없네요. <b>${data.name}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
             grid.appendChild(noReview);
           }
+          else {
+            noReview.innerHTML = ``;
+          }
         });
       });
 
