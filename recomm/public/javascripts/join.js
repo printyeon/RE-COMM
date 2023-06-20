@@ -22,12 +22,12 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
 
   if (signUpPassword !== reSignUpPassword) {
     alert("비번이 다릅니다.");
-    location.href = "/index";
+    location.href = "/";
   }
 
   if (signUpEmail.indexOf("@") == -1) {
     alert("이메일 형식이 아닙니다.");
-    location.href = "/index";
+    location.href = "/";
   }
 
   firebase
@@ -42,10 +42,12 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
       var errorMessage = error.message;
       if (errorCode == "auth/email-already-in-use") {
         alert("사용하고 있는 이메일입니다.");
+      } else if (errorCode == "auth/weak-password") {
+        alert("비밀번호는 6자 이상이여야 합니다.");
       } else {
         alert("잘못된 접근입니다");
       }
-      location.href = "/index";
+      location.href = "/";
     })
     .then(() => {
       firebase
@@ -84,97 +86,12 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
           console.log("  Email: " + profile.email);
         });
       }
+    })
+    .then(() => {
+      location.href = "/";
     });
 });
-/*
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(signUpEmail, signUpPassword)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      console.log("111");
-      //console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
 
-      if (errorCode == "auth/email-already-in-use") {
-        alert("사용하고 있는 이메일입니다.");
-      } else {
-        alert("잘못된 접근입니다");
-      }
-      location.href = "/views/index.html";
-    })
-    .then(() => {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(signUpEmail, signUpPassword)
-        .then((userCredential) => {
-          // Signed in
-          var user = userCredential.user;
-          console.log("222");
-
-          user.updateProfile({
-            displayName: signUpname,
-          });
-          //console.log(user);
-        });
-    })
-    .catch((error) => {
-      alert("잘못된 접근입니다");
-      location.href = "/views/index.html";
-    })
-    .then(() => {
-      const user = firebase.auth().currentUser;
-
-      if (user !== null) {
-        user.providerData.forEach((profile) => {
-          console.log("Sign-in provider: " + profile.providerId);
-          console.log("  Provider-specific UID: " + profile.uid);
-          console.log("  Name: " + profile.displayName);
-          console.log("  Email: " + profile.email);
-          console.log("  Photo URL: " + profile.photoURL);
-        });
-      } else {
-        alert("잘못된 접근입니다");
-        location.href = "/views/index.html";
-      }
-      //console.log(user);
-    })
-    .catch((error) => {
-      alert("잘못된 접근입니다");
-      location.href = "/views/index.html";
-    })
-    // .then((user) => {
-    //   // console.log("444");
-    //   // const db = getDatabase();
-    //   // set(ref(db, "users/" + userId), {
-    //   //   email: user,
-    //   // });
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // })
-    .then(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          console.log(user);
-          // ...
-        } else {
-          console.log("로그인안함");
-        }
-      });
-      console.log("555");
-      //location.href = "../login/survey.html";
-      //location.href = "/views/index.html";
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
-*/
 document.getElementById("signInButton").addEventListener("click", (event) => {
   event.preventDefault();
   const signInEmail = document.getElementById("signInEmail").value;
@@ -187,12 +104,15 @@ document.getElementById("signInButton").addEventListener("click", (event) => {
       console.log(userCredential);
       const user = userCredential.user;
 
-      location.href = "/index";
+      location.href = "/";
     })
     .catch((error) => {
       console.log("error");
       const errorCode = error.code;
       const errorMessage = error.message;
+    })
+    .then(() => {
+      location.href = "/";
     });
 });
 
@@ -203,7 +123,7 @@ document.getElementById("logout").addEventListener("click", (event) => {
     .signOut()
     .then(() => {
       console.log("로그아웃 됨");
-      location.href = "/index";
+      location.href = "/";
       // Sign-out successful.
     })
     .catch((error) => {});
@@ -218,5 +138,17 @@ firebase.auth().onAuthStateChanged((user) => {
     uname.innerHTML = user.displayName;
   } else {
     console.log("로그인안함");
+  }
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    document.getElementsByClassName("log-in")[0].style.display = "none";
+    document.getElementsByClassName("join")[0].style.display = "none";
+    document.getElementsByClassName("user")[0].style.display = "block";
+  } else {
+    document.getElementsByClassName("log-in")[0].style.display = "block";
+    document.getElementsByClassName("join")[0].style.display = "block";
+    document.getElementsByClassName("user")[0].style.display = "none";
   }
 });

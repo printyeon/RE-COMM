@@ -10,7 +10,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     document.getElementsByClassName("log-in")[0].style.display = "none";

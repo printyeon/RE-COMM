@@ -2,31 +2,31 @@
 
 // 하트 변수
 
-function chkHeart() {
-  let heart = document.getElementsByClassName("heart");
+// function chkHeart() {
+//   let heart = document.getElementsByClassName("heart");
 
-  // 같은 클래스명을 공유하는 요소들의 개수
-  let heartLength = heart.length;
-  console.log(heartLength);
+//   // 같은 클래스명을 공유하는 요소들의 개수
+//   let heartLength = heart.length;
+//   console.log(heartLength);
 
-  // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
-  for (let i = 0; i < heartLength; i++) {
-    heart[i].addEventListener("click", function () {
-      console.log("클릭");
-      // 꽉 찬 하트일 때
-      if (heart[i].getAttribute("src") == "/images/books-heart-1.png") {
-        // 경로 가져오기
-        heart[i].setAttribute("src", "/images/books-heart-2.png");
-        console.log(heart[i].getAttribute("src"));
-      }
-      // 빈 하트일 때
-      else if (heart[i].getAttribute("src") == "/images/books-heart-2.png") {
-        heart[i].setAttribute("src", "/images/books-heart-1.png");
-        console.log(heart[i].getAttribute("src"));
-      }
-    });
-  }
-}
+//   // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
+//   for (let i = 0; i < heartLength; i++) {
+//     heart[i].addEventListener("click", function () {
+//       console.log("클릭");
+//       // 꽉 찬 하트일 때
+//       if (heart[i].getAttribute("src") == "/images/books-heart-1.png") {
+//         // 경로 가져오기
+//         heart[i].setAttribute("src", "/images/books-heart-2.png");
+//         console.log(heart[i].getAttribute("src"));
+//       }
+//       // 빈 하트일 때
+//       else if (heart[i].getAttribute("src") == "/images/books-heart-2.png") {
+//         heart[i].setAttribute("src", "/images/books-heart-1.png");
+//         console.log(heart[i].getAttribute("src"));
+//       }
+//     });
+//   }
+// }
 
 // 서점별 베스트 셀러 버튼
 let btn = document.getElementsByClassName("store-btn");

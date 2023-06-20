@@ -309,6 +309,8 @@ fetch(api_url)
                 text: message,
               });
             database.ref("user/" + uid + "/message/" + index).set({
+              booktit: book.title,
+              bookimg: book.coverLargeUrl,
               id: user.email,
               name: user.displayName,
               text: message,

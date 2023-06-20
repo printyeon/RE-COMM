@@ -261,12 +261,14 @@ const showBookDetail = (event) => {
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           database.ref("user/" + user.uid + "/recentbook/" + id).set({
-            [id]: true,
+            booktit: book.title,
+            bookimg: book.coverLargeUrl,
           });
-
+          /*
           var likebookIsbnRef = database.ref(
             "user/" + user.uid + "/recentbook/"
           );
+          
           likebookIsbnRef.on("value", function (snapshot) {
             let data = snapshot.val();
             console.log(data);
@@ -274,7 +276,7 @@ const showBookDetail = (event) => {
             for (const i in data) {
               console.log(i);
             }
-          });
+          });*/
         }
       });
 
