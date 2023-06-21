@@ -13,20 +13,20 @@ nextBtns.forEach(function (nextBtn, index) {
       : 0;
     let slideWidth = -1650;
     let maxSlides = container.childElementCount;
-    console.log(maxSlides);
+    //console.log(maxSlides);
     let nextSlide = current + 1;
 
     let maxWidth = (slideWidth * maxSlides) / 5;
 
-    console.log(maxWidth);
+    //console.log(maxWidth);
     // 만약 index가 (슬라이드 index) 3, 4면 maxWidth = (slideWidth * maxSlides) / 4로
     // 왜냐하면 한 번 슬라이드 하는 요소의 개수가 슬라이드 3, 4번째는 4개이기 때문에 배너 수정 완
     if (index == 1 || index == 3) {
       maxWidth = (slideWidth * maxSlides) / 2;
     }
 
-    if(index % 5 != 0) {
-        maxWidth = (slideWidth * maxSlides) / 5;
+    if (index % 5 != 0) {
+      maxWidth = (slideWidth * maxSlides) / 5;
     }
 
     // 현재 위치 계산
@@ -39,7 +39,7 @@ nextBtns.forEach(function (nextBtn, index) {
     // 현재 위치 갱신
     container.dataset.current = nextSlide;
 
-    console.log(`현재 위치: ${transformX}, ${nextSlide}`);
+    //console.log(`현재 위치: ${transformX}, ${nextSlide}`);
 
     // 마지막 슬라이드에 도달했을 때
     if (maxWidth == transformX) {
@@ -47,7 +47,7 @@ nextBtns.forEach(function (nextBtn, index) {
       container.style.transform = "translateX(0px)";
       container.style.transition = "all ease 0.5s";
       container.dataset.current = 0;
-      console.log("첫 슬라이드로 이동");
+      //console.log("첫 슬라이드로 이동");
     }
   });
 });

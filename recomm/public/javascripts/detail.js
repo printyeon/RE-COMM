@@ -23,13 +23,13 @@ function moveToNavAndReview(comtype) {
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
-console.log(bookId);
+//console.log(bookId);
 
 let api_url =
   "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
   bookId +
   "&output=json";
-console.log(api_url);
+//console.log(api_url);
 
 fetch(api_url)
   .then((response) => {
@@ -41,7 +41,7 @@ fetch(api_url)
   })
   .then((data) => {
     const book = data.item[0];
-    console.log(book);
+    //console.log(book);
 
     if (book) {
       // 날짜 포맷팅
@@ -93,7 +93,7 @@ fetch(api_url)
 
       //별점 위 텍스트
       const starTitle = document.getElementsByClassName("star-title")[0];
-      console.log(starTitle.innerHTML);
+      //console.log(starTitle.innerHTML);
       if (book.customerReviewRank >= 8.9) {
         starTitle.innerHTML = "완전 추천해요!";
       } else if (book.customerReviewRank >= 6.9) {
@@ -123,7 +123,7 @@ fetch(api_url)
 
         if (book.categoryId != 200 && book.categoryId != 100) {
           let cla = transCI(book.categoryId);
-          console.log("cla : " + cla);
+          //console.log("cla : " + cla);
           let clat = document.createElement("clat");
           clat.innerHTML = `
             <div class="tag-item">
@@ -144,7 +144,7 @@ fetch(api_url)
   `;
         gridTag.appendChild(non);
       }
-      console.log(book.isbn);
+      //console.log(book.isbn);
 
       // 이제 컨테이너가 세개네요.. 이 세 개 처리를 어케학ㄱㅈ
       let gridContent = document.getElementsByClassName("grid-content")[0];
@@ -161,10 +161,10 @@ fetch(api_url)
       var messageRef = database.ref("message/" + book.isbn + "/imphra");
       messageRef.on("child_added", function (snapshot) {
         var data = snapshot.val();
-        console.log("추가됨");
+        //console.log("추가됨");
 
         // data.forEach((data, index) => {
-        //   console.log(data);
+        //   //console.log(data);
         let testcontent = document.createElement("testcontent");
         testcontent.innerHTML = `
       <div class="content">
@@ -186,15 +186,16 @@ fetch(api_url)
               </div> 
              
         `;
+        gridContent.appendChild(testcontent);
       });
 
       var messageRef = database.ref("message/" + book.isbn + "/felt");
       messageRef.on("child_added", function (snapshot) {
         var data = snapshot.val();
-        console.log("추가됨");
+        //console.log("추가됨");
 
         // data.forEach((data, index) => {
-        //   console.log(data);
+        //   //console.log(data);
         let testcontent = document.createElement("testcontent");
         testcontent.innerHTML = `
       <div class="content">
@@ -223,10 +224,10 @@ fetch(api_url)
       var messageRef = database.ref("message/" + book.isbn + "/free");
       messageRef.on("child_added", function (snapshot) {
         var data = snapshot.val();
-        console.log("추가됨");
+        //console.log("추가됨");
 
         // data.forEach((data, index) => {
-        //   console.log(data);
+        //   //console.log(data);
         let testcontent = document.createElement("testcontent");
         testcontent.innerHTML = `
       <div class="content">
@@ -263,7 +264,7 @@ fetch(api_url)
       //         childCount++;
       //       }
       //     }
-      //     console.log(childCount);
+      //     //console.log(childCount);
       //     let noReview = document.createElement("div");
       //     if (childCount === 0) {
       //       noReview.style.fontSize = "24px";
@@ -291,7 +292,6 @@ fetch(api_url)
       //   }
       // });
 
-
       var post = document.getElementsByClassName("post")[0];
       var messageField = document.getElementsByClassName("row")[0];
 
@@ -299,8 +299,8 @@ fetch(api_url)
         firebase.auth().onAuthStateChanged((user) => {
           if (user) {
             var message = messageField.value;
-            console.log("message : " + message);
-            console.log("type : " + type);
+            //console.log("message : " + message);
+            //console.log("type : " + type);
             if (message == "") {
               alert("메시지를 입력하세요");
               return true;
@@ -321,7 +321,7 @@ fetch(api_url)
               text: message,
             });
             messageField.value = "";
-            console.log("222222");
+            //console.log("222222");
             index++;
             database.ref("index").update({ index: index++ });
           } else {
@@ -331,11 +331,11 @@ fetch(api_url)
         });
       });
     } else {
-      console.log("책 정보가 없습니다.");
+      //console.log("책 정보가 없습니다.");
     }
   })
   .catch((error) => {
-    console.log(error);
+    //console.log(error);
   })
   .then(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -344,9 +344,9 @@ fetch(api_url)
         var messageRef = database.ref("user/" + uid + "/message");
         messageRef.on("value", function (snapshot) {
           var data = snapshot.val();
-          console.log(data);
+          //console.log(data);
           for (const i in data) {
-            console.log(data[i].text);
+            //console.log(data[i].text);
           }
         });
       }

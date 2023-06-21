@@ -18,25 +18,25 @@ firebase.auth().onAuthStateChanged((user) => {
     var recentbookRef = database.ref("user/" + user.uid + "/recentbook/");
     recentbookRef.on("value", function (snapshot) {
       let data = snapshot.val();
-      console.log(data);
+      //console.log(data);
       for (const i in data) {
-        console.log(i); //책 id 담겨이씀
+        //console.log(i); //책 id 담겨이씀
 
         //let id = i;
-        console.log(data[i]); //책 obj 담겨이씀
+        //console.log(data[i]); //책 obj 담겨이씀
 
         let bookobj = data[i];
         for (const element in bookobj) {
-          console.log(bookobj[element]); //진짜 책 타이틀(제목 나옴)
+          //console.log(bookobj[element]); //진짜 책 타이틀(제목 나옴)
           let id = bookobj[element];
 
           id = encodeURIComponent(id);
-          console.log(id);
+          //console.log(id);
           var api_url =
             "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
             id +
             "&output=json";
-          console.log(api_url);
+          //console.log(api_url);
           fetch(api_url)
             .then((response) => {
               if (response.ok) {
@@ -47,7 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
             })
             .then((data) => {
               let book = data.item[0];
-              console.log(book);
+              //console.log(book);
               let booksContainer =
                 document.getElementsByClassName("books-container")[0];
               let img = book.coverLargeUrl;
@@ -66,7 +66,7 @@ firebase.auth().onAuthStateChanged((user) => {
               booksContainer.appendChild(item);
             })
             .catch((error) => {
-              console.log(error);
+              //console.log(error);
             });
         }
       }
@@ -76,7 +76,7 @@ firebase.auth().onAuthStateChanged((user) => {
 const showrecentBookDetail = (event) => {
   let id = event.currentTarget.getAttribute("data-id");
   id = encodeURIComponent(id);
-  console.log(id);
+  //console.log(id);
 
   let bookDetailURL = "/detail";
   let url = bookDetailURL + "?id=" + id;
@@ -88,6 +88,7 @@ const showrecentBookDetail = (event) => {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     const user = firebase.auth().currentUser;
+    //console.log(user);
     if (user !== null) {
       //맨위 이름 설정
       let myname = document.getElementsByClassName("myname")[0];
@@ -100,19 +101,19 @@ firebase.auth().onAuthStateChanged((user) => {
     var recentbookRef = database.ref("user/" + user.uid + "/recentbook/");
     recentbookRef.on("value", function (snapshot) {
       let data = snapshot.val();
-      console.log(data);
+      //console.log(data);
       for (const i in data) {
-        console.log(i); //책 id 담겨이씀
+        //console.log(i); //책 id 담겨이씀
 
         //let id = i;
-        console.log(data[i]); //책 obj 담겨이씀
+        //console.log(data[i]); //책 obj 담겨이씀
 
         let bookobj = data[i];
 
         let title = bookobj.booktit;
         let img = bookobj.bookimg;
-        console.log(title);
-        console.log(img);
+        //console.log(title);
+        //console.log(img);
         //let url = bookobj[2];
 
         let booksContainer =
@@ -142,18 +143,18 @@ firebase.auth().onAuthStateChanged((user) => {
     var revbookRef = database.ref("user/" + user.uid + "/message");
     revbookRef.on("value", function (snapshot) {
       let data = snapshot.val();
-      console.log(data);
+      //console.log(data);
       for (const i in data) {
-        console.log(data[i]);
+        //console.log(data[i]);
 
         let revobj = data[i];
 
         let title = revobj.booktit;
         let img = revobj.bookimg;
         let txt = revobj.text;
-        console.log(title);
-        console.log(img);
-        console.log(txt);
+        //console.log(title);
+        //console.log(img);
+        //console.log(txt);
 
         let booksContainer =
           document.getElementsByClassName("rev-container")[0];
@@ -181,6 +182,7 @@ firebase.auth().onAuthStateChanged((user) => {
       }
     });
   } else {
+    location.href = "/my";
     alert("내 책장은 로그인 후 사용 가능 합니다.");
     location.href = "/";
   }
@@ -188,7 +190,7 @@ firebase.auth().onAuthStateChanged((user) => {
 const showBookDetail = (event) => {
   let id = event.currentTarget.getAttribute("data-id");
   id = encodeURIComponent(id);
-  console.log(id);
+  //console.log(id);
 
   let bookDetailURL = "/detail";
   let url = bookDetailURL + "?id=" + id;

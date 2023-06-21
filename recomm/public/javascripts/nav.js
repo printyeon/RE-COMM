@@ -10,14 +10,37 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
+var link = document.location.pathname;
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
+  if (user && link != "/detail") {
     document.getElementsByClassName("log-in")[0].style.display = "none";
     document.getElementsByClassName("join")[0].style.display = "none";
     document.getElementsByClassName("user")[0].style.display = "block";
+    document.getElementsByClassName("books")[0].style.display = "block";
+  } else if (user && link == "/detail") {
+    document.getElementsByClassName("log-in")[0].style.display = "none";
+    document.getElementsByClassName("join")[0].style.display = "none";
+    document.getElementsByClassName("user")[0].style.display = "block";
+    document.getElementsByClassName("books")[0].style.display = "block";
+  } else if (user == null && link == "/detail") {
+    document.getElementsByClassName("log-in")[0].style.display = "none";
+    document.getElementsByClassName("join")[0].style.display = "none";
+    document.getElementsByClassName("user")[0].style.display = "none";
+    document.getElementsByClassName("books")[0].style.display = "none";
   } else {
     document.getElementsByClassName("log-in")[0].style.display = "block";
     document.getElementsByClassName("join")[0].style.display = "block";
     document.getElementsByClassName("user")[0].style.display = "none";
+    document.getElementsByClassName("books")[0].style.display = "none";
   }
 });
+
+// //console.log(link);
+// if (link == "/detail") {
+//   //console.log("tes");
+//   document.getElementsByClassName("log-in")[0].style.display = "block";
+//   document.getElementsByClassName("join")[0].style.display = "block";
+// } else {
+//   document.getElementsByClassName("log-in")[0].style.display = "none";
+//   document.getElementsByClassName("join")[0].style.display = "none";
+// }

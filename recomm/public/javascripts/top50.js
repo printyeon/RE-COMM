@@ -7,8 +7,8 @@ let getBookAPI = (link) => {
 
   xhr.onreadystatechange = () => {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log("API 호출 완료");
-      console.log(link);
+      //console.log("API 호출 완료");
+      //console.log(link);
       apis = showBook(xhr.response);
     } else {
       // FAIL
@@ -22,10 +22,10 @@ let getBookAPI = (link) => {
 getBookAPI(link);
 
 const showBook = (jsonString) => {
-  //   console.log(jsonString);
+  //   //console.log(jsonString);
 
   let json = JSON.parse(jsonString);
-  // console.log(json);
+  // //console.log(json);
 
   let title;
   let img; // imageUrl
@@ -41,7 +41,7 @@ const showBook = (jsonString) => {
     img = json["item"][i]["coverLargeUrl"];
     pubDate = json["item"][i]["pubDate"].substr(0, 4); // 월ㄴ일 슬라이스
 
-    // console.log(title + "\n" + img + "\n" + pubDate);
+    // //console.log(title + "\n" + img + "\n" + pubDate);
 
     // let title_div = document.getElementsByClassName("title");
     // let img_div = document.getElementsByClassName("books-img");
@@ -77,8 +77,8 @@ const showBook = (jsonString) => {
     container.appendChild(item);
   }
 
-  console.log(totalResults);
-  console.log("책 15권 API 호출 완료");
+  //console.log(totalResults);
+  //console.log("책 15권 API 호출 완료");
 
   return json;
 };
@@ -88,7 +88,7 @@ function chkHeart() {
 
   // 같은 클래스명을 공유하는 요소들의 개수
   let heartLength = heart.length;
-  console.log(heartLength);
+  //console.log(heartLength);
 
   // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
   for (let i = 0; i < heartLength; i++) {
@@ -97,12 +97,12 @@ function chkHeart() {
       if (heart[i].getAttribute("src") == "./img/books-heart-1.png") {
         // 경로 가져오기
         heart[i].setAttribute("src", "./img/books-heart-2.png");
-        console.log(heart[i].getAttribute("src"));
+        //console.log(heart[i].getAttribute("src"));
       }
       // 빈 하트일 때
       else if (heart[i].getAttribute("src") == "./img/books-heart-2.png") {
         heart[i].setAttribute("src", "./img/books-heart-1.png");
-        console.log(heart[i].getAttribute("src"));
+        //console.log(heart[i].getAttribute("src"));
       }
     });
   }

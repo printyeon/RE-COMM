@@ -13,7 +13,7 @@ nextBtns.forEach(function (nextBtn, index) {
       : 0;
     let slideWidth = -1650;
     let maxSlides = container.childElementCount;
-    console.log(maxSlides);
+    //console.log(maxSlides);
     let nextSlide = current + 1;
 
     let maxWidth = (slideWidth * maxSlides) / 5;
@@ -34,7 +34,7 @@ nextBtns.forEach(function (nextBtn, index) {
     // 현재 위치 갱신
     container.dataset.current = nextSlide;
 
-    console.log(`현재 위치: ${transformX}, ${nextSlide}`);
+    //console.log(`현재 위치: ${transformX}, ${nextSlide}`);
 
     // 마지막 슬라이드에 도달했을 때
     if (maxWidth == transformX) {
@@ -42,7 +42,7 @@ nextBtns.forEach(function (nextBtn, index) {
       container.style.transform = "translateX(0px)";
       container.style.transition = "all ease 0.5s";
       container.dataset.current = 0;
-      console.log("첫 슬라이드로 이동");
+      //console.log("첫 슬라이드로 이동");
     }
   });
 });
@@ -83,7 +83,7 @@ function bannerSlide() {
   const nextSlide = () => {
     // 현재 인덱스에서 1++
     currentIndex++;
-    console.log("클릭" + currentIndex);
+    //console.log("클릭" + currentIndex);
 
     // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
     if (currentIndex >= bannerItems.length) {
@@ -146,7 +146,7 @@ function bannerSlide1() {
   const nextSlide = () => {
     // 현재 인덱스에서 1++
     currentIndex++;
-    console.log("클릭" + currentIndex);
+    //console.log("클릭" + currentIndex);
 
     // 마지막 슬라이드에서 다음 버튼을 클릭하면 첫 번째 슬라이드로 이동
     if (currentIndex >= bannerItems.length) {

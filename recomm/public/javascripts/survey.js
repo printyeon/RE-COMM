@@ -23,11 +23,11 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const user = auth.currentUser;
-    console.log(user);
+    //console.log(user);
     if (user !== null) {
       // The user object has basic properties such as display name, email, etc.
       displayName = user.displayName;
-      console.log(displayName);
+      //console.log(displayName);
       const email = user.email;
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
@@ -37,23 +37,28 @@ onAuthStateChanged(auth, (user) => {
       // you have one. Use User.getToken() instead.
       const uid = user.uid;
 
-      console.log(user);
-      console.log(displayName);
+      //console.log(user);
+      //console.log(displayName);
       const surveyName = document.getElementById("surveyName");
       surveyName.innerHTML = `${displayName}님의 취향을 알려주세요!`;
-      surveyName.style.fontSize = '48px';
-      surveyName.style.color = '#BC2638';
-      surveyName.style.fontWeight = '700';
+      surveyName.style.fontSize = "48px";
+      surveyName.style.color = "#BC2638";
+      surveyName.style.fontWeight = "700";
     } else {
-      console.log("d이름 가져오기 오류");
+      //console.log("d이름 가져오기 오류");
     }
 
     // ...
   } else {
-    console.log("사용자 가져오기 오류");
+    //console.log("사용자 가져오기 오류");
   }
 });
-
+// if (user !== null) {
+//   // The user object has basic properties such as display name, email, etc.
+//   const displayName = user.displayName;
+//   //console.log(displayName);
+//   const uid = user.uid;
+// }
 ////////////////////////////////////////////////////
 
 // import { getAuth } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
@@ -75,24 +80,24 @@ onAuthStateChanged(auth, (user) => {
 // const auth = getAuth();
 // const user = auth.currentUser;
 
-if (user !== null) {
-  // The user object has basic properties such as display name, email, etc.
-  const displayName = user.displayName;
-  console.log(displayName);
-  const uid = user.uid;
-}
-
 // // 버튼 클릭 이벤트 활/비활
 let btn = document.getElementsByClassName("survey-btn");
-console.log(btn);
+//console.log(btn);
 
 function handleClick(event) {
   if (event.target.classList[0] === "clicked") {
     event.target.classList.remove("clicked");
   } else {
-    console.log("클릭")
+    //console.log("클릭");
     for (var i = 0; i < btn.length; i++) {
       btn[i].classList.remove("clicked");
+      if (btn[i].style.backgroundColor == "rgb(188, 38, 56)") {
+        btn[i].style.backgroundColor = "#ffffff";
+        btn[i].style.color = "#777777";
+      } else if (btn[i].style.backgroundColor == "rgb(255, 255, 255)") {
+        btn[i].style.backgroundColor = "#bc2638";
+        btn[i].style.color = "#FBFBFB";
+      }
     }
 
     event.target.classList.add("clicked");

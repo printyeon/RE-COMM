@@ -12,9 +12,9 @@ firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log(user);
+    //console.log(user);
     // ...
   } else {
-    console.log("로그인안함");
+    //console.log("로그인안함");
   }
 });

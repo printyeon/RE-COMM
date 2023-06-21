@@ -7,22 +7,22 @@
 
 //   // 같은 클래스명을 공유하는 요소들의 개수
 //   let heartLength = heart.length;
-//   console.log(heartLength);
+//   //console.log(heartLength);
 
 //   // 같은 클래스명을 공유하는 요소들에게 한 번에 이벤트 추가
 //   for (let i = 0; i < heartLength; i++) {
 //     heart[i].addEventListener("click", function () {
-//       console.log("클릭");
+//       //console.log("클릭");
 //       // 꽉 찬 하트일 때
 //       if (heart[i].getAttribute("src") == "/images/books-heart-1.png") {
 //         // 경로 가져오기
 //         heart[i].setAttribute("src", "/images/books-heart-2.png");
-//         console.log(heart[i].getAttribute("src"));
+//         //console.log(heart[i].getAttribute("src"));
 //       }
 //       // 빈 하트일 때
 //       else if (heart[i].getAttribute("src") == "/images/books-heart-2.png") {
 //         heart[i].setAttribute("src", "/images/books-heart-1.png");
-//         console.log(heart[i].getAttribute("src"));
+//         //console.log(heart[i].getAttribute("src"));
 //       }
 //     });
 //   }
@@ -159,10 +159,10 @@ function inputIsInit() {
 
   if (this.value === "") {
     check.setAttribute("src", "/images/login/login-no-check.png");
-    console.log("값 안 들어옴");
+    //console.log("값 안 들어옴");
   } else {
     check.setAttribute("src", "/images/login/login-check.png");
-    console.log("값 들어옴");
+    //console.log("값 들어옴");
   }
 }
 
@@ -170,12 +170,10 @@ inputs.forEach(function (input) {
   input.addEventListener("input", inputIsInit);
 });
 
-
-
 let hearts = document.getElementsByClassName("heart");
 for (var i = 0; i < hearts.length; i++) {
   hearts[i].addEventListener("click", function () {
-    console.log("클릭------------------------------------");
+    //console.log("클릭------------------------------------");
     // 꽉 찬 하트일 때
     if (this.getAttribute("src") == "/images/books-heart-1.png") {
       this.setAttribute("src", "/images/books-heart-2.png");

@@ -11,19 +11,19 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-// fetch("http://book.interpark.com/api/bestSeller.api").then((response) => console.log("response: ", response));
+// fetch("http://book.interpark.com/api/bestSeller.api").then((response) => //console.log("response: ", response));
 
 // 인터파크 API
 const TYPE = "json";
 const KEY = "5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E";
 const link1 = `http://book.interpark.com/api/bestSeller.api?key=${KEY}&categoryId=100&output=json`;
-console.log(link1);
+////console.log(link1);
 
 let interparkAPI = (link) => {
   fetch(link)
     .then((response) => {
       if (response.ok) {
-        console.log("API 호출 완료");
+        ////console.log("API 호출 완료");
         return response.json();
       } else {
         throw new Error("API 요청에 실패했습니다.");
@@ -33,7 +33,7 @@ let interparkAPI = (link) => {
       showInterparkBook(data);
     })
     .catch((error) => {
-      console.log(error);
+      ////console.log(error);
     });
 };
 
@@ -85,7 +85,7 @@ function showInterparkBook(data) {
       </div>`;
 
     item.setAttribute("data-id", title);
-    console.log(title);
+    ////console.log(title);
     item.addEventListener("click", showBookDetail);
     container.appendChild(item);
 
@@ -96,7 +96,7 @@ function showInterparkBook(data) {
     let heart = document.getElementsByClassName("heart")[i];
 
     heart.addEventListener("click", function () {
-      console.log("클릭------------------------------------");
+      ////console.log("클릭------------------------------------");
       // 꽉 찬 하트일 때
       if (heart.getAttribute("src") == "/images/books-heart-1.png") {
         heart.setAttribute("src", "/images/books-heart-2.png");
@@ -108,7 +108,7 @@ function showInterparkBook(data) {
     });
   }
 
-  console.log("인터파크 베스트셀러 15권 API 호출 완료");
+  ////console.log("인터파크 베스트셀러 15권 API 호출 완료");
 }
 
 // 버튼 세 개별로 각각 베스트셀러, 추천도서, 신간 도서 가져오기
@@ -145,7 +145,7 @@ let APIS = (link) => {
   //  XMLHttpRequest 객체의 readyState 프로퍼티 값이 변할 때마다 자동으로 호출되는 함수 설정
   xhr.onreadystatechange = () => {
     if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-      console.log("버튼 세 개 API 호출 완료");
+      // //console.log("버튼 세 개 API 호출 완료");
       apis = showBooks(xhr.response);
     } else {
       // FAIL
@@ -209,7 +209,7 @@ const showBooks = (jsonString) => {
     </div>`;
 
     item.setAttribute("data-id", title);
-    console.log(title);
+    ////console.log(title);
     item.addEventListener("click", showBookDetail);
     container.appendChild(item);
     container.appendChild(item);
@@ -221,7 +221,7 @@ const showBooks = (jsonString) => {
     let heart = document.getElementsByClassName("heart")[i];
 
     heart.addEventListener("click", function () {
-      console.log("클릭------------------------------------");
+      ////console.log("클릭------------------------------------");
       // 꽉 찬 하트일 때
       if (heart.getAttribute("src") == "/images/books-heart-1.png") {
         heart.setAttribute("src", "/images/books-heart-2.png");
@@ -239,12 +239,12 @@ const showBooks = (jsonString) => {
 const showBookDetail = (event) => {
   let id = event.currentTarget.getAttribute("data-id");
   id = encodeURIComponent(id);
-  console.log(id);
+  ////console.log(id);
   var api_url =
     "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
     id +
     "&output=json";
-  console.log(api_url);
+  ////console.log(api_url);
 
   fetch(api_url)
     .then((response) => {
@@ -256,7 +256,7 @@ const showBookDetail = (event) => {
     })
     .then((data) => {
       let book = data.item[0];
-      console.log(book);
+      ////console.log(book);
       var data = 0;
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -271,10 +271,10 @@ const showBookDetail = (event) => {
           
           likebookIsbnRef.on("value", function (snapshot) {
             let data = snapshot.val();
-            console.log(data);
+            ////console.log(data);
 
             for (const i in data) {
-              console.log(i);
+              ////console.log(i);
             }
           });*/
         }
@@ -292,7 +292,7 @@ const showBookDetail = (event) => {
       window.location.href = url;
     })
     .catch((error) => {
-      console.log(error);
+      //console.log(error);
     });
 };
 
@@ -302,16 +302,16 @@ firebase.auth().onAuthStateChanged((user) => {
     var likebookIsbnRef = database.ref("user/" + user.uid + "/recentbook/");
     likebookIsbnRef.on("value", function (snapshot) {
       let recentbook = snapshot.val();
-      console.log(recentbook);
+      //console.log(recentbook);
 
       for (const id in recentbook) {
-        console.log(id);
+        //console.log(id);
 
         let api_url =
           "https://book.interpark.com/api/search.api?key=5DC0043F3B12F1DEA20EE1F13E31A6BF9EDA50043079B11214F1261975344B9E&query=" +
           id +
           "&output=json";
-        console.log(api_url);
+        //console.log(api_url);
         fetch(api_url)
           .then((response) => {
             if (response.ok) {
@@ -322,15 +322,15 @@ firebase.auth().onAuthStateChanged((user) => {
           })
           .then((data) => {
             let book = data.item[0];
-            console.log(book); ///이거다 이거!!!!!!!!!!!!!!!!!
-            console.log(book.title);
-            console.log(book.author);
-            console.log(book.publisher);
-            console.log(book.coverLargeUrl);
+            //console.log(book); ///이거다 이거!!!!!!!!!!!!!!!!!
+            //console.log(book.title);
+            //console.log(book.author);
+            //console.log(book.publisher);
+            //console.log(book.coverLargeUrl);
 
             let bookDetailURL = "/detail";
             let url = bookDetailURL + "?id=" + id;
-            console.log(url);
+            //console.log(url);
           });
       }
     });

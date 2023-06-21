@@ -9,12 +9,16 @@ var config = {
   measurementId: "G-N63J4R732X",
 };
 firebase.initializeApp(config);
-
+var link = document.location.href;
 // const auth = getAuth();
 // const user = auth.currentUser;
 document.getElementById("signUpButton").addEventListener("click", (event) => {
   event.preventDefault();
-
+  //console.log(link);
+  if (link == "http://localhost:3000/detail") {
+    location.href = "/";
+    alert("다시 회원가입을 진행해 주세요.");
+  }
   const signUpname = document.getElementById("signUpName").value;
   const signUpEmail = document.getElementById("signUpEmail").value;
   const signUpPassword = document.getElementById("signUpPassword").value;
@@ -35,7 +39,7 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
     .createUserWithEmailAndPassword(signUpEmail, signUpPassword)
     .then((userCredential) => {
       var user = userCredential.user;
-      console.log("회원가입 성공");
+      //console.log("회원가입 성공");
     })
     .catch((error) => {
       var errorCode = error.code;
@@ -56,18 +60,18 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;
-          console.log("로그인 성공");
+          //console.log("로그인 성공");
 
           user
             .updateProfile({
               displayName: signUpname,
             })
             .then(() => {
-              console.log("프로필 업뎃");
-              console.log(user);
+              //console.log("프로필 업뎃");
+              //console.log(user);
             })
             .catch((error) => {
-              console.log("프로필 업뎃안됨");
+              //console.log("프로필 업뎃안됨");
             });
         })
         .catch((error) => {
@@ -76,19 +80,22 @@ document.getElementById("signUpButton").addEventListener("click", (event) => {
         });
     })
     .then(() => {
-      const user = firebase.auth().currentUser;
-
-      if (user !== null) {
-        user.providerData.forEach((profile) => {
-          console.log("Sign-in provider: " + profile.providerId);
-          console.log("  Provider-specific UID: " + profile.uid);
-          console.log("  Name: " + profile.displayName);
-          console.log("  Email: " + profile.email);
-        });
-      }
+      //console.log("sdfsdfdsfds");
+      // const user = firebase.auth().currentUser;
+      // if (user !== null) {
+      //   user.providerData.forEach((profile) => {
+      //     //console.log("Sign-in provider: " + profile.providerId);
+      //     //console.log("  Provider-specific UID: " + profile.uid);
+      //     //console.log("  Name: " + profile.displayName);
+      //     //console.log("  Email: " + profile.email);
+      //   });
+      // }
     })
     .then(() => {
-      location.href = "/";
+      //console.log("false");
+      setTimeout(function () {
+        location.href = "/survey";
+      }, 2000);
     });
 });
 
@@ -101,13 +108,13 @@ document.getElementById("signInButton").addEventListener("click", (event) => {
     .signInWithEmailAndPassword(signInEmail, signInPassword)
     .then((userCredential) => {
       // Signed in
-      console.log(userCredential);
+      //console.log(userCredential);
       const user = userCredential.user;
 
       location.href = "/";
     })
     .catch((error) => {
-      console.log("error");
+      //console.log("error");
       const errorCode = error.code;
       const errorMessage = error.message;
     })
@@ -122,7 +129,7 @@ document.getElementById("logout").addEventListener("click", (event) => {
     .auth()
     .signOut()
     .then(() => {
-      console.log("로그아웃 됨");
+      //console.log("로그아웃 됨");
       location.href = "/";
       // Sign-out successful.
     })
@@ -134,10 +141,10 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     let uname = document.getElementById("uname");
 
-    console.log(uname.innerHTML);
+    //console.log(uname.innerHTML);
     uname.innerHTML = user.displayName;
   } else {
-    console.log("로그인안함");
+    //console.log("로그인안함");
   }
 });
 
