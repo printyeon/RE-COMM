@@ -180,7 +180,7 @@ fetch(api_url)
                           <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
                       </div>
                       <div class="heart">
-                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                          <img class="heart" onclick="heartonoff(this)" src="/images/books-heart-1.png" alt="">
                       </div>
                   </div>
               </div> 
@@ -401,4 +401,14 @@ function transCI(categoryId) {
   else if (categoryId == 215) return (cla = "프랑스도서");
   else if (categoryId == 216) return (cla = "중국도서");
   else if (categoryId == 217) return (cla = "해외주문원서");
+}
+
+function heartonoff(heart) {
+  if (heart.getAttribute("src") == "/images/books-heart-1.png") {
+    heart.setAttribute("src", "/images/books-heart-2.png");
+  }
+  // 빈 하트일 때
+  else if (heart.getAttribute("src") == "/images/books-heart-2.png") {
+    heart.setAttribute("src", "/images/books-heart-1.png");
+  }
 }
