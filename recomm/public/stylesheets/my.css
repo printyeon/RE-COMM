@@ -5,6 +5,7 @@
 }
 
 .user-books .user-title {
+    display: flex;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 700;
@@ -13,8 +14,12 @@
     padding-bottom: 50px;
 }
 
-.grid-books-items {
-    background-color: #494949;
+.books {
+    height: 425px;
+}
+
+.books-img {
+    width: 100%;
 }
 
 .next-btn:hover {
@@ -35,14 +40,18 @@
     height: 50px;
     background: #BC2638;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    top: 800px;
+    top: 850px;
     left: 129px;
+}
+
+.rev-container {
+    gap: 111px;
 }
 
 .recent-book .next-btn {
     position: absolute;
-    left: 1738px;
-    top: 565px;
+    left: 1784px;
+    top: 635px;
 }
 
 .recent-title {
@@ -90,8 +99,8 @@
 /* 작성한 리뷰 */
 .written-review .next-btn {
     position: absolute;
-    left: 1768px;
-    top: 1195px;
+    left: 1777px;
+    top: 1264px;
 }
 
 .line-img2 {
@@ -100,7 +109,7 @@
     height: 50px;
     background: #BC2638;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    top: 1450px;
+    top: 1480px;
     left: 129px;
 }
 
@@ -145,13 +154,13 @@
 .zzim-book {
     width: 1620px;
     height: 640px;
-    margin: 770px 150px 95px 150px;
+    margin: 0px 150px 95px 0px;
 }
 
 .zzim-book .next-btn {
     position: absolute;
     left: 1768px;
-    top: 1805px;
+    top: 1905px;
 }
 
 .line-img3 {
@@ -160,7 +169,7 @@
     height: 50px;
     background: #BC2638;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    top: 2090px;
+    top: 2110px;
     left: 129px;
 }
 
@@ -170,14 +179,14 @@
     height: 50px;
     background: #BC2638;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    top: 2780px;
+    top: 2790px;
     left: 129px;
 }
 
 .love-review {
     width: 1620px;
     height: 640px;
-    margin: -50px 150px 95px 150px;
+    margin: -50px 150px 95px 0px;
 }
 
 /* 작성한 리뷰 책  */
@@ -220,6 +229,6 @@
 
 .love-review .next-btn {
     position: absolute;
-    left: 1609px;
-    top: 286px;
+    left: 1759px;
+    top: 2586px;
 }

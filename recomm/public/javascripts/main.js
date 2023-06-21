@@ -144,6 +144,11 @@ function onReview() {
       document.body.style.filter = "blur(0px)";
     }
   });
+  // modal1.addEventListener('keydown', function(e) {
+  //   if(e.keyCode === 13) {
+  //     e.preventDefault();
+  //   };
+  // })
 }
 
 // 로그인/회원가입 모달창에서 입력값이 있으면 check 활성화 else 비활성화
@@ -164,3 +169,20 @@ function inputIsInit() {
 inputs.forEach(function (input) {
   input.addEventListener("input", inputIsInit);
 });
+
+
+
+let hearts = document.getElementsByClassName("heart");
+for (var i = 0; i < hearts.length; i++) {
+  hearts[i].addEventListener("click", function () {
+    console.log("클릭------------------------------------");
+    // 꽉 찬 하트일 때
+    if (this.getAttribute("src") == "/images/books-heart-1.png") {
+      this.setAttribute("src", "/images/books-heart-2.png");
+    }
+    // 빈 하트일 때
+    else if (this.getAttribute("src") == "/images/books-heart-2.png") {
+      this.setAttribute("src", "/images/books-heart-1.png");
+    }
+  });
+}

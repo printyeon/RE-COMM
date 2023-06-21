@@ -186,41 +186,6 @@ fetch(api_url)
               </div> 
              
         `;
-        gridContent.appendChild(testcontent);
-        // });
-
-        // 리뷰 없을 때 처리
-        firebase.auth().onAuthStateChanged((user) => {
-          if (user) {
-            let grids = document.querySelectorAll(".grid-content");
-            grids.forEach(function (grid) {
-              let childCount = grid.childElementCount;
-              let noReview = document.createElement("div");
-              if (childCount === 0) {
-                noReview.style.fontSize = "24px";
-                noReview.style.color = "#777777";
-                noReview.innerHTML = `리뷰가 없네요. <b>${user.displayName}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
-                grid.appendChild(noReview);
-              } else {
-                noReview.innerHTML = ``;
-              }
-            });
-          } else {
-            let grids = document.querySelectorAll(".grid-content");
-            grids.forEach(function (grid) {
-              let childCount = grid.childElementCount;
-              let noReview = document.createElement("div");
-              if (childCount === 0) {
-                noReview.style.fontSize = "24px";
-                noReview.style.color = "#777777";
-                noReview.innerHTML = `리뷰가 없네요. 로그인 하시고 첫 리뷰를 달아주시는 건 어때요?`;
-                grid.appendChild(noReview);
-              } else {
-                noReview.innerHTML = ``;
-              }
-            });
-          }
-        });
       });
 
       var messageRef = database.ref("message/" + book.isbn + "/felt");
@@ -286,6 +251,46 @@ fetch(api_url)
         gridContent2.appendChild(testcontent);
         // });
       });
+
+      // 리뷰 없을 때 처리
+      // firebase.auth().onAuthStateChanged((user) => {
+      //   if (user) {
+      //     let grids = document.querySelectorAll(".grid-content");
+      //     grids.forEach(function(grid) {
+      //     let childCount = 0;
+      //     for (let i = 0; i < grid.children.length; i++) {
+      //       if (grid.children[i].classList.contains("content")) {
+      //         childCount++;
+      //       }
+      //     }
+      //     console.log(childCount);
+      //     let noReview = document.createElement("div");
+      //     if (childCount === 0) {
+      //       noReview.style.fontSize = "24px";
+      //       noReview.style.color = "#777777";
+      //       noReview.innerHTML = `리뷰가 없네요. <b>${user.displayName}</b>님께서 첫 리뷰를 달아주시는 건 어때요?`;
+      //       grid.appendChild(noReview);
+      //     } else {
+      //       grid.removeChild(noReview);
+      //     }
+      //     });
+      //   } else {
+      //     let grids = document.querySelectorAll(".grid-content");
+      //     grids.forEach(function (grid) {
+      //       let childCount = grid.childElementCount;
+      //       let noReview = document.createElement("div");
+      //       if (childCount === 0) {
+      //         noReview.style.fontSize = "24px";
+      //         noReview.style.color = "#777777";
+      //         noReview.innerHTML = `리뷰가 없네요. 로그인 하시고 첫 리뷰를 달아주시는 건 어때요?`;
+      //         grid.appendChild(noReview);
+      //       } else {
+      //         grid.removeChild(noReview);
+      //       }
+      //     });
+      //   }
+      // });
+
 
       var post = document.getElementsByClassName("post")[0];
       var messageField = document.getElementsByClassName("row")[0];

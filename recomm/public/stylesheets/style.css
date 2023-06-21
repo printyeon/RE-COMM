@@ -177,8 +177,11 @@ body > div.best-commend > div:nth-child(4) {
 }
 
 .title-area {
+  font-size: 48px;
   display: flex;
   align-items: center;
+  font-weight: 700;
+  gap: 10px;
 }
 
 .title-area .title {
@@ -629,6 +632,11 @@ body > div:nth-child(6) {
   margin: 95px 150px 106px 150px;
   height: auto;
   position: relative;
+}
+
+.recome .title {
+  text-overflow: unset;
+  overflow: unset;
 }
 
 .recome-recommend .recome {
