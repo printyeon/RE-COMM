@@ -331,7 +331,15 @@ fetch(api_url)
                 id: user.email,
                 name: user.displayName,
                 text: message,
+              }, (error) => {
+                if (error) {
+                  // The write failed...
+                } else {
+                  const modal1 = document.getElementById("modal1");
+                  modal1.style.display = "none";
+                }
               });
+              
               messageField.value = "";
               //console.log("222222");
               index++;
