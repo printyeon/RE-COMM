@@ -211,7 +211,7 @@ fetch(api_url)
                           <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
                       </div>
                       <div class="heart">
-                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                          <img class="heart" onclick="heartonoff(this)" src="/images/books-heart-1.png" alt="">
                       </div>
                   </div>
               </div> 
@@ -243,7 +243,7 @@ fetch(api_url)
                           <div class="member-name"><p class="name">${data.name}</p>님의 리뷰</div>
                       </div>
                       <div class="heart">
-                          <img class="heart" src="/images/books-heart-1.png" alt="">
+                          <img class="heart" onclick="heartonoff(this)" src="/images/books-heart-1.png" alt="">
                       </div>
                   </div>
               </div> 
