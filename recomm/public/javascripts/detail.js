@@ -21,6 +21,11 @@ function moveToNavAndReview(comtype) {
   }
 }
 
+function cancle(){
+  const modal1 = document.getElementById("modal1");
+  modal1.style.display = "none";
+}
+
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
 //console.log(bookId);
@@ -294,6 +299,13 @@ fetch(api_url)
 
       var post = document.getElementsByClassName("post")[0];
       var messageField = document.getElementsByClassName("row")[0];
+      // var cancle = document.getElementsByClassName("cancle")[0];
+
+      // cancle.addEventListener("click", () => {
+      //   console.log("Asdf");
+      //   const modal1 = document.getElementById("modal1");
+      //   modal1.style.display = "none";
+      // });
 
       post.addEventListener("click", () => {
         firebase.auth().onAuthStateChanged((user) => {
@@ -303,27 +315,29 @@ fetch(api_url)
             //console.log("type : " + type);
             if (message == "") {
               alert("메시지를 입력하세요");
-              return true;
             }
-            let uid = user.uid;
-            database
-              .ref("message/" + book.isbn + "/" + type + "/" + index)
-              .set({
+            else{
+              let uid = user.uid;
+              database
+                .ref("message/" + book.isbn + "/" + type + "/" + index)
+                .set({
+                  id: user.email,
+                  name: user.displayName,
+                  text: message,
+                });
+              database.ref("user/" + uid + "/message/" + index).set({
+                booktit: book.title,
+                bookimg: book.coverLargeUrl,
                 id: user.email,
                 name: user.displayName,
                 text: message,
               });
-            database.ref("user/" + uid + "/message/" + index).set({
-              booktit: book.title,
-              bookimg: book.coverLargeUrl,
-              id: user.email,
-              name: user.displayName,
-              text: message,
-            });
-            messageField.value = "";
-            //console.log("222222");
-            index++;
-            database.ref("index").update({ index: index++ });
+              messageField.value = "";
+              //console.log("222222");
+              index++;
+              database.ref("index").update({ index: index++ });
+            }
+            
           } else {
             alert("로그인 후 사용하실 수 있습니다.");
             location.href = "/index";
